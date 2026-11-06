@@ -2,7 +2,7 @@
 // SITE CONFIGURATION — Weather Tomorrow (Global Meteorologic Platform)
 // ============================================================
 const SITE_NAME = "Weather Tomorrow";
-const CONTACT_EMAIL = "weathertomorrow-service@outlook.com";
+const CONTACT_EMAIL = ""; // No contact email set — removed on the owner's instruction (2026-11-06). Do not put any email here without his say-so.
 
 const CONFIG = {
   SITE_NAME: SITE_NAME,

@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 
 const SITE_NAME = "Weather Tomorrow";
-const DEFAULT_CONTACT = "weathertomorrow-service@outlook.com";
+const DEFAULT_CONTACT = "https://www.weathertomorrow.website"; // Site URL as the identifying contact (no email set).
 
 // In-memory serverless cache (valid 10 minutes)
 const serverCache = new Map();

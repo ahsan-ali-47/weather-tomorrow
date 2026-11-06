@@ -3,10 +3,10 @@
 const https = require('https');
 
 const SITE_NAME = "Weather Tomorrow";
-// Real contact email for the User-Agent (Nominatim requires an identifying
-// contact; the literal CONTACT_EMAIL_HERE placeholder gets throttled/blocked).
-const CONTACT_EMAIL = "weathertomorrow-service@outlook.com";
-const USER_AGENT = `${SITE_NAME}/1.0 (${CONTACT_EMAIL})`;
+// Site URL as the identifying contact for the User-Agent (Nominatim requires
+// an identifying contact; no email is set for this site).
+const SITE_URL = "https://www.weathertomorrow.website";
+const USER_AGENT = `${SITE_NAME}/1.0 (${SITE_URL})`;
 
 module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
