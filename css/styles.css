@@ -2050,3 +2050,515 @@ body.lang-ur .city-card-urdu {
     font-size: 38px;
   }
 }
+
+/* ============================================================
+   LIGHT / DARK THEME (redesign 2026-11-06, matches reference)
+   Light is the default (:root). Dark overrides live here.
+   ============================================================ */
+[data-theme="dark"] {
+  --card-bg: #0F2040;
+  --text-main: #F1F5F9;
+  --text-muted: #94A3B8;
+  --text-light: #64748B;
+  --border-color: rgba(148, 163, 184, 0.18);
+  --bg-page: #081226;
+  --footer-navy: #060D1D;
+  --accent-blue: #38BDF8;
+  --accent-sky: #38BDF8;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* Theme toggle button in the header (sun / moon) */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  color: var(--text-main);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.theme-toggle:hover {
+  transform: scale(1.06);
+}
+.theme-toggle svg {
+  width: 19px;
+  height: 19px;
+}
+
+/* ============================================================
+   REDESIGN 2026-11-06 — matches the reference images
+   (dark + light versions of Home, Countries, 10-Day, Hourly,
+   AQI & Details, About). Light default, dark via [data-theme].
+   This block overrides the older component styles above.
+   ============================================================ */
+
+/* ---- Page + surfaces (theme-aware) ---- */
+body {
+  background: var(--bg-page);
+  color: var(--text-main);
+}
+:root {
+  --bg-page: #E9F2FB;
+  --bg-soft: #F4F9FE;
+  --card-bg: #FFFFFF;
+  --card-bg-soft: #F8FAFC;
+  --hero-grad: linear-gradient(180deg, rgba(233, 242, 251, 0.15) 0%, rgba(233, 242, 251, 0.55) 78%, var(--bg-page) 100%);
+  --hero-title-color: #0B1E3A;
+  --hero-sub-color: #334155;
+  --chip-bg: rgba(255, 255, 255, 0.55);
+  --chip-border: rgba(255, 255, 255, 0.7);
+  --glass: rgba(255, 255, 255, 0.72);
+}
+[data-theme="dark"] {
+  --bg-page: #081226;
+  --bg-soft: #0C1B33;
+  --card-bg: #0F2040;
+  --card-bg-soft: #12264A;
+  --hero-grad: linear-gradient(180deg, rgba(8, 18, 38, 0.1) 0%, rgba(8, 18, 38, 0.55) 78%, var(--bg-page) 100%);
+  --hero-title-color: #FFFFFF;
+  --hero-sub-color: #CBD5E1;
+  --chip-bg: rgba(255, 255, 255, 0.1);
+  --chip-border: rgba(255, 255, 255, 0.22);
+  --glass: rgba(15, 32, 64, 0.72);
+}
+
+/* ---- Header ---- */
+.site-header {
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+}
+.brand-text {
+  color: var(--text-main);
+}
+.brand-text span {
+  color: var(--accent-sky);
+}
+.nav-link {
+  color: var(--text-muted);
+}
+.nav-link:hover,
+.nav-link.active {
+  color: var(--accent-sky);
+}
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent-sky);
+}
+.lang-btn {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+}
+.mobile-drawer {
+  background: var(--card-bg);
+}
+.mobile-nav-link {
+  color: var(--text-main);
+}
+.country-modal,
+.lang-modal {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+.lang-search-box input {
+  background: var(--card-bg-soft);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+}
+.lang-list li,
+.lang-list a {
+  color: var(--text-main);
+}
+.search-dropdown {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
+/* ---- Hero (Home) ---- */
+.hero-section {
+  min-height: 480px;
+  background: url('../images/hero-mountain-lake.jpg') no-repeat center 30% / cover;
+}
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--hero-grad);
+  z-index: 1;
+}
+[data-theme="dark"] .hero-section {
+  background: url('../images/about-globe.jpg') no-repeat right 20% center / 720px auto, linear-gradient(120deg, #081226 0%, #0C2247 55%, #123058 100%);
+}
+.hero-title {
+  color: var(--hero-title-color);
+  text-shadow: none;
+}
+.hero-title .hero-accent {
+  color: var(--accent-sky);
+}
+.hero-subtitle {
+  color: var(--hero-sub-color);
+  text-shadow: none;
+}
+.hero-trending-label {
+  color: var(--hero-sub-color);
+  text-shadow: none;
+}
+.hero-tag-chip {
+  background: var(--chip-bg);
+  border: 1px solid var(--chip-border);
+  color: var(--hero-title-color);
+  text-shadow: none;
+  backdrop-filter: blur(8px);
+}
+
+/* ---- Search bar ---- */
+.search-bar {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+}
+.search-input {
+  color: var(--text-main);
+}
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+.search-btn {
+  background: linear-gradient(135deg, #38BDF8 0%, #2563EB 100%);
+  border-radius: 999px;
+  color: #FFFFFF;
+}
+
+/* ---- Weather hero card ---- */
+.weather-hero-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.1);
+}
+.city-name {
+  color: var(--text-main);
+}
+.updated-time {
+  color: var(--text-muted);
+}
+.temp-big {
+  color: var(--text-main);
+}
+.cond-label,
+.feels-label {
+  color: var(--text-muted);
+}
+.metric-item {
+  background: var(--card-bg-soft);
+  border: 1px solid var(--border-color);
+}
+.metric-label {
+  color: var(--text-muted);
+}
+.metric-val {
+  color: var(--text-main);
+}
+
+/* ---- Forecast strips / day cards ---- */
+.forecast-cards-row {
+  gap: 10px;
+}
+.day-col-card {
+  background: var(--card-bg-soft);
+  border: 1px solid var(--border-color);
+}
+.day-name,
+.day-temps {
+  color: var(--text-main);
+}
+.day-date,
+.day-cond {
+  color: var(--text-muted);
+}
+.strip-link {
+  color: var(--accent-sky);
+}
+
+/* ---- Feature badges ---- */
+.badge-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+.badge-title {
+  color: var(--text-main);
+}
+.badge-sub {
+  color: var(--text-muted);
+}
+
+/* ---- Countries / cities grids ---- */
+.section-title {
+  color: var(--text-main);
+}
+.section-subtitle {
+  color: var(--text-muted);
+}
+.section-link {
+  color: var(--accent-sky);
+}
+.country-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+.country-card-name {
+  color: var(--text-main);
+}
+.country-card-meta {
+  color: var(--text-muted);
+}
+.country-city-chip {
+  background: var(--card-bg-soft);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+}
+
+/* ---- Page banners (Countries / 10-Day / Hourly / AQI / About / City) ---- */
+.page-banner {
+  background: linear-gradient(120deg, #0B1E3A 0%, #123058 60%, #1D4ED8 100%);
+  color: #FFFFFF;
+}
+[data-theme="light"] .page-banner {
+  background: url('../images/hero-mountain-lake.jpg') no-repeat center 30% / cover;
+}
+[data-theme="light"] .page-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(233, 242, 251, 0.88) 0%, rgba(233, 242, 251, 0.55) 60%, rgba(233, 242, 251, 0.25) 100%);
+}
+.page-banner .banner-title,
+.page-banner .banner-subtitle {
+  position: relative;
+  z-index: 1;
+}
+[data-theme="light"] .page-banner .banner-title {
+  color: #0B1E3A;
+}
+[data-theme="light"] .page-banner .banner-subtitle {
+  color: #334155;
+}
+
+/* ---- 10-Day rows / hourly cards / AQI ---- */
+.tenday-row-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+.tenday-day,
+.tenday-max {
+  color: var(--text-main);
+}
+.tenday-date,
+.tenday-cond,
+.tenday-min,
+.tenday-precip-col {
+  color: var(--text-muted);
+}
+.hourly-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+.hour-time,
+.hour-temp {
+  color: var(--text-main);
+}
+.hour-humidity {
+  color: var(--text-muted);
+}
+.aqi-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+.aqi-title {
+  color: var(--text-main);
+}
+.aqi-station {
+  color: var(--text-muted);
+}
+.sensor-pill {
+  background: var(--card-bg-soft);
+  border: 1px solid var(--border-color);
+}
+.sensor-name {
+  color: var(--text-muted);
+}
+.sensor-val {
+  color: var(--text-main);
+}
+
+/* ---- SEO / FAQ / footer ---- */
+.seo-section {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+.seo-title {
+  color: var(--text-main);
+}
+.seo-prose p,
+.seo-prose {
+  color: var(--text-muted);
+}
+.faq-question {
+  background: var(--card-bg-soft);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+}
+.site-footer {
+  background: var(--footer-navy);
+}
+[data-theme="light"] .site-footer {
+  background: #0B1E3A;
+}
+.footer-brand-title {
+  color: #FFFFFF;
+}
+.footer-brand-title span {
+  color: var(--accent-sky);
+}
+.footer-desc {
+  color: #94A3B8;
+}
+.footer-col-title {
+  color: #FFFFFF;
+}
+.footer-link {
+  color: #94A3B8;
+}
+.footer-link:hover {
+  color: #FFFFFF;
+}
+.footer-bottom {
+  color: #94A3B8;
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+/* ---- Responsive: header buttons + hero + grids ---- */
+@media (max-width: 992px) {
+  .hero-section {
+    min-height: 420px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  [data-theme="dark"] .hero-section {
+    background-size: 560px auto;
+  }
+}
+@media (max-width: 640px) {
+  .header-actions .lang-btn span span {
+    display: none;
+  }
+  .header-actions .lang-btn {
+    padding: 6px 8px;
+  }
+  .brand-text {
+    font-size: 18px;
+  }
+  .hero-section {
+    min-height: 380px;
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+  [data-theme="dark"] .hero-section {
+    background-size: 420px auto;
+    background-position: right -60px center;
+  }
+  .hero-title {
+    font-size: 30px;
+  }
+  .hero-subtitle {
+    font-size: 15px;
+  }
+  .search-bar {
+    height: 50px;
+  }
+  .forecast-cards-row {
+    grid-template-columns: repeat(3, 1fr);
+    overflow-x: auto;
+  }
+  .cities-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+@media (max-width: 380px) {
+  .hero-title {
+    font-size: 26px;
+  }
+  .brand-text {
+    font-size: 16px;
+  }
+  .header-actions .lang-btn {
+    display: none;
+  }
+  .forecast-cards-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---- Popular cities strip (Home, reference design) ---- */
+.popular-cities-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+.popular-city-card {
+  position: relative;
+  display: block;
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+  transition: transform 0.2s ease;
+}
+.popular-city-card:hover {
+  transform: translateY(-3px);
+}
+.popular-city-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.popular-city-name {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 18px 10px 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFFFFF;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.65));
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+@media (max-width: 992px) {
+  .popular-cities-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .popular-cities-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
