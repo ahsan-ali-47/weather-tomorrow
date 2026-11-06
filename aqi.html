@@ -22,7 +22,7 @@
   <meta name="twitter:image" content="https://www.weathertomorrow.website/images/hero-mountain-lake.jpg">
 
   <script>try{var __wt=localStorage.getItem('wt-theme');if(__wt==='dark'||__wt==='light')document.documentElement.setAttribute('data-theme',__wt);}catch(e){}</script>
-  <link rel="stylesheet" href="css/styles.css?v=redesign7">
+  <link rel="stylesheet" href="css/styles.css?v=redesign8">
 
   <script type="application/ld+json">
   {
@@ -431,7 +431,7 @@
             } else {
               // REQUIREMENT: If OpenAQ has no data for a city, HIDE the AQI block or display honest no-data notice. Never invent an AQI number.
               container.innerHTML = `
-                <div style="padding: 16px; background-color: #F8FAFC; border-radius: 8px; border: 1px dashed var(--border-color); color: var(--text-muted); font-size: 14px;">
+                <div style="padding: 16px; background-color: var(--card-bg-soft); border-radius: 8px; border: 1px dashed var(--border-color); color: var(--text-muted); font-size: 14px;">
                   <strong>No Active OpenAQ Station Telemetry for ${city.name}</strong>
                   <p style="margin-top: 4px; font-size: 13px;">Ground sensors for this exact coordinate radius are currently offline or unmonitored. Following strict scientific integrity standards, synthetic or invented AQI numbers are never displayed.</p>
                 </div>
@@ -440,7 +440,7 @@
           })
           .catch(() => {
             container.innerHTML = `
-              <div style="padding: 16px; background-color: #F8FAFC; border-radius: 8px; color: var(--text-muted); font-size: 14px;">
+              <div style="padding: 16px; background-color: var(--card-bg-soft); border-radius: 8px; color: var(--text-muted); font-size: 14px;">
                 Air quality telemetry temporarily unreachable.
               </div>
             `;

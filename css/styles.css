@@ -2619,6 +2619,7 @@ body {
 [data-theme="dark"] .hourly-tile { background-color: #16294D; }
 [data-theme="dark"] .hourly-tile:hover { background-color: #1B3160; }
 [data-theme="dark"] .radar-pill { background: #1E293B; color: #CBD5E1; }
+[data-theme="dark"] .radar-pill.active { background: var(--primary); color: #FFFFFF; }
 .prov-pill-btn {
   padding: 6px 14px;
   border-radius: 20px;
@@ -2642,6 +2643,9 @@ body {
   text-shadow: 0 1px 14px rgba(255, 255, 255, 0.95), 0 1px 4px rgba(255, 255, 255, 0.8);
 }
 [data-theme="light"] .hero-title .hero-accent { color: #0284C7; }
+[data-theme="light"] .banner-subtitle {
+  text-shadow: 0 1px 10px rgba(255, 255, 255, 0.9), 0 1px 3px rgba(255, 255, 255, 0.7);
+}
 [data-theme="light"] .page-banner::before {
   background: linear-gradient(120deg, rgba(233, 242, 251, 0.55) 0%, rgba(233, 242, 251, 0.30) 60%, rgba(233, 242, 251, 0.12) 100%);
 }
