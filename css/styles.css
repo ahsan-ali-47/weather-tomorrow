@@ -15,6 +15,7 @@
   --text-light: #94A3B8;
   --border-color: #E2E8F0;
   --accent-blue: #2563EB;
+  --primary: #2563EB;
   --accent-sky: #38BDF8;
   --bg-page: #F0F4F8;
   --header-height: 64px;
@@ -330,7 +331,7 @@ img {
   right: 20px;
   width: 280px;
   max-height: 400px;
-  background-color: #FFFFFF;
+  background-color: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: var(--card-radius);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
@@ -415,7 +416,7 @@ img {
   right: 140px;
   width: 320px;
   max-height: 440px;
-  background-color: #FFFFFF;
+  background-color: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: var(--card-radius);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
@@ -451,7 +452,7 @@ img {
   justify-content: space-between;
   align-items: center;
   padding: 16px 24px;
-  background: #F8FAFC;
+  background: var(--card-bg-soft);
   border-bottom: 1px solid var(--border-color);
   flex-wrap: wrap;
   gap: 12px;
@@ -575,7 +576,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #FFFFFF;
+  background: var(--card-bg);
   font-size: 13px;
   border-top: 1px solid var(--border-color);
   flex-wrap: wrap;
@@ -1435,7 +1436,7 @@ body.lang-ur .city-urdu {
    ABOUT & CONTACT PAGE LAYOUTS
    ============================================================ */
 .about-card, .contact-card {
-  background-color: #FFFFFF;
+  background-color: var(--card-bg);
   border-radius: var(--card-radius-lg);
   padding: 40px;
   box-shadow: var(--shadow-md);
@@ -2611,4 +2612,36 @@ body {
   .tenday-summary {
     grid-template-columns: repeat(2, 1fr) !important;
   }
+}
+
+/* ---- Colour-scheme fixes 2026-11-06: hardcoded whites that stayed white in dark mode ---- */
+[data-theme="dark"] .city-pill-btn { background-color: #1E293B; }
+[data-theme="dark"] .hourly-tile { background-color: #16294D; }
+[data-theme="dark"] .hourly-tile:hover { background-color: #1B3160; }
+[data-theme="dark"] .radar-pill { background: #1E293B; color: #CBD5E1; }
+.prov-pill-btn {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-main);
+  background-color: #F1F5F9;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.prov-pill-btn:hover, .prov-pill-btn.is-active {
+  background-color: var(--accent-blue);
+  color: #FFFFFF;
+  border-color: var(--accent-blue);
+}
+[data-theme="dark"] .prov-pill-btn { background-color: #1E293B; }
+/* Light mode: banner titles get a soft white glow instead of the heavy black shadow;
+   hero accent goes deeper blue for contrast; banner wash lightened so images show. */
+[data-theme="light"] .banner-title {
+  text-shadow: 0 1px 14px rgba(255, 255, 255, 0.95), 0 1px 4px rgba(255, 255, 255, 0.8);
+}
+[data-theme="light"] .hero-title .hero-accent { color: #0284C7; }
+[data-theme="light"] .page-banner::before {
+  background: linear-gradient(120deg, rgba(233, 242, 251, 0.55) 0%, rgba(233, 242, 251, 0.30) 60%, rgba(233, 242, 251, 0.12) 100%);
 }
