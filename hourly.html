@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="apple-touch-icon" href="images/logo.png">
+  <title>Hourly Weather Forecast — Real-Time Hour-by-Hour Updates | Weather Tomorrow</title>
+  <meta name="description" content="Detailed hour-by-hour weather forecast for Pakistan cities. Live hourly temperature, precipitation probability, humidity, and wind speed from MET Norway.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://weathertomorrow.website/hourly.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Hourly Weather Forecast — Real-Time Hour-by-Hour Updates | Weather Tomorrow">
+  <meta property="og:description" content="Hour-by-hour weather projections with temperature, wind, and rain probabilities powered by MET Norway.">
+  <meta property="og:url" content="https://weathertomorrow.website/hourly.html">
+  <meta property="og:image" content="https://weathertomorrow.website/images/hero-mountain-lake.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hourly Weather Forecast — Real-Time Hour-by-Hour Updates | Weather Tomorrow">
+  <meta name="twitter:description" content="Hour-by-hour weather projections with temperature, wind, and rain probabilities powered by MET Norway.">
+  <meta name="twitter:image" content="https://weathertomorrow.website/images/hero-mountain-lake.jpg">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://weathertomorrow.website/hourly.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://weathertomorrow.website/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Hourly Forecast",
+            "item": "https://weathertomorrow.website/hourly.html"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://weathertomorrow.website/hourly.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How frequently is the hourly weather updated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Hourly forecasts update every 30 to 60 minutes as new observational radar and satellite telemetry is processed by MET Norway."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What metrics are included in the hourly forecast?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each hourly slot reports air temperature in Celsius, weather condition symbol, relative humidity percentage, wind speed in km/h, and anticipated precipitation volume in millimeters."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+    <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Weather Tomorrow Home">
+        <div class="brand-icon">
+          <img src="images/logo.png" alt="Weather Tomorrow logo" width="34" height="34">
+        </div>
+        <div class="brand-text">Weather<span>Tomorrow</span></div>
+      </a>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link ">Home</a>
+        <a href="countries.html" class="nav-link ">Countries</a>
+        <a href="forecast-10day.html" class="nav-link ">10-Day</a>
+        <a href="hourly.html" class="nav-link active">Hourly</a>
+        <a href="aqi.html" class="nav-link ">AQI/Smog</a>
+        <a href="about.html" class="nav-link ">About</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Country Dropdown Button -->
+        <button id="countryTrigger" class="lang-btn" type="button" aria-haspopup="dialog" aria-expanded="false" title="Select World Country">
+          <span id="currentCountryLabel"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" class="svg-ico"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg> <span>Select Country</span></span>
+          <span class="lang-caret">▼</span>
+        </button>
+
+
+        <!-- Language Dropdown Button -->
+        <button id="langTrigger" class="lang-btn" type="button" aria-haspopup="dialog" aria-expanded="false" title="Select Language">
+          <span id="currentLangLabel">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" class="svg-ico"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span>English</span>
+          </span>
+          <span class="lang-caret">▼</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobileMenuToggle" class="mobile-toggle" type="button" aria-label="Toggle navigation menu">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileDrawer" class="mobile-drawer" role="menu">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="countries.html" class="mobile-nav-link">Countries</a>
+      <a href="forecast-10day.html" class="mobile-nav-link">10-Day</a>
+      <a href="hourly.html" class="mobile-nav-link">Hourly</a>
+      <a href="aqi.html" class="mobile-nav-link">AQI/Smog</a>
+      <a href="about.html" class="mobile-nav-link">About</a>
+    </div>
+
+    <!-- Country Searchable Modal -->
+    <div id="countryModal" class="country-modal" role="dialog" aria-label="Select Country">
+      <div class="lang-search-box">
+        <input type="text" id="countrySearchInput" placeholder="Search world country..." aria-label="Search country">
+      </div>
+      <ul id="countryList" class="lang-list"></ul>
+    </div>
+
+
+    <!-- Language Searchable Modal -->
+    <div id="langModal" class="lang-modal" role="dialog" aria-label="Select Language">
+      <div class="lang-search-box">
+        <input type="text" id="langSearchInput" placeholder="Search language..." aria-label="Search language">
+      </div>
+      <ul id="langList" class="lang-list"></ul>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <section class="page-banner">
+    <div class="container">
+      <div class="banner-icon">
+        <svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="currentColor" stroke-width="2" class="svg-ico"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+      </div>
+      <h1 class="banner-title">Hourly Weather Forecast</h1>
+      <p class="banner-subtitle">Hour-by-hour temperature, precipitation, and atmospheric updates powered by MET Norway.</p>
+
+      <div class="banner-search-wrap">
+        <div class="search-container" style="max-width: 520px; width: 100%; margin-bottom: 0;">
+          <div class="search-bar">
+            <span class="search-bar-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </span>
+            <input type="text" id="citySearchInput" class="search-input" placeholder="Search city for hourly forecast..." autocomplete="off">
+            <button type="button" id="citySearchBtn" class="search-btn"><span>Search</span></button>
+          </div>
+          <div id="searchDropdown" class="search-dropdown"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container" style="margin-top: 30px; margin-bottom: 50px;">
+    <!-- City Selection Bar -->
+    <div style="background-color: #FFFFFF; border-radius: var(--card-radius); padding: 16px 20px; box-shadow: var(--shadow-sm); border: 1px solid var(--border-color); margin-bottom: 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span class="location-pin"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+        <span id="selectedCityDisplay" style="font-size: 18px; font-weight: 800; color: var(--text-main);">London, United Kingdom</span>
+      </div>
+
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <button type="button" class="city-pill-btn active" data-city="london">London</button>
+        <button type="button" class="city-pill-btn" data-city="new-york">New York</button>
+        <button type="button" class="city-pill-btn" data-city="tokyo">Tokyo</button>
+        <button type="button" class="city-pill-btn" data-city="paris">Paris</button>
+        <button type="button" class="city-pill-btn" data-city="dubai">Dubai</button>
+        <button type="button" class="city-pill-btn" data-city="sydney">Sydney</button>
+      </div>
+    </div>
+
+    <!-- 24-Hour Timeline Grid -->
+    <div style="background-color: #FFFFFF; border-radius: var(--card-radius); padding: 24px; box-shadow: var(--shadow-sm); border: 1px solid var(--border-color); margin-bottom: 30px;">
+      <div class="section-head">
+        <h2 class="section-title">24-Hour Detailed Breakdown</h2>
+        <span style="font-size: 13px; color: var(--text-muted);">Real-Time MET Norway Data</span>
+      </div>
+      <div id="hourlyTimelineContainer" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px;">
+        <div style="padding: 30px; text-align: center; color: var(--text-muted); grid-column: 1 / -1;">
+          Loading hourly timetable...
+        </div>
+      </div>
+    </div>
+
+    <!-- SEO Content Section -->
+    <article class="seo-section">
+      <h2 class="seo-title">The Value of Hourly Precision in Weather Forecasting</h2>
+      <div class="seo-prose">
+        <p>
+          Micro-scale atmospheric fluctuations occur rapidly throughout the diurnal cycle. Morning surface inversions burn off under solar radiation, convective thunderstorms develop during late afternoons in monsoon months, and sudden wind shifts alter temperature and humidity within minutes.
+        </p>
+        <br>
+        <p>
+          Weather Tomorrow\'s hourly view allows commuters, outdoor laborers, aviation planners, and event organizers to identify exact windows of favorable weather and anticipate localized rainfall or smog accumulation.
+        </p>
+      </div>
+
+      <h3 class="faq-title">Hourly Forecast FAQs</h3>
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span>Can I check hourly forecasts for foreign cities?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Yes! Type any global location in the search bar (e.g. London, Dubai, New York, or Tokyo) to view high-resolution hourly forecasts sourced from MET Norway.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span>How is rain probability calculated hourly?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            MET Norway calculates precipitation by analyzing atmospheric moisture saturation, vertical velocity, and cloud condensation levels across 3D atmospheric grid cells.
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+    <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-brand-title">Weather<span>Tomorrow</span></div>
+          <p class="footer-desc">
+            Accurate, real-time meteorological intelligence and multi-day forecasts for countries and cities worldwide.
+          </p>
+          <div class="footer-attribution">
+            Data from MET Norway (api.met.no, CC BY 4.0)
+          </div>
+          <div style="font-size: 11px; color: #64748B; margin-top: 2px;">
+            Search data © OpenStreetMap contributors
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="countries.html" class="footer-link">Countries</a></li>
+            <li><a href="forecast-10day.html" class="footer-link">10-Day Forecast</a></li>
+            <li><a href="hourly.html" class="footer-link">Hourly Forecast</a></li>
+            <li><a href="aqi.html" class="footer-link">AQI &amp; Smog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="terms.html" class="footer-link">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Worldwide Coverage</h4>
+          <div class="footer-desc" style="font-size: 13px;">
+            Connecting millions of cities worldwide to live meteorological telemetry.
+          </div>
+</div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Weather Tomorrow. All rights reserved.</div>
+        <div class="footer-credit">Made with <svg viewBox="0 0 24 24" width="14" height="14" fill="#EF4444" style="vertical-align: -2px; display: inline-block;" aria-label="love"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> by Ahsan Ali</div>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    .city-pill-btn {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-main);
+      background-color: #F1F5F9;
+      border: 1px solid var(--border-color);
+      transition: all 0.15s ease;
+    }
+    .city-pill-btn:hover, .city-pill-btn.active {
+      background-color: var(--accent-blue);
+      color: #FFFFFF;
+      border-color: var(--accent-blue);
+    }
+    .hourly-tile {
+      background-color: #F8FAFC;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 14px 10px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      transition: transform 0.15s ease, background-color 0.15s ease;
+    }
+    .hourly-tile:hover {
+      background-color: #EFF6FF;
+      transform: translateY(-2px);
+      border-color: #93C5FD;
+    }
+  </style>
+
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/weather.js"></script>
+  <script src="js/countries.js"></script>
+  <script src="js/language.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.footer-email').forEach(el => {
+        if (typeof CONTACT_EMAIL !== 'undefined') el.textContent = CONTACT_EMAIL;
+      });
+
+      initLanguage();
+
+      const mobileBtn = document.getElementById('mobileMenuToggle');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+      if (mobileBtn && mobileDrawer) {
+        mobileBtn.addEventListener('click', () => mobileDrawer.classList.toggle('is-open'));
+      }
+
+      initSearch('#citySearchInput', '#searchDropdown');
+
+      const params = new URLSearchParams(window.location.search);
+      const queryCitySlug = params.get('city') || 'london';
+
+      function loadCityHourly(slug) {
+        const city = CONFIG.FEATURED_CITIES.find(c => c.slug === slug) || CONFIG.DEFAULT_CITY;
+        document.getElementById('selectedCityDisplay').textContent = `${city.name}, ${city.country || 'Global City'}`;
+
+        document.querySelectorAll('.city-pill-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.city === slug);
+        });
+
+        const container = document.getElementById('hourlyTimelineContainer');
+        container.innerHTML = `<div style="padding: 30px; text-align: center; color: var(--text-muted); grid-column: 1 / -1;">Fetching hourly updates for ${city.name}...</div>`;
+
+        API.getWeather(city.lat, city.lon)
+          .then(data => {
+            const parsed = WeatherRenderer.parseForecast(data);
+            const hours = parsed.hourly.slice(0, 24);
+
+            container.innerHTML = hours.map(h => {
+              const timeLabel = UI.formatHourLabel(h.time);
+              const iconSvg = UI.getWeatherIcon(h.symbolCode);
+              return `
+                <div class="hourly-tile">
+                  <span style="font-size: 13px; font-weight: 700; color: var(--text-muted);">${timeLabel}</span>
+                  <div style="width: 38px; height: 38px; margin: 4px 0;">${iconSvg}</div>
+                  <span style="font-size: 18px; font-weight: 800; color: var(--text-main);">${h.temp}°C</span>
+                  <span style="font-size: 12px; color: var(--accent-blue); display: inline-flex; align-items: center; gap: 4px;">
+                    <span class="inline-svg-tiny">${UI.svg.humidity}</span> ${h.humidity}%
+                  </span>
+                  <span style="font-size: 11px; color: var(--text-muted); display: inline-flex; align-items: center; gap: 4px;">
+                    <span class="inline-svg-tiny">${UI.svg.wind}</span> ${h.windSpeed} km/h
+                  </span>
+                </div>
+              `;
+            }).join('');
+          })
+          .catch(err => {
+            container.innerHTML = `<div style="padding: 30px; text-align: center; color: #DC2626; font-weight: 600; grid-column: 1 / -1;">Weather data could not be loaded, please try again</div>`;
+          });
+      }
+
+      document.querySelectorAll('.city-pill-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          loadCityHourly(btn.dataset.city);
+        });
+      });
+
+      loadCityHourly(queryCitySlug);
+
+      document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const item = btn.parentElement;
+          const answer = item.querySelector('.faq-answer');
+          const icon = btn.querySelector('.faq-toggle-icon');
+          if (answer.style.display === 'none') {
+            answer.style.display = 'block';
+            icon.textContent = '−';
+          } else {
+            answer.style.display = 'none';
+            icon.textContent = '+';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

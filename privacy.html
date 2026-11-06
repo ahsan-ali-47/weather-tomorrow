@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="apple-touch-icon" href="images/logo.png">
+  <title>Privacy Policy — Data Protection &amp; Cookies | Weather Tomorrow</title>
+  <meta name="description" content="Privacy Policy for Weather Tomorrow. Detailed information regarding user privacy, data collection policies, cookies, and AdSense compliance.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://weathertomorrow.website/privacy.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Privacy Policy — Weather Tomorrow">
+  <meta property="og:description" content="Review how Weather Tomorrow protects visitor privacy and maintains transparent web policies.">
+  <meta property="og:url" content="https://weathertomorrow.website/privacy.html">
+  <meta property="og:image" content="https://weathertomorrow.website/images/hero-mountain-lake.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Privacy Policy — Weather Tomorrow">
+  <meta name="twitter:description" content="Review how Weather Tomorrow protects visitor privacy and maintains transparent web policies.">
+  <meta name="twitter:image" content="https://weathertomorrow.website/images/hero-mountain-lake.jpg">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://weathertomorrow.website/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Privacy Policy",
+        "item": "https://weathertomorrow.website/privacy.html"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+    <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Weather Tomorrow Home">
+        <div class="brand-icon">
+          <img src="images/logo.png" alt="Weather Tomorrow logo" width="34" height="34">
+        </div>
+        <div class="brand-text">Weather<span>Tomorrow</span></div>
+      </a>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link ">Home</a>
+        <a href="countries.html" class="nav-link ">Countries</a>
+        <a href="forecast-10day.html" class="nav-link ">10-Day</a>
+        <a href="hourly.html" class="nav-link ">Hourly</a>
+        <a href="aqi.html" class="nav-link ">AQI/Smog</a>
+        <a href="about.html" class="nav-link ">About</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Country Dropdown Button -->
+        <button id="countryTrigger" class="lang-btn" type="button" aria-haspopup="dialog" aria-expanded="false" title="Select World Country">
+          <span id="currentCountryLabel"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" class="svg-ico"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg> <span>Select Country</span></span>
+          <span class="lang-caret">▼</span>
+        </button>
+
+
+        <!-- Language Dropdown Button -->
+        <button id="langTrigger" class="lang-btn" type="button" aria-haspopup="dialog" aria-expanded="false" title="Select Language">
+          <span id="currentLangLabel">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" class="svg-ico"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span>English</span>
+          </span>
+          <span class="lang-caret">▼</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobileMenuToggle" class="mobile-toggle" type="button" aria-label="Toggle navigation menu">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileDrawer" class="mobile-drawer" role="menu">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="countries.html" class="mobile-nav-link">Countries</a>
+      <a href="forecast-10day.html" class="mobile-nav-link">10-Day</a>
+      <a href="hourly.html" class="mobile-nav-link">Hourly</a>
+      <a href="aqi.html" class="mobile-nav-link">AQI/Smog</a>
+      <a href="about.html" class="mobile-nav-link">About</a>
+    </div>
+
+    <!-- Country Searchable Modal -->
+    <div id="countryModal" class="country-modal" role="dialog" aria-label="Select Country">
+      <div class="lang-search-box">
+        <input type="text" id="countrySearchInput" placeholder="Search world country..." aria-label="Search country">
+      </div>
+      <ul id="countryList" class="lang-list"></ul>
+    </div>
+
+
+    <!-- Language Searchable Modal -->
+    <div id="langModal" class="lang-modal" role="dialog" aria-label="Select Language">
+      <div class="lang-search-box">
+        <input type="text" id="langSearchInput" placeholder="Search language..." aria-label="Search language">
+      </div>
+      <ul id="langList" class="lang-list"></ul>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <section class="page-banner">
+    <div class="container">
+      <div class="banner-icon">
+        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="white" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+      </div>
+      <h1 class="banner-title">Privacy Policy</h1>
+      <p class="banner-subtitle">Last updated: November 2026 • Your data protection and privacy are our top priority.</p>
+    </div>
+  </section>
+
+  <main class="container" style="margin-top: 30px; margin-bottom: 50px;">
+    <article class="seo-section">
+      <div class="seo-prose">
+        <p>
+          At <strong>Weather Tomorrow</strong>, accessible from https://weathertomorrow.website, one of our main priorities is the privacy of our visitors. This Privacy Policy document outlines the types of information collected and recorded by Weather Tomorrow and how we utilize it.
+        </p>
+
+        <h2 style="font-size: 20px; font-weight: 800; color: var(--text-main); margin: 24px 0 12px 0;">1. Information We Collect</h2>
+        <p>
+          Weather Tomorrow operates on a minimal-data philosophy. We do not require account registration, passwords, or personal identity verification. When you search for a city or location, geographic coordinates are processed strictly in real-time by your browser and our stateless proxy functions to retrieve weather forecasts. We never store personal location profiles.
+        </p>
+
+        <h2 style="font-size: 20px; font-weight: 800; color: var(--text-main); margin: 24px 0 12px 0;">2. Log Files &amp; Analytics</h2>
+        <p>
+          Like most web platforms, Weather Tomorrow uses standard server log files. The information inside log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date/time stamps, referring/exit pages, and number of clicks. These are not linked to any personally identifiable information.
+        </p>
+
+        <h2 style="font-size: 20px; font-weight: 800; color: var(--text-main); margin: 24px 0 12px 0;">3. Cookies &amp; Local Storage</h2>
+        <p>
+          We use browser local storage (<code>localStorage</code>) solely to remember your chosen language setting (such as English or Urdu) so you do not need to reselect it upon subsequent page visits. Third-party advertising partners such as Google AdSense may use cookies to serve personalized ads based on your visits to this and other websites.
+        </p>
+
+        <h2 style="font-size: 20px; font-weight: 800; color: var(--text-main); margin: 24px 0 12px 0;">4. Third-Party Meteorological Services</h2>
+        <p>
+          Our site communicates with the Meteorological Institute of Norway (api.met.no) and OpenStreetMap Nominatim. All queries are relayed via secure serverless proxies that transmit an identifying User-Agent header with contact details to fulfill public API terms of service.
+        </p>
+
+        <h2 style="font-size: 20px; font-weight: 800; color: var(--text-main); margin: 24px 0 12px 0;">5. GDPR &amp; CCPA Data Rights</h2>
+        <p>
+          Under European GDPR and California CCPA regulations, visitors have the right to request information regarding data collection. Because we do not store personal profiles, databases, or cookies tracking individual identities, we collect zero persistent personal records.
+        </p>
+
+        <h2 style="font-size: 20px; font-weight: 800; color: var(--text-main); margin: 24px 0 12px 0;">6. Contact Information</h2>
+        <p>
+          If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact our team via email at: <strong class="footer-email">CONTACT_EMAIL_HERE</strong>.
+        </p>
+      </div>
+    </article>
+  </main>
+
+    <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-brand-title">Weather<span>Tomorrow</span></div>
+          <p class="footer-desc">
+            Accurate, real-time meteorological intelligence and multi-day forecasts for countries and cities worldwide.
+          </p>
+          <div class="footer-attribution">
+            Data from MET Norway (api.met.no, CC BY 4.0)
+          </div>
+          <div style="font-size: 11px; color: #64748B; margin-top: 2px;">
+            Search data © OpenStreetMap contributors
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="countries.html" class="footer-link">Countries</a></li>
+            <li><a href="forecast-10day.html" class="footer-link">10-Day Forecast</a></li>
+            <li><a href="hourly.html" class="footer-link">Hourly Forecast</a></li>
+            <li><a href="aqi.html" class="footer-link">AQI &amp; Smog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="terms.html" class="footer-link">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Worldwide Coverage</h4>
+          <div class="footer-desc" style="font-size: 13px;">
+            Connecting millions of cities worldwide to live meteorological telemetry.
+          </div>
+</div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Weather Tomorrow. All rights reserved.</div>
+        <div class="footer-credit">Made with <svg viewBox="0 0 24 24" width="14" height="14" fill="#EF4444" style="vertical-align: -2px; display: inline-block;" aria-label="love"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> by Ahsan Ali</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/countries.js"></script>
+  <script src="js/language.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.footer-email').forEach(el => {
+        if (typeof CONTACT_EMAIL !== 'undefined') el.textContent = CONTACT_EMAIL;
+      });
+
+      initLanguage();
+
+      const mobileBtn = document.getElementById('mobileMenuToggle');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+      if (mobileBtn && mobileDrawer) {
+        mobileBtn.addEventListener('click', () => mobileDrawer.classList.toggle('is-open'));
+      }
+    });
+  </script>
+</body>
+</html>

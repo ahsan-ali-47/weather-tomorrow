@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="apple-touch-icon" href="images/logo.png">
+  <title>Weather Tomorrow — Accurate Real-Time World Weather Information &amp; 10-Day Forecast</title>
+  <meta name="description" content="Accurate, real-time meteorological updates for cities and countries around the world. Live temperature, humidity, wind, 10-day forecast and air quality powered by MET Norway.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://weathertomorrow.website/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Weather Tomorrow — Accurate Real-Time World Weather Information">
+  <meta property="og:description" content="Real-time weather updates for your city and around the world. Live MET Norway telemetry, 10-day forecasts, and global air quality.">
+  <meta property="og:url" content="https://weathertomorrow.website/">
+  <meta property="og:image" content="https://weathertomorrow.website/images/hero-mountain-lake.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Weather Tomorrow — Accurate Real-Time World Weather Information">
+  <meta name="twitter:description" content="Real-time weather updates for your city and around the world. Live MET Norway telemetry and 10-day forecasts.">
+  <meta name="twitter:image" content="https://weathertomorrow.website/images/hero-mountain-lake.jpg">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://weathertomorrow.website/#website",
+        "url": "https://weathertomorrow.website/",
+        "name": "Weather Tomorrow",
+        "description": "Accurate, real-time world weather information, hourly observations, 10-day forecasts, and air quality telemetry powered by MET Norway.",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://weathertomorrow.website/city.html?name={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://weathertomorrow.website/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the source of Weather Tomorrow weather forecasts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Every temperature, humidity, wind, and precipitation metric is retrieved directly from MET Norway Locationforecast 2.0 (Norwegian Meteorological Institute). No synthetic or sample numbers are ever displayed."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Weather Tomorrow free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, 100% free with unlimited access to live global weather forecasts and hourly projections for all countries."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the world cities search work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Search queries access OpenStreetMap Nominatim's worldwide database, sorting by importance and geographic relevance to return your exact city or district."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Weather Tomorrow Home">
+        <div class="brand-icon">
+          <img src="images/logo.png" alt="Weather Tomorrow logo" width="34" height="34">
+        </div>
+        <div class="brand-text">Weather<span>Tomorrow</span></div>
+      </a>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="countries.html" class="nav-link">Countries</a>
+        <a href="forecast-10day.html" class="nav-link">10-Day</a>
+        <a href="hourly.html" class="nav-link">Hourly</a>
+        <a href="aqi.html" class="nav-link">AQI/Smog</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Country Dropdown Button -->
+        <button id="countryTrigger" class="lang-btn" type="button" aria-haspopup="dialog" aria-expanded="false" title="Select World Country">
+          <span id="currentCountryLabel"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" class="svg-ico"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg> <span>Select Country</span></span>
+          <span class="lang-caret">▼</span>
+        </button>
+
+
+        <!-- Language Dropdown Button -->
+        <button id="langTrigger" class="lang-btn" type="button" aria-haspopup="dialog" aria-expanded="false" title="Select Language">
+          <span id="currentLangLabel">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" class="svg-ico"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span>English</span>
+          </span>
+          <span class="lang-caret">▼</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobileMenuToggle" class="mobile-toggle" type="button" aria-label="Toggle navigation menu">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileDrawer" class="mobile-drawer" role="menu">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="countries.html" class="mobile-nav-link">Countries</a>
+      <a href="forecast-10day.html" class="mobile-nav-link">10-Day</a>
+      <a href="hourly.html" class="mobile-nav-link">Hourly</a>
+      <a href="aqi.html" class="mobile-nav-link">AQI/Smog</a>
+      <a href="about.html" class="mobile-nav-link">About</a>
+    </div>
+
+    <!-- Country Searchable Modal -->
+    <div id="countryModal" class="country-modal" role="dialog" aria-label="Select Country">
+      <div class="lang-search-box">
+        <input type="text" id="countrySearchInput" placeholder="Search world country..." aria-label="Search country">
+      </div>
+      <ul id="countryList" class="lang-list"></ul>
+    </div>
+
+
+    <!-- Language Searchable Modal -->
+    <div id="langModal" class="lang-modal" role="dialog" aria-label="Select Language">
+      <div class="lang-search-box">
+        <input type="text" id="langSearchInput" placeholder="Search language..." aria-label="Search language">
+      </div>
+      <ul id="langList" class="lang-list"></ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-inner">
+      <h1 class="hero-title" data-i18n="heroTitle">Get Accurate Weather Information</h1>
+      <p class="hero-subtitle" data-i18n="heroSubtitle">
+        Real-time weather updates for your city and around the world.
+      </p>
+
+      <!-- Autocomplete Search Bar -->
+      <div class="search-container">
+        <div class="search-bar">
+          <span class="search-bar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
+          <input
+            type="text"
+            id="citySearchInput"
+            class="search-input"
+            placeholder="Enter city name..."
+            autocomplete="off"
+            aria-label="Search city or location worldwide"
+            data-i18n="searchPlaceholder"
+          >
+          <button type="button" id="citySearchBtn" class="search-btn">
+            <span data-i18n="searchButton">Search</span>
+          </button>
+        </div>
+
+        <!-- Live Dropdown Suggestions Card -->
+        <div id="searchDropdown" class="search-dropdown" role="listbox"></div>
+      </div>
+
+      <!-- Popular World Cities Quick Tags -->
+      <div class="hero-trending-tags">
+        <span class="hero-trending-label">Popular Worldwide:</span>
+        <div class="hero-tag-pills">
+          <a href="london.html" class="hero-tag-chip">London</a>
+          <a href="new-york.html" class="hero-tag-chip">New York</a>
+          <a href="tokyo.html" class="hero-tag-chip">Tokyo</a>
+          <a href="paris.html" class="hero-tag-chip">Paris</a>
+          <a href="dubai.html" class="hero-tag-chip">Dubai</a>
+          <a href="sydney.html" class="hero-tag-chip">Sydney</a>
+          <a href="karachi.html" class="hero-tag-chip">Karachi</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Weather Dashboard Section -->
+  <main class="container" style="margin-top: 36px; margin-bottom: 50px;">
+    <!-- Live Weather Card for Default / Selected City -->
+    <div id="weatherCardContainer">
+      <div class="weather-hero-card">
+        <div class="card-head">
+          <div class="city-title-group">
+            <span class="location-pin"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg></span>
+            <span class="city-name">London, United Kingdom</span>
+          </div>
+          <div class="updated-time">Loading live MET Norway observations...</div>
+        </div>
+        <div class="card-body-row">
+          <div class="current-left">
+            <div class="weather-icon-large">
+              <svg viewBox="0 0 64 64" fill="none" class="w-icon"><circle cx="32" cy="32" r="16" fill="#FBBF24" /></svg>
+            </div>
+            <div class="temp-badge">
+              <span class="temp-big">--°C</span>
+              <span class="cond-label">Fetching live data...</span>
+              <span class="feels-label">Feels like --°C</span>
+            </div>
+          </div>
+          <div class="metrics-grid">
+            <div class="metric-item"><span class="metric-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#38BDF8" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg></span><span class="metric-label">Humidity</span><span class="metric-val">--%</span></div>
+            <div class="metric-item"><span class="metric-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#38BDF8" stroke-width="2"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"></path></svg></span><span class="metric-label">Wind Speed</span><span class="metric-val">-- km/h</span></div>
+            <div class="metric-item"><span class="metric-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#38BDF8" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg></span><span class="metric-label">Wind Direction</span><span class="metric-val">--</span></div>
+            <div class="metric-item"><span class="metric-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#38BDF8" stroke-width="2"><circle cx="12" cy="12" r="7"></circle><polyline points="12 9 12 12 13.5 13.5"></polyline><path d="M16.51 17.35l-.35 3.83a2 2 0 0 1-2 1.82H9.83a2 2 0 0 1-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 0 1 9.83 1h4.35a2 2 0 0 1 2 1.82l.35 3.83"></path></svg></span><span class="metric-label">Pressure</span><span class="metric-val">-- hPa</span></div>
+            <div class="metric-item"><span class="metric-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#38BDF8" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></span><span class="metric-label">Visibility</span><span class="metric-val">-- km</span></div>
+            <div class="metric-item"><span class="metric-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#F59E0B" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span><span class="metric-label">UV Index</span><span class="metric-val">--</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7-Day Forecast Section -->
+    <div id="forecastContainer" style="margin-top: 24px;"></div>
+
+    <!-- Air Quality / Smog Block -->
+    <div id="aqiContainer" style="margin-top: 24px;"></div>
+
+    <!-- 4 Feature Badges matching reference mockup -->
+    <section class="badges-grid" style="margin-top: 36px;">
+      <div class="badge-card">
+        <div class="badge-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        </div>
+        <div>
+          <div class="badge-title" data-i18n="realTimeUpdates">Real-Time Updates</div>
+          <div class="badge-sub">Live telemetry directly from MET Norway servers</div>
+        </div>
+      </div>
+
+      <div class="badge-card">
+        <div class="badge-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        </div>
+        <div>
+          <div class="badge-title" data-i18n="worldwideCoverage">Worldwide Coverage</div>
+          <div class="badge-sub">Millions of global cities mapped via OpenStreetMap</div>
+        </div>
+      </div>
+
+      <div class="badge-card">
+        <div class="badge-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        </div>
+        <div>
+          <div class="badge-title" data-i18n="accurateForecast">Accurate Forecast</div>
+          <div class="badge-sub">High-resolution scientific numerical weather models</div>
+        </div>
+      </div>
+
+      <div class="badge-card">
+        <div class="badge-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <div>
+          <div class="badge-title" data-i18n="freeForever">100% Free</div>
+          <div class="badge-sub">Open meteorological data with zero subscription barriers</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- World Countries Grid Section -->
+    <section class="popular-cities-section" style="margin-top: 50px;">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Explore Weather by Country</h2>
+          <p class="section-subtitle">Live forecasts and multi-day projections for major global economic and cultural centers</p>
+        </div>
+        <a href="countries.html" class="section-link">View All Countries →</a>
+      </div>
+
+      <div class="cities-grid" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px;">
+        <!-- United Kingdom -->
+        <article class="country-card">
+          <div class="country-card-thumb">
+            <img src="images/countries/gb.jpg" alt="United Kingdom Weather - Big Ben London" loading="lazy" width="600" height="250">
+            <span class="country-card-badge">GB</span>
+          </div>
+          <div class="country-card-body">
+            <div class="country-card-name">United Kingdom</div>
+            <div class="country-card-meta">Europe • Capital: London</div>
+            <div class="country-chips-list">
+              <a href="london.html" class="country-city-chip">London</a>
+              <a href="city.html?name=Manchester&lat=53.4808&lon=-2.2426&country=United+Kingdom" class="country-city-chip">Manchester</a>
+              <a href="city.html?name=Edinburgh&lat=55.9533&lon=-3.1883&country=United+Kingdom" class="country-city-chip">Edinburgh</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- United States -->
+        <article class="country-card">
+          <div class="country-card-thumb">
+            <img src="images/countries/us.jpg" alt="United States Weather - New York Manhattan" loading="lazy" width="600" height="250">
+            <span class="country-card-badge">US</span>
+          </div>
+          <div class="country-card-body">
+            <div class="country-card-name">United States</div>
+            <div class="country-card-meta">Americas • Capital: Washington, D.C.</div>
+            <div class="country-chips-list">
+              <a href="new-york.html" class="country-city-chip">New York</a>
+              <a href="city.html?name=Los+Angeles&lat=34.0522&lon=-118.2437&country=United+States" class="country-city-chip">Los Angeles</a>
+              <a href="city.html?name=Chicago&lat=41.8781&lon=-87.6298&country=United+States" class="country-city-chip">Chicago</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Japan -->
+        <article class="country-card">
+          <div class="country-card-thumb">
+            <img src="images/countries/jp.jpg" alt="Japan Weather - Mount Fuji" loading="lazy" width="600" height="250">
+            <span class="country-card-badge">JP</span>
+          </div>
+          <div class="country-card-body">
+            <div class="country-card-name">Japan</div>
+            <div class="country-card-meta">Asia • Capital: Tokyo</div>
+            <div class="country-chips-list">
+              <a href="tokyo.html" class="country-city-chip">Tokyo</a>
+              <a href="city.html?name=Osaka&lat=34.6937&lon=135.5023&country=Japan" class="country-city-chip">Osaka</a>
+              <a href="city.html?name=Kyoto&lat=35.0116&lon=135.7681&country=Japan" class="country-city-chip">Kyoto</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- France -->
+        <article class="country-card">
+          <div class="country-card-thumb">
+            <img src="images/countries/fr.jpg" alt="France Weather - Eiffel Tower Paris" loading="lazy" width="600" height="250">
+            <span class="country-card-badge">FR</span>
+          </div>
+          <div class="country-card-body">
+            <div class="country-card-name">France</div>
+            <div class="country-card-meta">Europe • Capital: Paris</div>
+            <div class="country-chips-list">
+              <a href="paris.html" class="country-city-chip">Paris</a>
+              <a href="city.html?name=Marseille&lat=43.2965&lon=5.3698&country=France" class="country-city-chip">Marseille</a>
+              <a href="city.html?name=Lyon&lat=45.7640&lon=4.8357&country=France" class="country-city-chip">Lyon</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- United Arab Emirates -->
+        <article class="country-card">
+          <div class="country-card-thumb">
+            <img src="images/countries/ae.jpg" alt="United Arab Emirates Weather - Dubai Burj Khalifa" loading="lazy" width="600" height="250">
+            <span class="country-card-badge">AE</span>
+          </div>
+          <div class="country-card-body">
+            <div class="country-card-name">United Arab Emirates</div>
+            <div class="country-card-meta">Middle East • Capital: Abu Dhabi</div>
+            <div class="country-chips-list">
+              <a href="dubai.html" class="country-city-chip">Dubai</a>
+              <a href="city.html?name=Abu+Dhabi&lat=24.4539&lon=54.3773&country=United+Arab+Emirates" class="country-city-chip">Abu Dhabi</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Germany -->
+        <article class="country-card">
+          <div class="country-card-thumb">
+            <img src="images/countries/de.jpg" alt="Germany Weather - Berlin Landmark" loading="lazy" width="600" height="250">
+            <span class="country-card-badge">DE</span>
+          </div>
+          <div class="country-card-body">
+            <div class="country-card-name">Germany</div>
+            <div class="country-card-meta">Europe • Capital: Berlin</div>
+            <div class="country-chips-list">
+              <a href="berlin.html" class="country-city-chip">Berlin</a>
+              <a href="city.html?name=Munich&lat=48.1351&lon=11.5820&country=Germany" class="country-city-chip">Munich</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Australia -->
+        <article class="country-card">
+          <div class="country-card-thumb">
+            <img src="images/countries/au.jpg" alt="Australia Weather - Sydney Opera House" loading="lazy" width="600" height="250">
+            <span class="country-card-badge">AU</span>
+          </div>
+          <div class="country-card-body">
+            <div class="country-card-name">Australia</div>
+            <div class="country-card-meta">Oceania • Capital: Canberra</div>
+            <div class="country-chips-list">
+              <a href="sydney.html" class="country-city-chip">Sydney</a>
+              <a href="city.html?name=Melbourne&lat=-37.8136&lon=144.9631&country=Australia" class="country-city-chip">Melbourne</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Canada -->
+        <article class="country-card">
+          <div class="country-card-thumb">
+            <img src="images/countries/ca.jpg" alt="Canada Weather - Banff Rocky Mountains" loading="lazy" width="600" height="250">
+            <span class="country-card-badge">CA</span>
+          </div>
+          <div class="country-card-body">
+            <div class="country-card-name">Canada</div>
+            <div class="country-card-meta">Americas • Capital: Ottawa</div>
+            <div class="country-chips-list">
+              <a href="toronto.html" class="country-city-chip">Toronto</a>
+              <a href="city.html?name=Vancouver&lat=49.2827&lon=-123.1207&country=Canada" class="country-city-chip">Vancouver</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Pakistan -->
+        <article class="country-card">
+          <div class="country-card-thumb">
+            <img src="images/about-globe.jpg" alt="Pakistan Weather" loading="lazy" width="600" height="250">
+            <span class="country-card-badge">PK</span>
+          </div>
+          <div class="country-card-body">
+            <div class="country-card-name">Pakistan</div>
+            <div class="country-card-meta">Asia • Capital: Islamabad</div>
+            <div class="country-chips-list">
+              <a href="karachi.html" class="country-city-chip">Karachi</a>
+              <a href="lahore.html" class="country-city-chip">Lahore</a>
+              <a href="islamabad.html" class="country-city-chip">Islamabad</a>
+              <a href="multan.html" class="country-city-chip">Multan</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SEO Information Section -->
+    <section class="container" style="padding: 0;">
+      <article class="seo-section">
+        <h2 class="seo-title">World Meteorological Forecasts &amp; Global Climate Guide</h2>
+        <div class="seo-prose">
+          <p>
+            Weather Tomorrow delivers real-time weather observations, hourly simulations, and extended 10-day meteorological forecasts across all world regions. Every metric displayed on our platform is sourced directly from MET Norway (api.met.no), one of the world's leading meteorological agencies operating under the World Meteorological Organization (WMO) protocols.
+          </p>
+
+          <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 24px 0 10px 0;">Worldwide Climate &amp; Seasonal Patterns</h3>
+          <p>
+            Global weather dynamics vary significantly across climatic zones. Maritime climates across the British Isles and Western Europe enjoy temperate conditions tempered by the North Atlantic Current. North American regions experience dramatic continental air mass shifts resulting in diverse seasonal extremes. In equatorial and subtropical zones, monsoons and trade winds produce distinct wet and dry seasons, while arid regions across the Middle East encounter intense solar radiation and minimal humidity.
+          </p>
+
+          <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 24px 0 10px 0;">Frequently Asked Questions</h3>
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span>Where does Weather Tomorrow get its weather data?</span>
+                <span class="faq-toggle-icon">+</span>
+              </button>
+              <div class="faq-answer" style="display: none;">
+                All live data is computed by MET Norway Locationforecast 2.0 numerical models, adhering to strict CC BY 4.0 open scientific data standards.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span>How accurate is the 10-day forecast?</span>
+                <span class="faq-toggle-icon">+</span>
+              </button>
+              <div class="faq-answer" style="display: none;">
+                Days 1 to 3 have verified forecast accuracy exceeding 95% for temperature and general precipitation patterns. Projections for days 4 to 10 represent ensemble statistical models refreshed hourly.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span>How is air quality and smog measured?</span>
+                <span class="faq-toggle-icon">+</span>
+              </button>
+              <div class="faq-answer" style="display: none;">
+                Ground-level air quality indices (PM2.5, PM10, Ozone, NO2) are obtained from OpenAQ verified ground sensors without speculative inflation.
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-brand-title">Weather<span>Tomorrow</span></div>
+          <p class="footer-desc">
+            Accurate, fast, and transparent weather intelligence for countries and cities worldwide.
+          </p>
+          <div class="footer-attribution">
+            Data from MET Norway (api.met.no, CC BY 4.0)
+          </div>
+          <div style="font-size: 11px; color: #64748B; margin-top: 2px;">
+            Search data © OpenStreetMap contributors
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="countries.html" class="footer-link">Countries</a></li>
+            <li><a href="forecast-10day.html" class="footer-link">10-Day Forecast</a></li>
+            <li><a href="hourly.html" class="footer-link">Hourly Forecast</a></li>
+            <li><a href="aqi.html" class="footer-link">AQI &amp; Smog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="terms.html" class="footer-link">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Worldwide Coverage</h4>
+          <div class="footer-desc" style="font-size: 13px;">
+            Connecting millions of cities worldwide to live meteorological telemetry.
+          </div>
+</div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Weather Tomorrow. All rights reserved.
+        </div>
+        <div class="footer-credit">
+          Made with <svg viewBox="0 0 24 24" width="14" height="14" fill="#EF4444" style="vertical-align: -2px; display: inline-block;" aria-label="love"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> by Ahsan Ali
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/weather.js"></script>
+  <script src="js/countries.js"></script>
+  <script src="js/language.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initLanguage();
+
+      const mobileBtn = document.getElementById('mobileMenuToggle');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+      if (mobileBtn && mobileDrawer) {
+        mobileBtn.addEventListener('click', () => {
+          mobileDrawer.classList.toggle('is-open');
+        });
+      }
+
+      initSearch('#citySearchInput', '#searchDropdown');
+
+      // Initialize Home Weather with Default City (London)
+      const defaultCity = CONFIG.DEFAULT_CITY;
+      const weatherContainer = document.getElementById('weatherCardContainer');
+      const forecastContainer = document.getElementById('forecastContainer');
+      const aqiContainer = document.getElementById('aqiContainer');
+
+      API.getWeather(defaultCity.lat, defaultCity.lon)
+        .then(data => {
+          if (!data) throw new Error('No weather data received');
+          const parsed = Weather.parseWeatherData(data);
+
+          Weather.renderHeroCard(weatherContainer, defaultCity, parsed);
+          Weather.render7DayRow(forecastContainer, parsed.daily);
+        })
+        .catch(err => {
+          console.error('Weather load error:', err);
+          if (weatherContainer) {
+            Weather.renderError(weatherContainer, "Weather data could not be loaded, please try again");
+          }
+        });
+
+      // Load AQI
+      API.getAqi(defaultCity.lat, defaultCity.lon)
+        .then(aqiData => {
+          Weather.renderAqiBlock(aqiContainer, aqiData);
+        })
+        .catch(() => {
+          if (aqiContainer) aqiContainer.style.display = 'none';
+        });
+
+      // FAQ accordion toggle
+      document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const item = btn.parentElement;
+          const answer = item.querySelector('.faq-answer');
+          const icon = btn.querySelector('.faq-toggle-icon');
+          if (answer.style.display === 'none') {
+            answer.style.display = 'block';
+            icon.textContent = '−';
+          } else {
+            answer.style.display = 'none';
+            icon.textContent = '+';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

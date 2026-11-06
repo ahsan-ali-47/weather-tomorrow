@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="apple-touch-icon" href="images/logo.png">
+  <title>Pakistan AQI &amp; Smog Tracker — Live Air Quality Index | Weather Tomorrow</title>
+  <meta name="description" content="Live Air Quality Index (AQI) and smog monitoring for Lahore, Karachi, Islamabad and Punjab cities. Real PM2.5 ground station telemetry via OpenAQ without synthetic estimates.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://weathertomorrow.website/aqi.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pakistan AQI &amp; Smog Tracker — Live Air Quality Index | Weather Tomorrow">
+  <meta property="og:description" content="Live Air Quality Index and smog telemetry for Pakistan cities powered by OpenAQ ground stations.">
+  <meta property="og:url" content="https://weathertomorrow.website/aqi.html">
+  <meta property="og:image" content="https://weathertomorrow.website/images/hero-mountain-lake.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pakistan AQI &amp; Smog Tracker — Live Air Quality Index | Weather Tomorrow">
+  <meta name="twitter:description" content="Live Air Quality Index and smog telemetry for Pakistan cities powered by OpenAQ ground stations.">
+  <meta name="twitter:image" content="https://weathertomorrow.website/images/hero-mountain-lake.jpg">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://weathertomorrow.website/aqi.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://weathertomorrow.website/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "AQI & Smog",
+            "item": "https://weathertomorrow.website/aqi.html"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://weathertomorrow.website/aqi.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why does smog peak during November and December in Lahore?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "During late autumn, nighttime radiational cooling creates a thermal inversion layer that acts as a ceiling, trapping vehicular exhaust, industrial fumes, and post-harvest crop stubble smoke near ground level."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Weather Tomorrow source AQI measurements?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AQI telemetry is queried server-side from OpenAQ ground stations. When active sensors are available, verified PM2.5 and PM10 values are shown; if sensors are offline, the block is honestly omitted to prevent fake data."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+    <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Weather Tomorrow Home">
+        <div class="brand-icon">
+          <img src="images/logo.png" alt="Weather Tomorrow logo" width="34" height="34">
+        </div>
+        <div class="brand-text">Weather<span>Tomorrow</span></div>
+      </a>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link ">Home</a>
+        <a href="countries.html" class="nav-link ">Countries</a>
+        <a href="forecast-10day.html" class="nav-link ">10-Day</a>
+        <a href="hourly.html" class="nav-link ">Hourly</a>
+        <a href="aqi.html" class="nav-link active">AQI/Smog</a>
+        <a href="about.html" class="nav-link ">About</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Country Dropdown Button -->
+        <button id="countryTrigger" class="lang-btn" type="button" aria-haspopup="dialog" aria-expanded="false" title="Select World Country">
+          <span id="currentCountryLabel"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" class="svg-ico"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg> <span>Select Country</span></span>
+          <span class="lang-caret">▼</span>
+        </button>
+
+
+        <!-- Language Dropdown Button -->
+        <button id="langTrigger" class="lang-btn" type="button" aria-haspopup="dialog" aria-expanded="false" title="Select Language">
+          <span id="currentLangLabel">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" class="svg-ico"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span>English</span>
+          </span>
+          <span class="lang-caret">▼</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobileMenuToggle" class="mobile-toggle" type="button" aria-label="Toggle navigation menu">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileDrawer" class="mobile-drawer" role="menu">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="countries.html" class="mobile-nav-link">Countries</a>
+      <a href="forecast-10day.html" class="mobile-nav-link">10-Day</a>
+      <a href="hourly.html" class="mobile-nav-link">Hourly</a>
+      <a href="aqi.html" class="mobile-nav-link">AQI/Smog</a>
+      <a href="about.html" class="mobile-nav-link">About</a>
+    </div>
+
+    <!-- Country Searchable Modal -->
+    <div id="countryModal" class="country-modal" role="dialog" aria-label="Select Country">
+      <div class="lang-search-box">
+        <input type="text" id="countrySearchInput" placeholder="Search world country..." aria-label="Search country">
+      </div>
+      <ul id="countryList" class="lang-list"></ul>
+    </div>
+
+
+    <!-- Language Searchable Modal -->
+    <div id="langModal" class="lang-modal" role="dialog" aria-label="Select Language">
+      <div class="lang-search-box">
+        <input type="text" id="langSearchInput" placeholder="Search language..." aria-label="Search language">
+      </div>
+      <ul id="langList" class="lang-list"></ul>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <section class="page-banner">
+    <div class="container">
+      <div class="banner-icon">
+        <svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="currentColor" stroke-width="2" class="svg-ico"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>
+      </div>
+      <h1 class="banner-title">Pakistan AQI &amp; Smog Tracker</h1>
+      <p class="banner-subtitle">Verified ground station telemetry, smog alerts, and protective health recommendations.</p>
+
+      <div class="banner-search-wrap">
+        <div class="search-container" style="max-width: 520px; width: 100%; margin-bottom: 0;">
+          <div class="search-bar">
+            <span class="search-bar-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </span>
+            <input type="text" id="citySearchInput" class="search-input" placeholder="Search city for air quality..." autocomplete="off">
+            <button type="button" id="citySearchBtn" class="search-btn"><span>Search</span></button>
+          </div>
+          <div id="searchDropdown" class="search-dropdown"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container" style="margin-top: 30px; margin-bottom: 50px;">
+    <!-- City Selection Bar -->
+    <div style="background-color: #FFFFFF; border-radius: var(--card-radius); padding: 16px 20px; box-shadow: var(--shadow-sm); border: 1px solid var(--border-color); margin-bottom: 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span class="location-pin"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg></span>
+        <span id="selectedCityDisplay" style="font-size: 18px; font-weight: 800; color: var(--text-main);">London, United Kingdom</span>
+      </div>
+
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <button type="button" class="city-pill-btn active" data-city="london">London</button>
+        <button type="button" class="city-pill-btn" data-city="new-york">New York</button>
+        <button type="button" class="city-pill-btn" data-city="tokyo">Tokyo</button>
+        <button type="button" class="city-pill-btn" data-city="paris">Paris</button>
+        <button type="button" class="city-pill-btn" data-city="dubai">Dubai</button>
+        <button type="button" class="city-pill-btn" data-city="sydney">Sydney</button>
+      </div>
+    </div>
+
+    <!-- Live Telemetry Card -->
+    <div id="liveAqiCard" style="background-color: #FFFFFF; border-radius: var(--card-radius); padding: 28px; box-shadow: var(--shadow-sm); border: 1px solid var(--border-color); margin-bottom: 30px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 14px; margin-bottom: 20px;">
+        <div>
+          <h2 style="font-size: 20px; font-weight: 800; color: var(--text-main);">Live OpenAQ Station Telemetry</h2>
+          <span id="stationSubtext" style="font-size: 13px; color: var(--text-muted);">Ground telemetry observations</span>
+        </div>
+        <span style="font-size: 12px; background-color: #EFF6FF; color: var(--accent-blue); padding: 4px 10px; border-radius: 12px; font-weight: 600;">Verified Sensors Only</span>
+      </div>
+
+      <div id="aqiTelemetryContainer">
+        <!-- Rendered via JS -->
+        <p style="color: var(--text-muted);">Querying ground sensor network...</p>
+      </div>
+    </div>
+
+    <!-- AQI Health Scale Reference Table -->
+    <div style="background-color: #FFFFFF; border-radius: var(--card-radius); padding: 28px; box-shadow: var(--shadow-sm); border: 1px solid var(--border-color); margin-bottom: 30px;">
+      <h2 style="font-size: 20px; font-weight: 800; color: var(--text-main); margin-bottom: 18px;">Air Quality Index (AQI) Standard Scale &amp; Health Guidelines</h2>
+      
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="display: flex; align-items: center; gap: 14px; padding: 12px; background-color: #ECFDF5; border-radius: 8px; border-left: 5px solid #10B981;">
+          <span style="font-weight: 800; width: 80px; color: #065F46;">0 - 50</span>
+          <span style="font-weight: 700; width: 100px; color: #047857;">Good</span>
+          <span style="font-size: 13px; color: #064E3B;">Air quality is satisfactory and poses little or no health risk.</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 14px; padding: 12px; background-color: #FEFCE8; border-radius: 8px; border-left: 5px solid #FACC15;">
+          <span style="font-weight: 800; width: 80px; color: #854D0E;">51 - 100</span>
+          <span style="font-weight: 700; width: 100px; color: #A16207;">Moderate</span>
+          <span style="font-size: 13px; color: #713F12;">Acceptable quality; sensitive individuals may experience minor irritation.</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 14px; padding: 12px; background-color: #FFF7ED; border-radius: 8px; border-left: 5px solid #FB923C;">
+          <span style="font-weight: 800; width: 80px; color: #9A3412;">101 - 150</span>
+          <span style="font-weight: 700; width: 100px; color: #C2410C;">Sensitive</span>
+          <span style="font-size: 13px; color: #7C2D12;">Members of sensitive groups may experience adverse health effects.</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 14px; padding: 12px; background-color: #FEF2F2; border-radius: 8px; border-left: 5px solid #EF4444;">
+          <span style="font-weight: 800; width: 80px; color: #991B1B;">151 - 200</span>
+          <span style="font-weight: 700; width: 100px; color: #B91C1C;">Unhealthy</span>
+          <span style="font-size: 13px; color: #7F1D1D;">Everyone may begin to experience health effects; sensitive groups more serious.</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 14px; padding: 12px; background-color: #FAF5FF; border-radius: 8px; border-left: 5px solid #A855F7;">
+          <span style="font-weight: 800; width: 80px; color: #6B21A8;">201 - 300</span>
+          <span style="font-weight: 700; width: 100px; color: #7E22CE;">Very Unhealthy</span>
+          <span style="font-size: 13px; color: #581C87;">Health alert: increased likelihood of adverse effects for the entire population.</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 14px; padding: 12px; background-color: #450A0A; border-radius: 8px; border-left: 5px solid #7F1D1D; color: #FFFFFF;">
+          <span style="font-weight: 800; width: 80px; color: #FCA5A5;">301+</span>
+          <span style="font-weight: 700; width: 100px; color: #F87171;">Hazardous</span>
+          <span style="font-size: 13px; color: #FECACA;">Emergency conditions: entire population is likely to be severely affected. Stay indoors.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEO Content Section -->
+    <article class="seo-section">
+      <h2 class="seo-title">Punjab Smog Crisis: Causes &amp; Personal Safety Measures</h2>
+      <div class="seo-prose">
+        <p>
+          The Punjab smog season typically emerges between late October and mid-January. A combination of factors converges to create severe particulate pollution: post-monsoon agricultural stubble burning across transboundary agricultural corridors, low surface wind velocities (&lt; 5 km/h), vehicular tailpipe emissions, brick kiln operations, and meteorological temperature inversions where cold dense air traps airborne pollutants close to street level.
+        </p>
+        <br>
+        <p>
+          During elevated PM2.5 conditions (&gt; 150 µg/m³), health authorities recommend:
+        </p>
+        <ul style="list-style: disc; margin-left: 24px; margin-top: 8px;">
+          <li>Wearing certified N95 or KN95 particulate respirators when commuting outdoors.</li>
+          <li>Operating HEPA air filtration units inside living and sleeping spaces.</li>
+          <li>Avoiding early morning outdoor jogs or intense athletic exercises when surface inversion is thickest.</li>
+          <li>Keeping home windows and doors sealed during peak traffic hours.</li>
+        </ul>
+      </div>
+
+      <h3 class="faq-title">Smog &amp; Air Quality FAQs</h3>
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span>What is the difference between fog and smog?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Fog is natural condensed atmospheric water vapor that dissipates as temperatures rise. Smog (smoke + fog) is a hazardous cocktail of chemical gases (nitrogen oxides, sulfur dioxide, ozone) and particulate matter (PM2.5 and PM10) that creates stinging eyes, respiratory distress, and reduced visibility.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span>Why are PM2.5 particulates particularly dangerous?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            PM2.5 particles are less than 2.5 micrometers in aerodynamic diameter — approximately 3% the width of a human hair. Because of their tiny size, they bypass nasal cilia, penetrate deep into alveolar lung tissues, and can enter the cardiovascular bloodstream.
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+    <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-brand-title">Weather<span>Tomorrow</span></div>
+          <p class="footer-desc">
+            Accurate, real-time meteorological intelligence and multi-day forecasts for countries and cities worldwide.
+          </p>
+          <div class="footer-attribution">
+            Data from MET Norway (api.met.no, CC BY 4.0)
+          </div>
+          <div style="font-size: 11px; color: #64748B; margin-top: 2px;">
+            Search data © OpenStreetMap contributors
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="countries.html" class="footer-link">Countries</a></li>
+            <li><a href="forecast-10day.html" class="footer-link">10-Day Forecast</a></li>
+            <li><a href="hourly.html" class="footer-link">Hourly Forecast</a></li>
+            <li><a href="aqi.html" class="footer-link">AQI &amp; Smog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="terms.html" class="footer-link">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Worldwide Coverage</h4>
+          <div class="footer-desc" style="font-size: 13px;">
+            Connecting millions of cities worldwide to live meteorological telemetry.
+          </div>
+</div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Weather Tomorrow. All rights reserved.</div>
+        <div class="footer-credit">Made with <svg viewBox="0 0 24 24" width="14" height="14" fill="#EF4444" style="vertical-align: -2px; display: inline-block;" aria-label="love"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> by Ahsan Ali</div>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    .city-pill-btn {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-main);
+      background-color: #F1F5F9;
+      border: 1px solid var(--border-color);
+      transition: all 0.15s ease;
+    }
+    .city-pill-btn:hover, .city-pill-btn.active {
+      background-color: var(--accent-blue);
+      color: #FFFFFF;
+      border-color: var(--accent-blue);
+    }
+  </style>
+
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/weather.js"></script>
+  <script src="js/countries.js"></script>
+  <script src="js/language.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.footer-email').forEach(el => {
+        if (typeof CONTACT_EMAIL !== 'undefined') el.textContent = CONTACT_EMAIL;
+      });
+
+      initLanguage();
+
+      const mobileBtn = document.getElementById('mobileMenuToggle');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+      if (mobileBtn && mobileDrawer) {
+        mobileBtn.addEventListener('click', () => mobileDrawer.classList.toggle('is-open'));
+      }
+
+      initSearch('#citySearchInput', '#searchDropdown');
+
+      const params = new URLSearchParams(window.location.search);
+      const queryCitySlug = params.get('city') || 'london';
+
+      function loadCityAqi(slug) {
+        const city = CONFIG.FEATURED_CITIES.find(c => c.slug === slug) || CONFIG.DEFAULT_CITY;
+        document.getElementById('selectedCityDisplay').textContent = `${city.name}, ${city.country || 'Global City'}`;
+
+        document.querySelectorAll('.city-pill-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.city === slug);
+        });
+
+        const container = document.getElementById('aqiTelemetryContainer');
+        container.innerHTML = `<p style="color: var(--text-muted);">Contacting OpenAQ ground station telemetry for ${city.name} (${city.lat}°N, ${city.lon}°E)...</p>`;
+
+        API.getAqi(city.lat, city.lon)
+          .then(data => {
+            if (data && data.available && data.sensors && data.sensors.length > 0) {
+              container.innerHTML = `
+                <div style="display: flex; flex-direction: column; gap: 16px;">
+                  <div style="font-size: 14px; color: #047857; font-weight: 600;">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align: -2px; display: inline-block; margin-right: 4px;"><polyline points="20 6 9 17 4 12"></polyline></svg>Active station: ${data.stationName || 'OpenAQ Station'}
+                  </div>
+                  <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+                    ${data.sensors.map(s => `
+                      <div class="sensor-pill">
+                        <span class="sensor-name">${s.parameter?.displayName || s.name || 'Pollutant'}</span>
+                        <span class="sensor-val">${s.latest?.value || '--'} ${s.parameter?.units || 'µg/m³'}</span>
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+              `;
+            } else {
+              // REQUIREMENT: If OpenAQ has no data for a city, HIDE the AQI block or display honest no-data notice. Never invent an AQI number.
+              container.innerHTML = `
+                <div style="padding: 16px; background-color: #F8FAFC; border-radius: 8px; border: 1px dashed var(--border-color); color: var(--text-muted); font-size: 14px;">
+                  <strong>No Active OpenAQ Station Telemetry for ${city.name}</strong>
+                  <p style="margin-top: 4px; font-size: 13px;">Ground sensors for this exact coordinate radius are currently offline or unmonitored. Following strict scientific integrity standards, synthetic or invented AQI numbers are never displayed.</p>
+                </div>
+              `;
+            }
+          })
+          .catch(() => {
+            container.innerHTML = `
+              <div style="padding: 16px; background-color: #F8FAFC; border-radius: 8px; color: var(--text-muted); font-size: 14px;">
+                Air quality telemetry temporarily unreachable.
+              </div>
+            `;
+          });
+      }
+
+      document.querySelectorAll('.city-pill-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          loadCityAqi(btn.dataset.city);
+        });
+      });
+
+      loadCityAqi(queryCitySlug);
+
+      document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const item = btn.parentElement;
+          const answer = item.querySelector('.faq-answer');
+          const icon = btn.querySelector('.faq-toggle-icon');
+          if (answer.style.display === 'none') {
+            answer.style.display = 'block';
+            icon.textContent = '−';
+          } else {
+            answer.style.display = 'none';
+            icon.textContent = '+';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

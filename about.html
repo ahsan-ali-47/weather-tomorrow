@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="apple-touch-icon" href="images/logo.png">
+  <title>About Us — Transparent Weather Intelligence | Weather Tomorrow</title>
+  <meta name="description" content="Learn about Weather Tomorrow, our meteorological data integrity, open-access architecture, and commitment to verified forecast models powered by MET Norway.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://weathertomorrow.website/about.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About Us — Transparent Weather Intelligence | Weather Tomorrow">
+  <meta property="og:description" content="Learn about Weather Tomorrow, our open data philosophy, and our verified forecasts from MET Norway.">
+  <meta property="og:url" content="https://weathertomorrow.website/about.html">
+  <meta property="og:image" content="https://weathertomorrow.website/images/about-globe.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Us — Transparent Weather Intelligence | Weather Tomorrow">
+  <meta name="twitter:description" content="Learn about Weather Tomorrow, our open data philosophy, and our verified forecasts from MET Norway.">
+  <meta name="twitter:image" content="https://weathertomorrow.website/images/about-globe.jpg">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://weathertomorrow.website/about.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://weathertomorrow.website/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About Us",
+            "item": "https://weathertomorrow.website/about.html"
+          }
+        ]
+      },
+      {
+        "@type": "AboutPage",
+        "@id": "https://weathertomorrow.website/about.html#about",
+        "name": "About Weather Tomorrow",
+        "description": "Weather Tomorrow provides free, high-performance, and privacy-respecting weather intelligence powered by MET Norway."
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+    <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Weather Tomorrow Home">
+        <div class="brand-icon">
+          <img src="images/logo.png" alt="Weather Tomorrow logo" width="34" height="34">
+        </div>
+        <div class="brand-text">Weather<span>Tomorrow</span></div>
+      </a>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link ">Home</a>
+        <a href="countries.html" class="nav-link ">Countries</a>
+        <a href="forecast-10day.html" class="nav-link ">10-Day</a>
+        <a href="hourly.html" class="nav-link ">Hourly</a>
+        <a href="aqi.html" class="nav-link ">AQI/Smog</a>
+        <a href="about.html" class="nav-link active">About</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Country Dropdown Button -->
+        <button id="countryTrigger" class="lang-btn" type="button" aria-haspopup="dialog" aria-expanded="false" title="Select World Country">
+          <span id="currentCountryLabel"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" class="svg-ico"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg> <span>Select Country</span></span>
+          <span class="lang-caret">▼</span>
+        </button>
+
+
+        <!-- Language Dropdown Button -->
+        <button id="langTrigger" class="lang-btn" type="button" aria-haspopup="dialog" aria-expanded="false" title="Select Language">
+          <span id="currentLangLabel">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" class="svg-ico"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span>English</span>
+          </span>
+          <span class="lang-caret">▼</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobileMenuToggle" class="mobile-toggle" type="button" aria-label="Toggle navigation menu">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileDrawer" class="mobile-drawer" role="menu">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="countries.html" class="mobile-nav-link">Countries</a>
+      <a href="forecast-10day.html" class="mobile-nav-link">10-Day</a>
+      <a href="hourly.html" class="mobile-nav-link">Hourly</a>
+      <a href="aqi.html" class="mobile-nav-link">AQI/Smog</a>
+      <a href="about.html" class="mobile-nav-link">About</a>
+    </div>
+
+    <!-- Country Searchable Modal -->
+    <div id="countryModal" class="country-modal" role="dialog" aria-label="Select Country">
+      <div class="lang-search-box">
+        <input type="text" id="countrySearchInput" placeholder="Search world country..." aria-label="Search country">
+      </div>
+      <ul id="countryList" class="lang-list"></ul>
+    </div>
+
+
+    <!-- Language Searchable Modal -->
+    <div id="langModal" class="lang-modal" role="dialog" aria-label="Select Language">
+      <div class="lang-search-box">
+        <input type="text" id="langSearchInput" placeholder="Search language..." aria-label="Search language">
+      </div>
+      <ul id="langList" class="lang-list"></ul>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <section class="page-banner">
+    <div class="container">
+      <div class="banner-icon">
+        <svg viewBox="0 0 24 24" width="46" height="46" fill="none" stroke="currentColor" stroke-width="2" class="svg-ico"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+      </div>
+      <h1 class="banner-title">About Weather Tomorrow</h1>
+      <p class="banner-subtitle">Your trusted weather companion. Fast, transparent, and built on verifiable scientific open data.</p>
+    </div>
+  </section>
+
+  <main class="container" style="margin-top: 30px; margin-bottom: 50px;">
+    <!-- Main About Card matching reference image layout -->
+    <article class="about-card">
+      <div class="about-grid">
+        <!-- Left Column: Content, Checklist, Button -->
+        <div>
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+            <span style="display: inline-flex; align-items: center; color: var(--accent-blue);">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" class="svg-ico"><path d="M12 2v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="M20 12h2"></path><path d="m19.07 4.93-1.41 1.41"></path><path d="M15.947 12.65a4 4 0 0 0-5.925-4.128"></path><path d="M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z"></path></svg>
+            </span>
+            <span style="font-size: 14px; font-weight: 700; color: var(--accent-blue); text-transform: uppercase;">Your trusted weather companion</span>
+          </div>
+
+          <h2 style="font-size: 32px; font-weight: 800; color: var(--text-main); line-height: 1.2; margin-bottom: 16px;">
+            Accurate, Real-Time Weather for Cities Around the World
+          </h2>
+
+          <p style="font-size: 15px; color: var(--text-muted); line-height: 1.7; margin-bottom: 20px;">
+            Weather Tomorrow is a modern and easy-to-use weather website that provides accurate and real-time weather information for countries and cities around the world. We believe that meteorological data should be free, accessible, and free of synthetic guessing.
+          </p>
+
+          <ul class="about-features-list">
+            <li class="about-feature-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Real-time updates directly from MET Norway</span>
+            </li>
+            <li class="about-feature-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>7-day &amp; 10-day numerical forecast projections</span>
+            </li>
+            <li class="about-feature-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Verified ground-level smog &amp; air quality tracking</span>
+            </li>
+            <li class="about-feature-item">
+              <span class="check-icon"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <span>Global coverage across millions of cities via OpenStreetMap</span>
+            </li>
+          </ul>
+
+          <a href="countries.html" class="submit-btn" style="text-decoration: none; display: inline-block; margin-top: 10px;">
+            Explore World Countries →
+          </a>
+        </div>
+
+        <!-- Right Column: Earth Globe Artwork from Reference Image -->
+        <div class="about-img-wrap">
+          <img src="images/about-globe.jpg" alt="Weather Tomorrow Global Weather Earth Visual" width="480" height="480" class="about-img" loading="lazy">
+        </div>
+      </div>
+    </article>
+
+    <!-- Data Sources & Integrity Statement -->
+    <article class="seo-section">
+      <h2 class="seo-title">Our Meteorological Data Architecture</h2>
+      <div class="seo-prose">
+        <p>
+          Weather Tomorrow is engineered with an unwavering commitment to data integrity. Rather than relying on commercial ad-heavy aggregators or synthetic AI temperature estimators, every single metric rendered on this site is retrieved from authoritative open scientific institutes:
+        </p>
+        <br>
+        <ul style="list-style: disc; margin-left: 24px; line-height: 1.8;">
+          <li>
+            <strong>Meteorological Institute of Norway (MET Norway)</strong>: Locationforecast 2.0 API provides our complete weather forecast stack, including instant temperature, barometric pressure, relative humidity, wind velocity, and hourly precipitation models. Used under the Creative Commons Attribution 4.0 International license (CC BY 4.0).
+          </li>
+          <li>
+            <strong>OpenStreetMap &amp; Nominatim</strong>: Powers our global search and geocoding index, allowing fast lookups of any village, town, or metropolis worldwide with zero proprietary tracking. Sourced under the Open Database License (ODbL).
+          </li>
+          <li>
+            <strong>OpenAQ</strong>: Connects our platform to public ground-based air quality monitoring stations for PM2.5 and PM10 telemetry. If a location lacks physical sensors, we honestly omit the air quality card rather than displaying fabricated numbers.
+          </li>
+        </ul>
+      </div>
+
+      <h3 class="faq-title">Frequently Asked Questions</h3>
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span>Is Weather Tomorrow completely free to use?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Yes, Weather Tomorrow is 100% free with no subscription, registration, or paywall.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span>Why is this site built without heavy frontend frameworks?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            By using pure semantic HTML5, clean vanilla CSS, and lightweight JavaScript, page load speeds are near-instantaneous even on low-bandwidth 3G and 4G mobile connections across Pakistan.
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+    <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-brand-title">Weather<span>Tomorrow</span></div>
+          <p class="footer-desc">
+            Accurate, real-time meteorological intelligence and multi-day forecasts for countries and cities worldwide.
+          </p>
+          <div class="footer-attribution">
+            Data from MET Norway (api.met.no, CC BY 4.0)
+          </div>
+          <div style="font-size: 11px; color: #64748B; margin-top: 2px;">
+            Search data © OpenStreetMap contributors
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="countries.html" class="footer-link">Countries</a></li>
+            <li><a href="forecast-10day.html" class="footer-link">10-Day Forecast</a></li>
+            <li><a href="hourly.html" class="footer-link">Hourly Forecast</a></li>
+            <li><a href="aqi.html" class="footer-link">AQI &amp; Smog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="terms.html" class="footer-link">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Worldwide Coverage</h4>
+          <div class="footer-desc" style="font-size: 13px;">
+            Connecting millions of cities worldwide to live meteorological telemetry.
+          </div>
+</div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Weather Tomorrow. All rights reserved.</div>
+        <div class="footer-credit">Made with <svg viewBox="0 0 24 24" width="14" height="14" fill="#EF4444" style="vertical-align: -2px; display: inline-block;" aria-label="love"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> by Ahsan Ali</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/countries.js"></script>
+  <script src="js/language.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.footer-email').forEach(el => {
+        if (typeof CONTACT_EMAIL !== 'undefined') el.textContent = CONTACT_EMAIL;
+      });
+
+      initLanguage();
+
+      const mobileBtn = document.getElementById('mobileMenuToggle');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+      if (mobileBtn && mobileDrawer) {
+        mobileBtn.addEventListener('click', () => mobileDrawer.classList.toggle('is-open'));
+      }
+
+      document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const item = btn.parentElement;
+          const answer = item.querySelector('.faq-answer');
+          const icon = btn.querySelector('.faq-toggle-icon');
+          if (answer.style.display === 'none') {
+            answer.style.display = 'block';
+            icon.textContent = '−';
+          } else {
+            answer.style.display = 'none';
+            icon.textContent = '+';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
