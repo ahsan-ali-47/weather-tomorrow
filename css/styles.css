@@ -2361,6 +2361,26 @@ body {
   color: #334155;
 }
 
+/* ---- Per-page banner images (reference-style backgrounds) ---- */
+[data-theme="light"] .page-banner.banner-countries {
+  background: url('../images/banner-countries-light.jpg') no-repeat center / cover;
+}
+[data-theme="light"] .page-banner.banner-10day {
+  background: url('../images/banner-10day-light.jpg') no-repeat center / cover;
+}
+[data-theme="dark"] .page-banner.banner-countries {
+  background: url('../images/banner-countries-dark.jpg') no-repeat center / cover;
+}
+[data-theme="dark"] .page-banner.banner-10day {
+  background: url('../images/banner-10day-dark.jpg') no-repeat center / cover;
+}
+[data-theme="dark"] .page-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(8, 18, 38, 0.72) 0%, rgba(8, 18, 38, 0.35) 60%, rgba(8, 18, 38, 0.15) 100%);
+}
+
 /* ---- 10-Day rows / hourly cards / AQI ---- */
 .tenday-row-card {
   background: var(--card-bg);
