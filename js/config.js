@@ -224,6 +224,16 @@ const CONFIG = {
         { slug: "sargodha", name: "Sargodha", lat: 32.0836, lon: 72.6711, region: "Punjab", elevation: "189 m" },
         { slug: "murree", name: "Murree", lat: 33.9047, lon: 73.3919, region: "Punjab", elevation: "2,291 m" },
         { slug: "mardan", name: "Mardan", lat: 34.1986, lon: 72.0231, region: "Khyber Pakhtunkhwa", elevation: "311 m" },
+        { slug: "layyah", name: "Layyah", lat: 30.9613, lon: 70.9397, region: "Punjab", elevation: "143 m" },
+        { slug: "mansehra", name: "Mansehra", lat: 34.3313, lon: 73.1966, region: "Khyber Pakhtunkhwa", elevation: "1,088 m" },
+        { slug: "haripur", name: "Haripur", lat: 33.9999, lon: 72.9344, region: "Khyber Pakhtunkhwa", elevation: "610 m" },
+        { slug: "jhelum", name: "Jhelum", lat: 32.9425, lon: 73.7278, region: "Punjab", elevation: "234 m" },
+        { slug: "mirpur", name: "Mirpur", lat: 33.1489, lon: 73.7537, region: "Azad Jammu & Kashmir", elevation: "459 m" },
+        { slug: "rawalakot", name: "Rawalakot", lat: 33.8578, lon: 73.7604, region: "Azad Jammu & Kashmir", elevation: "1,638 m" },
+        { slug: "narowal", name: "Narowal", lat: 32.0993, lon: 74.8736, region: "Punjab", elevation: "245 m" },
+        { slug: "toba-tek-singh", name: "Toba Tek Singh", lat: 30.9748, lon: 72.4826, region: "Punjab", elevation: "183 m" },
+        { slug: "rahim-yar-khan", name: "Rahim Yar Khan", lat: 28.4195, lon: 70.302, region: "Punjab", elevation: "83 m" },
+        { slug: "abbottabad", name: "Abbottabad", lat: 34.1688, lon: 73.2215, region: "Khyber Pakhtunkhwa", elevation: "1,260 m" },
       ]
     },
     {
@@ -289,6 +299,16 @@ const CONFIG = {
     { slug: "sargodha", name: "Sargodha", country: "Pakistan", countryCode: "PK", lat: 32.0836, lon: 72.6711, region: "Punjab", elevation: "189 m" },
     { slug: "murree", name: "Murree", country: "Pakistan", countryCode: "PK", lat: 33.9047, lon: 73.3919, region: "Punjab", elevation: "2,291 m" },
     { slug: "mardan", name: "Mardan", country: "Pakistan", countryCode: "PK", lat: 34.1986, lon: 72.0231, region: "Khyber Pakhtunkhwa", elevation: "311 m" },
+    { slug: "layyah", name: "Layyah", country: "Pakistan", countryCode: "PK", lat: 30.9613, lon: 70.9397, region: "Punjab", elevation: "143 m" },
+    { slug: "mansehra", name: "Mansehra", country: "Pakistan", countryCode: "PK", lat: 34.3313, lon: 73.1966, region: "Khyber Pakhtunkhwa", elevation: "1,088 m" },
+    { slug: "haripur", name: "Haripur", country: "Pakistan", countryCode: "PK", lat: 33.9999, lon: 72.9344, region: "Khyber Pakhtunkhwa", elevation: "610 m" },
+    { slug: "jhelum", name: "Jhelum", country: "Pakistan", countryCode: "PK", lat: 32.9425, lon: 73.7278, region: "Punjab", elevation: "234 m" },
+    { slug: "mirpur", name: "Mirpur", country: "Pakistan", countryCode: "PK", lat: 33.1489, lon: 73.7537, region: "Azad Jammu & Kashmir", elevation: "459 m" },
+    { slug: "rawalakot", name: "Rawalakot", country: "Pakistan", countryCode: "PK", lat: 33.8578, lon: 73.7604, region: "Azad Jammu & Kashmir", elevation: "1,638 m" },
+    { slug: "narowal", name: "Narowal", country: "Pakistan", countryCode: "PK", lat: 32.0993, lon: 74.8736, region: "Punjab", elevation: "245 m" },
+    { slug: "toba-tek-singh", name: "Toba Tek Singh", country: "Pakistan", countryCode: "PK", lat: 30.9748, lon: 72.4826, region: "Punjab", elevation: "183 m" },
+    { slug: "rahim-yar-khan", name: "Rahim Yar Khan", country: "Pakistan", countryCode: "PK", lat: 28.4195, lon: 70.302, region: "Punjab", elevation: "83 m" },
+    { slug: "abbottabad", name: "Abbottabad", country: "Pakistan", countryCode: "PK", lat: 34.1688, lon: 73.2215, region: "Khyber Pakhtunkhwa", elevation: "1,260 m" },
   ]
 };
 
