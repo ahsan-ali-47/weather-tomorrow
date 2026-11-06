@@ -2201,27 +2201,9 @@ body {
   z-index: 1;
 }
 [data-theme="dark"] .hero-section {
-  background: linear-gradient(120deg, #081226 0%, #0C2247 55%, #123058 100%);
+  background: url('../images/hero-globe-dark.jpg') no-repeat center right / cover;
 }
-/* Globe visual on dark hero: a round "globe badge" cropped to the globe
-   itself (not the whole rectangular photo), with a soft navy glow so its
-   edge melts into the dark background. */
-[data-theme="dark"] .hero-section::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 5%;
-  width: 460px;
-  height: 460px;
-  transform: translateY(-50%);
-  z-index: 1;
-  border-radius: 50%;
-  background: url('../images/about-globe.jpg') no-repeat -645px -129px / 1100px auto;
-  box-shadow:
-    0 0 0 1px rgba(56, 189, 248, 0.18),
-    0 0 90px 34px rgba(8, 18, 38, 0.9);
-  pointer-events: none;
-}
+
 .hero-title {
   color: var(--hero-title-color);
   text-shadow: none;
@@ -2479,12 +2461,7 @@ body {
     padding-top: 48px;
     padding-bottom: 48px;
   }
-  [data-theme="dark"] .hero-section::after {
-    width: 380px;
-    height: 380px;
-    background-position: -560px -110px;
-    background-size: 950px auto;
-  }
+
 }
 @media (max-width: 640px) {
   .header-actions .lang-btn span span {
@@ -2501,14 +2478,7 @@ body {
     padding-top: 36px;
     padding-bottom: 36px;
   }
-  [data-theme="dark"] .hero-section::after {
-    width: 280px;
-    height: 280px;
-    right: -30px;
-    opacity: 0.85;
-    background-position: -420px -80px;
-    background-size: 700px auto;
-  }
+
   .hero-title {
     font-size: 30px;
   }
