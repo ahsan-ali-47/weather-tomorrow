@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="apple-touch-icon" href="images/logo.png">
+  <title>Sialkot Weather Today &amp; 10-Day Forecast — Weather Tomorrow</title>
+  <meta name="description" content="Live Sialkot weather forecast today, hourly temperature updates, rain probability, humidity, and 10-day meteorological outlook from MET Norway.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.weathertomorrow.website/sialkot">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sialkot Weather Today &amp; 10-Day Forecast — Weather Tomorrow">
+  <meta property="og:description" content="Live Sialkot (Pakistan) weather updates, real-time hourly forecasts, and 10-day projections powered by MET Norway.">
+  <meta property="og:url" content="https://www.weathertomorrow.website/sialkot">
+  <meta property="og:image" content="https://www.weathertomorrow.website/images/hero-mountain-lake.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sialkot Weather — Weather Tomorrow">
+  <meta name="twitter:description" content="Real-time Sialkot weather forecast, hourly breakdown, and 10-day outlook.">
+  <meta name="twitter:image" content="https://www.weathertomorrow.website/images/hero-mountain-lake.jpg">
+
+  <script>try{var __wt=localStorage.getItem('wt-theme');if(__wt==='dark'||__wt==='light')document.documentElement.setAttribute('data-theme',__wt);}catch(e){}</script>
+  <link rel="stylesheet" href="css/styles.css?v=redesign9">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.weathertomorrow.website/sialkot#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.weathertomorrow.website/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Countries",
+            "item": "https://www.weathertomorrow.website/countries"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Sialkot",
+            "item": "https://www.weathertomorrow.website/sialkot"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.weathertomorrow.website/sialkot#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is today's current weather in Sialkot?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Weather observations for Sialkot are updated in real-time using MET Norway's Locationforecast 2.0 operational models, providing temperature, humidity, wind, and atmospheric pressure."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How accurate is the 10-day forecast for Sialkot?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The first 3 to 5 days provide verified accuracy exceeding 90%. Projections for days 6 to 10 represent ensemble statistical models recalculated hourly."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#38BDF8">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Weather Tomorrow">
+  <script src="/pwa.js" defer></script>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index" class="brand" aria-label="Weather Tomorrow Home">
+        <div class="brand-icon">
+          <img src="images/logo.png" alt="Weather Tomorrow logo" width="34" height="34">
+        </div>
+        <div class="brand-text">Weather<span>Tomorrow</span></div>
+      </a>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="index" class="nav-link">Home</a>
+        <a href="countries" class="nav-link">Countries</a>
+        <a href="forecast-10day" class="nav-link">10-Day</a>
+        <a href="hourly" class="nav-link">Hourly</a>
+        <a href="aqi" class="nav-link">AQI/Smog</a>
+        <a href="about" class="nav-link">About</a>
+      </nav>
+
+      <div class="header-actions">
+
+        <!-- Language Dropdown Button -->
+        <button id="langTrigger" class="lang-btn" type="button" aria-haspopup="dialog" aria-expanded="false" title="Select Language">
+          <span id="currentLangLabel">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" class="svg-ico"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span>English</span>
+          </span>
+          <span class="lang-caret">▼</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <!-- Theme Toggle (Light / Dark) -->
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Dark mode">
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+        <button id="mobileMenuToggle" class="mobile-toggle" type="button" aria-label="Toggle navigation menu">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileDrawer" class="mobile-drawer" role="menu">
+      <a href="index" class="mobile-nav-link">Home</a>
+      <a href="countries" class="mobile-nav-link">Countries</a>
+      <a href="forecast-10day" class="mobile-nav-link">10-Day</a>
+      <a href="hourly" class="mobile-nav-link">Hourly</a>
+      <a href="aqi" class="mobile-nav-link">AQI/Smog</a>
+      <a href="about" class="mobile-nav-link">About</a>
+    </div>
+
+
+    <!-- Language Searchable Modal -->
+    <div id="langModal" class="lang-modal" role="dialog" aria-label="Select Language">
+      <div class="lang-search-box">
+        <input type="text" id="langSearchInput" placeholder="Search language..." aria-label="Search language">
+      </div>
+      <ul id="langList" class="lang-list"></ul>
+    </div>
+  </header>
+
+  <!-- City Page Banner -->
+  <section class="page-banner">
+    <div class="container">
+      <div class="banner-icon"><svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="white" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg></div>
+      <h1 class="banner-title">Sialkot Weather Today — Hourly &amp; 10-Day Forecast</h1>
+      <p class="banner-subtitle">Sialkot • Punjab, Pakistan • Elevation: 256 m</p>
+
+      <div class="banner-search-wrap">
+        <div class="search-container" style="max-width: 520px; width: 100%; margin-bottom: 0;">
+          <div class="search-bar">
+            <span class="search-bar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
+            <input type="text" id="citySearchInput" class="search-input" placeholder="Search another world city..." autocomplete="off">
+            <button type="button" id="citySearchBtn" class="search-btn"><span>Search</span></button>
+          </div>
+          <div id="searchDropdown" class="search-dropdown"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container" style="margin-top: 30px; margin-bottom: 50px;">
+    <!-- Main Live Weather Card -->
+    <div id="weatherCardContainer">
+      <div class="weather-hero-card">
+        <div class="card-head">
+          <div class="city-title-group">
+            <span class="location-pin"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#2563EB" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg></span>
+            <span class="city-name">Sialkot, Pakistan</span>
+          </div>
+          <div class="updated-time">Connecting to MET Norway Live Telemetry...</div>
+        </div>
+        <div class="card-body-row">
+          <div class="current-left">
+            <div class="weather-icon-large">
+              <svg viewBox="0 0 64 64" fill="none" class="w-icon"><circle cx="32" cy="32" r="16" fill="#FBBF24" /></svg>
+            </div>
+            <div class="temp-badge">
+              <span class="temp-big">--°C</span>
+              <span class="cond-label">Fetching live data...</span>
+              <span class="feels-label">Feels like --°C</span>
+            </div>
+          </div>
+          <div class="metrics-grid">
+            <div class="metric-item"><span class="metric-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#38BDF8" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg></span><span class="metric-label">Humidity</span><span class="metric-val">--%</span></div>
+            <div class="metric-item"><span class="metric-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#38BDF8" stroke-width="2"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"></path></svg></span><span class="metric-label">Wind Speed</span><span class="metric-val">-- km/h</span></div>
+            <div class="metric-item"><span class="metric-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#38BDF8" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg></span><span class="metric-label">Wind Direction</span><span class="metric-val">--</span></div>
+            <div class="metric-item"><span class="metric-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#38BDF8" stroke-width="2"><circle cx="12" cy="12" r="7"></circle><polyline points="12 9 12 12 13.5 13.5"></polyline><path d="M16.51 17.35l-.35 3.83a2 2 0 0 1-2 1.82H9.83a2 2 0 0 1-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 0 1 9.83 1h4.35a2 2 0 0 1 2 1.82l.35 3.83"></path></svg></span><span class="metric-label">Pressure</span><span class="metric-val">-- hPa</span></div>
+            <div class="metric-item"><span class="metric-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#38BDF8" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></span><span class="metric-label">Visibility</span><span class="metric-val">-- km</span></div>
+            <div class="metric-item"><span class="metric-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#F59E0B" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span><span class="metric-label">UV Index</span><span class="metric-val">--</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7-Day & 10-Day Projections Container -->
+    <div id="forecastContainer" style="margin-top: 24px;"></div>
+
+    <!-- Air Quality / Smog Block -->
+    <div id="aqiContainer" style="margin-top: 24px;"></div>
+
+    <!-- Live Doppler Radar & Satellite Map Section (Matching Reference Design) -->
+    <section class="radar-visual-card" aria-label="Live Weather Radar for Sialkot">
+      <div class="radar-card-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span class="live-pulse-dot" aria-hidden="true"></span>
+          <div>
+            <h3 style="font-size: 17px; font-weight: 700; color: var(--text-main); margin: 0;">Live Doppler Weather Radar — Sialkot</h3>
+            <p style="font-size: 12px; color: var(--text-muted); margin: 2px 0 0 0;">Continuous satellite telemetry, precipitation reflectivity &amp; storm tracking</p>
+          </div>
+        </div>
+        <div class="radar-layer-pills" role="tablist">
+          <span class="radar-pill active" role="tab">Radar</span>
+          <span class="radar-pill" role="tab">Satellite</span>
+          <span class="radar-pill" role="tab">Precipitation</span>
+          <span class="radar-pill" role="tab">Wind Flow</span>
+        </div>
+      </div>
+
+      <div class="radar-viewport">
+        <img src="images/maps-radar.jpg" alt="Live Doppler Weather Radar and Satellite Cloud Imagery for Sialkot" width="1200" height="340" loading="lazy">
+        <div class="radar-badge-active">
+          <span style="display: inline-block; width: 8px; height: 8px; background: #22C55E; border-radius: 50%;"></span>
+          <span>DOPPLER RADAR • MET NORWAY TELEMETRY</span>
+        </div>
+        <div class="radar-scale-bar">
+          <span style="color: #94A3B8;">Precipitation Intensity:</span>
+          <div class="scale-grad"></div>
+          <span style="font-weight: 700; color: #EF4444;">Severe</span>
+        </div>
+      </div>
+
+      <div class="radar-card-footer">
+        <span style="color: var(--text-muted); display: inline-flex; align-items: center; gap: 6px;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          Continuous real-time sweep • Live MET Norway location telemetry
+        </span>
+        <a href="countries" style="color: var(--primary); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+          Explore Worldwide Radar Stations &rarr;
+        </a>
+      </div>
+    </section>
+  
+
+    <!-- Comprehensive Real SEO Article Specific to This World City -->
+    <article class="seo-section" style="margin-top: 40px;">
+      <h2 class="seo-title">Sialkot Weather, Climate &amp; Meteorological Overview</h2>
+      <div class="seo-prose">
+        <p>
+          Welcome to the authoritative weather intelligence report for <strong>Sialkot</strong>, located in Punjab, Pakistan (Coordinates: 32.4945°N, 74.5229°E; approximate elevation: 256 m). Weather Tomorrow streams continuous high-resolution numerical forecasts computed by the Norwegian Meteorological Institute (MET Norway), ensuring that residents, travelers, and meteorologists receive verifiable data free from estimation bias.
+        </p>
+
+        <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 20px 0 10px 0;">Atmospheric &amp; Seasonal Patterns in Sialkot</h3>
+        <p>
+Sialkot's geographic location on the Punjab plains near the foothills exposes it to distinct atmospheric dynamics throughout the annual cycle. The surrounding topography, altitude of 256 m, and humid subtropical position govern prevailing wind patterns, cloud formations, and temperature fluctuations.
+        </p>
+        <p>
+          During the summer months, convective activity and solar elevation contribute to seasonal peak temperatures, while winter periods bring cooler air masses and dense fog. The monsoon season typically delivers heavy precipitation, with seasonal transitions frequently inducing rapid shifts in dew point and relative humidity.
+        </p>
+
+        <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 20px 0 10px 0;">Hourly Breakdown &amp; 10-Day Extended Projections</h3>
+        <p>
+          To plan daily outdoor schedules, travel, or logistics in Sialkot, consult the hourly breakdown above. Temperatures undergo characteristic diurnal cycles, cooling significantly between midnight and dawn before climbing after sunrise. The 10-day forecast extends your planning horizon with ensemble forecasts tracking barometric frontal transitions.
+        </p>
+
+        <!-- Internal Links to Other Major World Cities -->
+        <div style="margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--border-color);">
+          <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 12px;">Explore Other Major World Cities</h4>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+            
+              <a href="london" class="badge-card" style="padding: 8px 14px; font-size: 13px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;display:inline-block;margin-right:4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> London (United Kingdom)
+              </a>
+              <a href="karachi" class="badge-card" style="padding: 8px 14px; font-size: 13px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;display:inline-block;margin-right:4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> Karachi (Pakistan)
+              </a>
+            
+              <a href="new-york" class="badge-card" style="padding: 8px 14px; font-size: 13px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;display:inline-block;margin-right:4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> New York (United States)
+              </a>
+            
+              <a href="tokyo" class="badge-card" style="padding: 8px 14px; font-size: 13px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;display:inline-block;margin-right:4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> Tokyo (Japan)
+              </a>
+            
+              <a href="paris" class="badge-card" style="padding: 8px 14px; font-size: 13px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;display:inline-block;margin-right:4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> Paris (France)
+              </a>
+            
+              <a href="dubai" class="badge-card" style="padding: 8px 14px; font-size: 13px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;display:inline-block;margin-right:4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> Dubai (United Arab Emirates)
+              </a>
+            
+              <a href="sydney" class="badge-card" style="padding: 8px 14px; font-size: 13px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;display:inline-block;margin-right:4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> Sydney (Australia)
+              </a>
+            
+              <a href="toronto" class="badge-card" style="padding: 8px 14px; font-size: 13px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;display:inline-block;margin-right:4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> Toronto (Canada)
+              </a>
+            
+              <a href="berlin" class="badge-card" style="padding: 8px 14px; font-size: 13px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;display:inline-block;margin-right:4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> Berlin (Germany)
+              </a>
+            
+              <a href="rome" class="badge-card" style="padding: 8px 14px; font-size: 13px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;display:inline-block;margin-right:4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> Rome (Italy)
+              </a>
+            
+              <a href="singapore" class="badge-card" style="padding: 8px 14px; font-size: 13px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;display:inline-block;margin-right:4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> Singapore (Singapore)
+              </a>
+            
+              <a href="istanbul" class="badge-card" style="padding: 8px 14px; font-size: 13px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;display:inline-block;margin-right:4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> Istanbul (Turkey)
+              </a>
+            
+              <a href="riyadh" class="badge-card" style="padding: 8px 14px; font-size: 13px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;display:inline-block;margin-right:4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> Riyadh (Saudi Arabia)
+              </a>
+            
+              <a href="cairo" class="badge-card" style="padding: 8px 14px; font-size: 13px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;display:inline-block;margin-right:4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> Cairo (Egypt)
+              </a>
+            
+              <a href="madrid" class="badge-card" style="padding: 8px 14px; font-size: 13px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;display:inline-block;margin-right:4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> Madrid (Spain)
+              </a>
+            
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-brand-title">Weather<span>Tomorrow</span></div>
+          <p class="footer-desc">
+            Accurate, real-time meteorological intelligence and multi-day forecasts for countries and cities worldwide.
+          </p>
+          <div class="footer-attribution">
+            Data from MET Norway (api.met.no, CC BY 4.0)
+          </div>
+          <div style="font-size: 11px; color: #64748B; margin-top: 2px;">
+            Search data © OpenStreetMap contributors
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index" class="footer-link">Home</a></li>
+            <li><a href="countries" class="footer-link">Countries</a></li>
+            <li><a href="forecast-10day" class="footer-link">10-Day Forecast</a></li>
+            <li><a href="hourly" class="footer-link">Hourly Forecast</a></li>
+            <li><a href="aqi" class="footer-link">AQI &amp; Smog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about" class="footer-link">About Us</a></li>
+            <li><a href="privacy" class="footer-link">Privacy Policy</a></li>
+            <li><a href="terms" class="footer-link">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Worldwide Coverage</h4>
+          <div class="footer-desc" style="font-size: 13px;">
+            Connecting millions of cities worldwide to live meteorological telemetry.
+          </div>
+</div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Weather Tomorrow. All rights reserved.</div>
+        <div class="footer-credit">Made with <svg viewBox="0 0 24 24" width="14" height="14" fill="#EF4444" style="vertical-align: -2px; display: inline-block;" aria-label="love"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> by Ahsan Ali</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/theme.js"></script>
+  <script src="js/config.js?v=2"></script>
+  <script src="js/i18n.js?v=2"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/search.js?v=2"></script>
+  <script src="js/weather.js?v=4"></script>
+  <script src="js/countries.js?v=2"></script>
+  <script src="js/language.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initLanguage();
+
+      const mobileBtn = document.getElementById('mobileMenuToggle');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+      if (mobileBtn && mobileDrawer) {
+        mobileBtn.addEventListener('click', () => mobileDrawer.classList.toggle('is-open'));
+      }
+
+      initSearch('#citySearchInput', '#searchDropdown');
+
+      const cityInfo = {
+        slug: 'sialkot',
+        name: 'Sialkot',
+        country: 'Pakistan',
+        region: 'Punjab',
+        lat: 32.4945,
+        lon: 74.5229
+      };
+
+      const weatherContainer = document.getElementById('weatherCardContainer');
+      const forecastContainer = document.getElementById('forecastContainer');
+      const aqiContainer = document.getElementById('aqiContainer');
+
+      API.getWeather(cityInfo.lat, cityInfo.lon)
+        .then(data => {
+          if (!data) throw new Error('No weather data returned');
+          const parsed = Weather.parseWeatherData(data);
+          Weather.renderHeroCard(weatherContainer, cityInfo, parsed);
+          Weather.render7DayRow(forecastContainer, parsed.daily);
+        })
+        .catch(err => {
+          console.error('Weather load error:', err);
+          if (weatherContainer) {
+            Weather.renderError(weatherContainer, "Weather data could not be loaded, please try again");
+          }
+        });
+
+      API.getAqi(cityInfo.lat, cityInfo.lon)
+        .then(aqiData => {
+          Weather.renderAqiBlock(aqiContainer, aqiData);
+        })
+        .catch(() => {
+          if (aqiContainer) aqiContainer.style.display = 'none';
+        });
+    });
+  </script>
+</body>
+</html>

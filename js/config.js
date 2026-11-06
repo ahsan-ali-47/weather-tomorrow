@@ -214,6 +214,16 @@ const CONFIG = {
         { slug: "islamabad", name: "Islamabad", lat: 33.6844, lon: 73.0479, region: "Federal Capital", elevation: "540 m" },
         { slug: "rawalpindi", name: "Rawalpindi", lat: 33.5651, lon: 73.0169, region: "Punjab", elevation: "508 m" },
         { slug: "multan", name: "Multan", lat: 30.1575, lon: 71.5249, region: "Punjab", elevation: "122 m" }
+        { slug: "faisalabad", name: "Faisalabad", lat: 31.4504, lon: 73.135, region: "Punjab", elevation: "183 m" },
+        { slug: "peshawar", name: "Peshawar", lat: 34.0151, lon: 71.5249, region: "Khyber Pakhtunkhwa", elevation: "331 m" },
+        { slug: "quetta", name: "Quetta", lat: 30.1798, lon: 66.975, region: "Balochistan", elevation: "1,680 m" },
+        { slug: "gujrat", name: "Gujrat", lat: 32.5736, lon: 74.1005, region: "Punjab", elevation: "233 m" },
+        { slug: "sialkot", name: "Sialkot", lat: 32.4945, lon: 74.5229, region: "Punjab", elevation: "256 m" },
+        { slug: "hyderabad", name: "Hyderabad", lat: 25.396, lon: 68.3578, region: "Sindh", elevation: "13 m" },
+        { slug: "bahawalpur", name: "Bahawalpur", lat: 29.3956, lon: 71.6722, region: "Punjab", elevation: "117 m" },
+        { slug: "sargodha", name: "Sargodha", lat: 32.0836, lon: 72.6711, region: "Punjab", elevation: "189 m" },
+        { slug: "murree", name: "Murree", lat: 33.9047, lon: 73.3919, region: "Punjab", elevation: "2,291 m" },
+        { slug: "mardan", name: "Mardan", lat: 34.1986, lon: 72.0231, region: "Khyber Pakhtunkhwa", elevation: "311 m" },
       ]
     },
     {
@@ -269,6 +279,16 @@ const CONFIG = {
     { slug: "islamabad", name: "Islamabad", country: "Pakistan", countryCode: "PK", lat: 33.6844, lon: 73.0479, region: "Federal Capital", elevation: "540 m" },
     { slug: "rawalpindi", name: "Rawalpindi", country: "Pakistan", countryCode: "PK", lat: 33.5651, lon: 73.0169, region: "Punjab", elevation: "508 m" },
     { slug: "multan", name: "Multan", country: "Pakistan", countryCode: "PK", lat: 30.1575, lon: 71.5249, region: "Punjab", elevation: "122 m" }
+    { slug: "faisalabad", name: "Faisalabad", country: "Pakistan", countryCode: "PK", lat: 31.4504, lon: 73.135, region: "Punjab", elevation: "183 m" },
+    { slug: "peshawar", name: "Peshawar", country: "Pakistan", countryCode: "PK", lat: 34.0151, lon: 71.5249, region: "Khyber Pakhtunkhwa", elevation: "331 m" },
+    { slug: "quetta", name: "Quetta", country: "Pakistan", countryCode: "PK", lat: 30.1798, lon: 66.975, region: "Balochistan", elevation: "1,680 m" },
+    { slug: "gujrat", name: "Gujrat", country: "Pakistan", countryCode: "PK", lat: 32.5736, lon: 74.1005, region: "Punjab", elevation: "233 m" },
+    { slug: "sialkot", name: "Sialkot", country: "Pakistan", countryCode: "PK", lat: 32.4945, lon: 74.5229, region: "Punjab", elevation: "256 m" },
+    { slug: "hyderabad", name: "Hyderabad", country: "Pakistan", countryCode: "PK", lat: 25.396, lon: 68.3578, region: "Sindh", elevation: "13 m" },
+    { slug: "bahawalpur", name: "Bahawalpur", country: "Pakistan", countryCode: "PK", lat: 29.3956, lon: 71.6722, region: "Punjab", elevation: "117 m" },
+    { slug: "sargodha", name: "Sargodha", country: "Pakistan", countryCode: "PK", lat: 32.0836, lon: 72.6711, region: "Punjab", elevation: "189 m" },
+    { slug: "murree", name: "Murree", country: "Pakistan", countryCode: "PK", lat: 33.9047, lon: 73.3919, region: "Punjab", elevation: "2,291 m" },
+    { slug: "mardan", name: "Mardan", country: "Pakistan", countryCode: "PK", lat: 34.1986, lon: 72.0231, region: "Khyber Pakhtunkhwa", elevation: "311 m" },
   ]
 };
 
