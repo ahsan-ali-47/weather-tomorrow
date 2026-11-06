@@ -2374,6 +2374,24 @@ body {
 [data-theme="dark"] .page-banner.banner-10day {
   background: url('../images/banner-10day-dark.jpg') no-repeat center / cover;
 }
+[data-theme="light"] .page-banner.banner-hourly {
+  background: url('../images/banner-hourly-light.jpg') no-repeat center / cover;
+}
+[data-theme="light"] .page-banner.banner-aqi {
+  background: url('../images/banner-aqi-light.jpg') no-repeat center / cover;
+}
+[data-theme="light"] .page-banner.banner-about {
+  background: url('../images/about-globe.jpg') no-repeat center / cover;
+}
+[data-theme="dark"] .page-banner.banner-hourly {
+  background: url('../images/banner-hourly-dark.jpg') no-repeat center / cover;
+}
+[data-theme="dark"] .page-banner.banner-aqi {
+  background: url('../images/banner-aqi-dark.jpg') no-repeat center / cover;
+}
+[data-theme="dark"] .page-banner.banner-about {
+  background: url('../images/hero-globe-dark.jpg') no-repeat center / cover;
+}
 [data-theme="dark"] .page-banner::before {
   content: "";
   position: absolute;
