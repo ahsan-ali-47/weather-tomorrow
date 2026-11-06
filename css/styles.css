@@ -2201,7 +2201,21 @@ body {
   z-index: 1;
 }
 [data-theme="dark"] .hero-section {
-  background: url('../images/about-globe.jpg') no-repeat right 20% center / 720px auto, linear-gradient(120deg, #081226 0%, #0C2247 55%, #123058 100%);
+  background: linear-gradient(120deg, #081226 0%, #0C2247 55%, #123058 100%);
+}
+/* Globe visual on dark hero: faded into the navy background so it has
+   no hard rectangular edges and its bright sky is dimmed to match. */
+[data-theme="dark"] .hero-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(8, 18, 38, 0.3) 0%, rgba(8, 18, 38, 0.5) 100%),
+    url('../images/about-globe.jpg') no-repeat right 8% center / 640px auto;
+  -webkit-mask-image: radial-gradient(ellipse 72% 85% at 72% 50%, #000 42%, transparent 76%);
+  mask-image: radial-gradient(ellipse 72% 85% at 72% 50%, #000 42%, transparent 76%);
+  pointer-events: none;
 }
 .hero-title {
   color: var(--hero-title-color);
@@ -2460,8 +2474,8 @@ body {
     padding-top: 48px;
     padding-bottom: 48px;
   }
-  [data-theme="dark"] .hero-section {
-    background-size: 560px auto;
+  [data-theme="dark"] .hero-section::after {
+    background-size: auto, 520px auto;
   }
 }
 @media (max-width: 640px) {
@@ -2479,9 +2493,9 @@ body {
     padding-top: 36px;
     padding-bottom: 36px;
   }
-  [data-theme="dark"] .hero-section {
-    background-size: 420px auto;
-    background-position: right -60px center;
+  [data-theme="dark"] .hero-section::after {
+    background-size: auto, 380px auto;
+    background-position: center, right -40px center;
   }
   .hero-title {
     font-size: 30px;
