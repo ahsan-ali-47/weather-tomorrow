@@ -39,7 +39,7 @@
         "description": "Accurate, real-time world weather information, hourly observations, 10-day forecasts, and air quality telemetry powered by MET Norway.",
         "potentialAction": {
           "@type": "SearchAction",
-          "target": "https://www.weathertomorrow.website/city.html?name={search_term_string}",
+          "target": "https://www.weathertomorrow.website/city?name={search_term_string}",
           "query-input": "required name=search_term_string"
         }
       },
@@ -88,7 +88,7 @@
   <!-- Site Header -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="brand" aria-label="Weather Tomorrow Home">
+      <a href="index" class="brand" aria-label="Weather Tomorrow Home">
         <div class="brand-icon">
           <img src="images/logo.png" alt="Weather Tomorrow logo" width="34" height="34">
         </div>
@@ -96,12 +96,12 @@
       </a>
 
       <nav class="main-nav" aria-label="Main Navigation">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="countries.html" class="nav-link">Countries</a>
-        <a href="forecast-10day.html" class="nav-link">10-Day</a>
-        <a href="hourly.html" class="nav-link">Hourly</a>
-        <a href="aqi.html" class="nav-link">AQI/Smog</a>
-        <a href="about.html" class="nav-link">About</a>
+        <a href="index" class="nav-link active">Home</a>
+        <a href="countries" class="nav-link">Countries</a>
+        <a href="forecast-10day" class="nav-link">10-Day</a>
+        <a href="hourly" class="nav-link">Hourly</a>
+        <a href="aqi" class="nav-link">AQI/Smog</a>
+        <a href="about" class="nav-link">About</a>
       </nav>
 
       <div class="header-actions">
@@ -129,12 +129,12 @@
 
     <!-- Mobile Drawer -->
     <div id="mobileDrawer" class="mobile-drawer" role="menu">
-      <a href="index.html" class="mobile-nav-link">Home</a>
-      <a href="countries.html" class="mobile-nav-link">Countries</a>
-      <a href="forecast-10day.html" class="mobile-nav-link">10-Day</a>
-      <a href="hourly.html" class="mobile-nav-link">Hourly</a>
-      <a href="aqi.html" class="mobile-nav-link">AQI/Smog</a>
-      <a href="about.html" class="mobile-nav-link">About</a>
+      <a href="index" class="mobile-nav-link">Home</a>
+      <a href="countries" class="mobile-nav-link">Countries</a>
+      <a href="forecast-10day" class="mobile-nav-link">10-Day</a>
+      <a href="hourly" class="mobile-nav-link">Hourly</a>
+      <a href="aqi" class="mobile-nav-link">AQI/Smog</a>
+      <a href="about" class="mobile-nav-link">About</a>
     </div>
 
 
@@ -181,13 +181,13 @@
       <div class="hero-trending-tags">
         <span class="hero-trending-label">Popular Worldwide:</span>
         <div class="hero-tag-pills">
-          <a href="london.html" class="hero-tag-chip">London</a>
-          <a href="new-york.html" class="hero-tag-chip">New York</a>
-          <a href="tokyo.html" class="hero-tag-chip">Tokyo</a>
-          <a href="paris.html" class="hero-tag-chip">Paris</a>
-          <a href="dubai.html" class="hero-tag-chip">Dubai</a>
-          <a href="sydney.html" class="hero-tag-chip">Sydney</a>
-          <a href="karachi.html" class="hero-tag-chip">Karachi</a>
+          <a href="london" class="hero-tag-chip">London</a>
+          <a href="new-york" class="hero-tag-chip">New York</a>
+          <a href="tokyo" class="hero-tag-chip">Tokyo</a>
+          <a href="paris" class="hero-tag-chip">Paris</a>
+          <a href="dubai" class="hero-tag-chip">Dubai</a>
+          <a href="sydney" class="hero-tag-chip">Sydney</a>
+          <a href="karachi" class="hero-tag-chip">Karachi</a>
         </div>
       </div>
     </div>
@@ -234,14 +234,14 @@
         <div>
           <h2 class="section-title">Explore popular cities</h2>
         </div>
-        <a href="countries.html" class="section-link">More Cities &rarr;</a>
+        <a href="countries" class="section-link">More Cities &rarr;</a>
       </div>
       <div class="popular-cities-row">
-        <a href="london.html" class="popular-city-card"><img src="images/countries/gb.jpg" alt="London weather" loading="lazy"><span class="popular-city-name">London</span></a>
-        <a href="tokyo.html" class="popular-city-card"><img src="images/countries/jp.jpg" alt="Tokyo weather" loading="lazy"><span class="popular-city-name">Tokyo</span></a>
-        <a href="dubai.html" class="popular-city-card"><img src="images/countries/ae.jpg" alt="Dubai weather" loading="lazy"><span class="popular-city-name">Dubai</span></a>
-        <a href="karachi.html" class="popular-city-card"><img src="images/karachi.jpg" alt="Karachi weather" loading="lazy"><span class="popular-city-name">Karachi</span></a>
-        <a href="paris.html" class="popular-city-card"><img src="images/countries/fr.jpg" alt="Paris weather" loading="lazy"><span class="popular-city-name">Paris</span></a>
+        <a href="london" class="popular-city-card"><img src="images/countries/gb.jpg" alt="London weather" loading="lazy"><span class="popular-city-name">London</span></a>
+        <a href="tokyo" class="popular-city-card"><img src="images/countries/jp.jpg" alt="Tokyo weather" loading="lazy"><span class="popular-city-name">Tokyo</span></a>
+        <a href="dubai" class="popular-city-card"><img src="images/countries/ae.jpg" alt="Dubai weather" loading="lazy"><span class="popular-city-name">Dubai</span></a>
+        <a href="karachi" class="popular-city-card"><img src="images/karachi.jpg" alt="Karachi weather" loading="lazy"><span class="popular-city-name">Karachi</span></a>
+        <a href="paris" class="popular-city-card"><img src="images/countries/fr.jpg" alt="Paris weather" loading="lazy"><span class="popular-city-name">Paris</span></a>
       </div>
     </section>
 
@@ -298,7 +298,7 @@
           <h2 class="section-title">Explore Weather by Country</h2>
           <p class="section-subtitle">Live forecasts and multi-day projections for major global economic and cultural centers</p>
         </div>
-        <a href="countries.html" class="section-link">View All Countries →</a>
+        <a href="countries" class="section-link">View All Countries →</a>
       </div>
 
       <div class="cities-grid" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px;">
@@ -312,9 +312,9 @@
             <div class="country-card-name">United Kingdom</div>
             <div class="country-card-meta">Europe • Capital: London</div>
             <div class="country-chips-list">
-              <a href="london.html" class="country-city-chip">London</a>
-              <a href="city.html?name=Manchester&lat=53.4808&lon=-2.2426&country=United+Kingdom" class="country-city-chip">Manchester</a>
-              <a href="city.html?name=Edinburgh&lat=55.9533&lon=-3.1883&country=United+Kingdom" class="country-city-chip">Edinburgh</a>
+              <a href="london" class="country-city-chip">London</a>
+              <a href="city?name=Manchester&lat=53.4808&lon=-2.2426&country=United+Kingdom" class="country-city-chip">Manchester</a>
+              <a href="city?name=Edinburgh&lat=55.9533&lon=-3.1883&country=United+Kingdom" class="country-city-chip">Edinburgh</a>
             </div>
           </div>
         </article>
@@ -329,9 +329,9 @@
             <div class="country-card-name">United States</div>
             <div class="country-card-meta">Americas • Capital: Washington, D.C.</div>
             <div class="country-chips-list">
-              <a href="new-york.html" class="country-city-chip">New York</a>
-              <a href="city.html?name=Los+Angeles&lat=34.0522&lon=-118.2437&country=United+States" class="country-city-chip">Los Angeles</a>
-              <a href="city.html?name=Chicago&lat=41.8781&lon=-87.6298&country=United+States" class="country-city-chip">Chicago</a>
+              <a href="new-york" class="country-city-chip">New York</a>
+              <a href="city?name=Los+Angeles&lat=34.0522&lon=-118.2437&country=United+States" class="country-city-chip">Los Angeles</a>
+              <a href="city?name=Chicago&lat=41.8781&lon=-87.6298&country=United+States" class="country-city-chip">Chicago</a>
             </div>
           </div>
         </article>
@@ -346,9 +346,9 @@
             <div class="country-card-name">Japan</div>
             <div class="country-card-meta">Asia • Capital: Tokyo</div>
             <div class="country-chips-list">
-              <a href="tokyo.html" class="country-city-chip">Tokyo</a>
-              <a href="city.html?name=Osaka&lat=34.6937&lon=135.5023&country=Japan" class="country-city-chip">Osaka</a>
-              <a href="city.html?name=Kyoto&lat=35.0116&lon=135.7681&country=Japan" class="country-city-chip">Kyoto</a>
+              <a href="tokyo" class="country-city-chip">Tokyo</a>
+              <a href="city?name=Osaka&lat=34.6937&lon=135.5023&country=Japan" class="country-city-chip">Osaka</a>
+              <a href="city?name=Kyoto&lat=35.0116&lon=135.7681&country=Japan" class="country-city-chip">Kyoto</a>
             </div>
           </div>
         </article>
@@ -363,9 +363,9 @@
             <div class="country-card-name">France</div>
             <div class="country-card-meta">Europe • Capital: Paris</div>
             <div class="country-chips-list">
-              <a href="paris.html" class="country-city-chip">Paris</a>
-              <a href="city.html?name=Marseille&lat=43.2965&lon=5.3698&country=France" class="country-city-chip">Marseille</a>
-              <a href="city.html?name=Lyon&lat=45.7640&lon=4.8357&country=France" class="country-city-chip">Lyon</a>
+              <a href="paris" class="country-city-chip">Paris</a>
+              <a href="city?name=Marseille&lat=43.2965&lon=5.3698&country=France" class="country-city-chip">Marseille</a>
+              <a href="city?name=Lyon&lat=45.7640&lon=4.8357&country=France" class="country-city-chip">Lyon</a>
             </div>
           </div>
         </article>
@@ -380,8 +380,8 @@
             <div class="country-card-name">United Arab Emirates</div>
             <div class="country-card-meta">Middle East • Capital: Abu Dhabi</div>
             <div class="country-chips-list">
-              <a href="dubai.html" class="country-city-chip">Dubai</a>
-              <a href="city.html?name=Abu+Dhabi&lat=24.4539&lon=54.3773&country=United+Arab+Emirates" class="country-city-chip">Abu Dhabi</a>
+              <a href="dubai" class="country-city-chip">Dubai</a>
+              <a href="city?name=Abu+Dhabi&lat=24.4539&lon=54.3773&country=United+Arab+Emirates" class="country-city-chip">Abu Dhabi</a>
             </div>
           </div>
         </article>
@@ -396,8 +396,8 @@
             <div class="country-card-name">Germany</div>
             <div class="country-card-meta">Europe • Capital: Berlin</div>
             <div class="country-chips-list">
-              <a href="berlin.html" class="country-city-chip">Berlin</a>
-              <a href="city.html?name=Munich&lat=48.1351&lon=11.5820&country=Germany" class="country-city-chip">Munich</a>
+              <a href="berlin" class="country-city-chip">Berlin</a>
+              <a href="city?name=Munich&lat=48.1351&lon=11.5820&country=Germany" class="country-city-chip">Munich</a>
             </div>
           </div>
         </article>
@@ -412,8 +412,8 @@
             <div class="country-card-name">Australia</div>
             <div class="country-card-meta">Oceania • Capital: Canberra</div>
             <div class="country-chips-list">
-              <a href="sydney.html" class="country-city-chip">Sydney</a>
-              <a href="city.html?name=Melbourne&lat=-37.8136&lon=144.9631&country=Australia" class="country-city-chip">Melbourne</a>
+              <a href="sydney" class="country-city-chip">Sydney</a>
+              <a href="city?name=Melbourne&lat=-37.8136&lon=144.9631&country=Australia" class="country-city-chip">Melbourne</a>
             </div>
           </div>
         </article>
@@ -428,8 +428,8 @@
             <div class="country-card-name">Canada</div>
             <div class="country-card-meta">Americas • Capital: Ottawa</div>
             <div class="country-chips-list">
-              <a href="toronto.html" class="country-city-chip">Toronto</a>
-              <a href="city.html?name=Vancouver&lat=49.2827&lon=-123.1207&country=Canada" class="country-city-chip">Vancouver</a>
+              <a href="toronto" class="country-city-chip">Toronto</a>
+              <a href="city?name=Vancouver&lat=49.2827&lon=-123.1207&country=Canada" class="country-city-chip">Vancouver</a>
             </div>
           </div>
         </article>
@@ -444,10 +444,10 @@
             <div class="country-card-name">Pakistan</div>
             <div class="country-card-meta">Asia • Capital: Islamabad</div>
             <div class="country-chips-list">
-              <a href="karachi.html" class="country-city-chip">Karachi</a>
-              <a href="lahore.html" class="country-city-chip">Lahore</a>
-              <a href="islamabad.html" class="country-city-chip">Islamabad</a>
-              <a href="multan.html" class="country-city-chip">Multan</a>
+              <a href="karachi" class="country-city-chip">Karachi</a>
+              <a href="lahore" class="country-city-chip">Lahore</a>
+              <a href="islamabad" class="country-city-chip">Islamabad</a>
+              <a href="multan" class="country-city-chip">Multan</a>
             </div>
           </div>
         </article>
@@ -525,20 +525,20 @@
         <div>
           <h4 class="footer-col-title">Navigation</h4>
           <ul class="footer-links">
-            <li><a href="index.html" class="footer-link">Home</a></li>
-            <li><a href="countries.html" class="footer-link">Countries</a></li>
-            <li><a href="forecast-10day.html" class="footer-link">10-Day Forecast</a></li>
-            <li><a href="hourly.html" class="footer-link">Hourly Forecast</a></li>
-            <li><a href="aqi.html" class="footer-link">AQI &amp; Smog</a></li>
+            <li><a href="index" class="footer-link">Home</a></li>
+            <li><a href="countries" class="footer-link">Countries</a></li>
+            <li><a href="forecast-10day" class="footer-link">10-Day Forecast</a></li>
+            <li><a href="hourly" class="footer-link">Hourly Forecast</a></li>
+            <li><a href="aqi" class="footer-link">AQI &amp; Smog</a></li>
           </ul>
         </div>
 
         <div>
           <h4 class="footer-col-title">Company</h4>
           <ul class="footer-links">
-            <li><a href="about.html" class="footer-link">About Us</a></li>
-            <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
-            <li><a href="terms.html" class="footer-link">Terms of Service</a></li>
+            <li><a href="about" class="footer-link">About Us</a></li>
+            <li><a href="privacy" class="footer-link">Privacy Policy</a></li>
+            <li><a href="terms" class="footer-link">Terms of Service</a></li>
           </ul>
         </div>
 
@@ -567,9 +567,9 @@
   <script src="js/i18n.js?v=2"></script>
   <script src="js/ui.js"></script>
   <script src="js/api.js"></script>
-  <script src="js/search.js"></script>
-  <script src="js/weather.js?v=3"></script>
-  <script src="js/countries.js"></script>
+  <script src="js/search.js?v=2"></script>
+  <script src="js/weather.js?v=4"></script>
+  <script src="js/countries.js?v=2"></script>
   <script src="js/language.js"></script>
 
   <script>

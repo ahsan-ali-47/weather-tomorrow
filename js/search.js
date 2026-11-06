@@ -184,7 +184,7 @@ function initSearch(inputSelector, dropdownSelector, onSelect) {
       : null;
 
     if (matched) {
-      window.location.href = `${matched.slug}.html`;
+      window.location.href = `${matched.slug}`;
     } else {
       const q = new URLSearchParams({
         name: place.name || place.city,
@@ -193,7 +193,7 @@ function initSearch(inputSelector, dropdownSelector, onSelect) {
         country: place.country || '',
         state: place.state || place.region || ''
       });
-      window.location.href = `city.html?${q.toString()}`;
+      window.location.href = `city?${q.toString()}`;
     }
   }
 

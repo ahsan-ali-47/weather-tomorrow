@@ -228,7 +228,7 @@ const WeatherRenderer = {
               <span class="strip-icon">${(typeof UI !== 'undefined' && UI.svg) ? UI.svg.chart : ''}</span>
               <span>${forecast7DaysLabel}</span>
             </div>
-            <a href="forecast-10day.html" class="strip-link">${viewAllLabel}</a>
+            <a href="forecast-10day" class="strip-link">${viewAllLabel}</a>
           </div>
 
           <div class="forecast-cards-row">
@@ -266,7 +266,7 @@ const WeatherRenderer = {
             <span style="color: var(--primary); display: inline-flex;">${(typeof UI !== 'undefined' && UI.svg && UI.svg.chart) ? UI.svg.chart : ''}</span>
             <span>7-Day Weather Forecast</span>
           </h2>
-          <a href="forecast-10day.html" style="color: var(--primary); font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">View 10-Day Details &rarr;</a>
+          <a href="forecast-10day" style="color: var(--primary); font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">View 10-Day Details &rarr;</a>
         </div>
         <div class="forecast-cards-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px;">
           ${days.map(d => {
@@ -356,7 +356,7 @@ const WeatherRenderer = {
   },
 
   // Render full 10-day forecast grid (SVG icons).
-  // NOTE: the summary tiles live in forecast-10day.html as static markup
+  // NOTE: the summary tiles live in forecast-10day as static markup
   // (Max/Min/Avg Humidity + Total Rain) — do NOT add them here (duplicates).
   render10DayGrid(container, dailyList) {
     if (!container || !dailyList) return;

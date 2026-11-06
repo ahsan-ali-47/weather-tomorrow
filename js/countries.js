@@ -169,9 +169,9 @@ const CountryNav = {
     // Otherwise navigate to city weather
     const isPrebuilt = (CONFIG.FEATURED_CITIES || []).some(fc => fc.slug === firstCity.slug);
     if (isPrebuilt && firstCity.slug) {
-      window.location.href = `${firstCity.slug}.html`;
+      window.location.href = `${firstCity.slug}`;
     } else {
-      window.location.href = `city.html?name=${encodeURIComponent(firstCity.name)}&lat=${firstCity.lat}&lon=${firstCity.lon}&country=${encodeURIComponent(countryObj.name)}`;
+      window.location.href = `city?name=${encodeURIComponent(firstCity.name)}&lat=${firstCity.lat}&lon=${firstCity.lon}&country=${encodeURIComponent(countryObj.name)}`;
     }
   },
 
