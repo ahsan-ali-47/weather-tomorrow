@@ -1,7 +1,7 @@
 /* Weather Tomorrow service worker — caches the app shell so the site
    works offline and can be installed. Live weather data is NEVER cached:
    all /api/* requests always go to the network. */
-const CACHE_NAME = 'weather-tomorrow-v1';
+const CACHE_NAME = 'weather-tomorrow-v2';
 
 const APP_SHELL = [
   '/',
