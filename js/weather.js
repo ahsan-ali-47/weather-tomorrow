@@ -291,9 +291,10 @@ const WeatherRenderer = {
   },
 
   // Render hourly forecast cards (SVG icons) + temperature curve (real temps)
-  renderHourlyStrip(container, hourlyList) {
-    if (!container || !hourlyList) return;
-    const hours = hourlyList.slice(0, 24);
+  // Build the 24-hour temperature-curve SVG (real temps only, no fake data)
+  buildHourlyCurveSvg(hourlyList) {
+    const hours = (hourlyList || []).slice(0, 24);
+    if (!hours.length) return '';
     const temps = hours.map(h => h.temp);
     const tMin = Math.min.apply(null, temps);
     const tMax = Math.max.apply(null, temps);
@@ -306,11 +307,30 @@ const WeatherRenderer = {
     });
     const line = pts.map(p => p.join(',')).join(' ');
     const area = PAD + ',' + (H - PAD) + ' ' + line + ' ' + (W - PAD) + ',' + (H - PAD);
-    const curveSvg = '<svg viewBox="0 0 ' + W + ' ' + H + '" style="width: 100%; height: auto; display: block;" role="img" aria-label="Temperature curve">' +
+    return '<svg viewBox="0 0 ' + W + ' ' + H + '" style="width: 100%; height: auto; display: block;" role="img" aria-label="Temperature curve">' +
       '<polygon points="' + area + '" style="fill: rgba(56,189,248,0.15);" />' +
       '<polyline points="' + line + '" fill="none" style="stroke: var(--accent-sky); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round;" />' +
       pts.map((p, i) => '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="3.5" style="fill: var(--accent-sky);" /><text x="' + p[0] + '" y="' + (p[1] - 9) + '" text-anchor="middle" style="font-size: 11px; font-weight: 700; fill: var(--text-main);">' + temps[i] + '°</text>').join('') +
       '</svg>';
+  },
+
+  // Curve-only render: hourly.html builds its own cards inline, so it calls
+  // this to draw just the curve above them (into #hourlyCurveContainer).
+  renderHourlyCurve(container, hourlyList) {
+    if (!container) return;
+    const svg = this.buildHourlyCurveSvg(hourlyList);
+    if (!svg) { container.innerHTML = ''; return; }
+    container.innerHTML = `
+      <div class="hourly-curve" style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--card-radius); padding: 20px 16px 8px; margin-bottom: 16px; box-shadow: var(--shadow-sm);">
+        <h3 style="font-size: 16px; font-weight: 700; color: var(--text-main); margin: 0 0 8px 0;">Temperature curve — next 24 hours</h3>
+        ${svg}
+      </div>`;
+  },
+
+  renderHourlyStrip(container, hourlyList) {
+    if (!container || !hourlyList) return;
+    const hours = hourlyList.slice(0, 24);
+    const curveSvg = this.buildHourlyCurveSvg(hours);
 
     container.innerHTML = `
       <div class="hourly-curve" style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--card-radius); padding: 20px 16px 8px; margin-bottom: 16px; box-shadow: var(--shadow-sm);">

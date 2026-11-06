@@ -204,6 +204,7 @@
         <h2 class="section-title">24-Hour Detailed Breakdown</h2>
         <span style="font-size: 13px; color: var(--text-muted);">Real-Time MET Norway Data</span>
       </div>
+      <div id="hourlyCurveContainer"></div>
       <div id="hourlyTimelineContainer" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px;">
         <div style="padding: 30px; text-align: center; color: var(--text-muted); grid-column: 1 / -1;">
           Loading hourly timetable...
@@ -341,7 +342,7 @@
   <script src="js/ui.js"></script>
   <script src="js/api.js"></script>
   <script src="js/search.js"></script>
-  <script src="js/weather.js?v=2"></script>
+  <script src="js/weather.js?v=3"></script>
   <script src="js/countries.js"></script>
   <script src="js/language.js"></script>
 
@@ -379,6 +380,7 @@
           .then(data => {
             const parsed = WeatherRenderer.parseForecast(data);
             const hours = parsed.hourly.slice(0, 24);
+            WeatherRenderer.renderHourlyCurve(document.getElementById('hourlyCurveContainer'), hours);
 
             container.innerHTML = hours.map(h => {
               const timeLabel = UI.formatHourLabel(h.time);
