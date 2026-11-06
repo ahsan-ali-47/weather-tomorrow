@@ -221,6 +221,13 @@
           <div id="summaryAvgHumidity" style="font-size: 20px; font-weight: 800; color: var(--text-main);">--%</div>
         </div>
       </div>
+      <div class="badge-card">
+        <div class="badge-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"></path><line x1="8" y1="16" x2="8" y2="20"></line><line x1="12" y1="16" x2="12" y2="20"></line><line x1="16" y1="16" x2="16" y2="20"></line></svg></div>
+        <div>
+          <div style="font-size: 12px; color: var(--text-muted); font-weight: 600;">Total Rain (10-Day)</div>
+          <div id="summaryTotalRain" style="font-size: 20px; font-weight: 800; color: var(--text-main);">-- mm</div>
+        </div>
+      </div>
     </div>
 
     <!-- 10-Day Forecast Grid -->
@@ -343,7 +350,7 @@
   <script src="js/ui.js"></script>
   <script src="js/api.js"></script>
   <script src="js/search.js"></script>
-  <script src="js/weather.js"></script>
+  <script src="js/weather.js?v=2"></script>
   <script src="js/countries.js"></script>
   <script src="js/language.js"></script>
 
@@ -389,10 +396,12 @@
               const max = Math.max(...parsed.daily.map(d => d.maxTemp));
               const min = Math.min(...parsed.daily.map(d => d.minTemp));
               const avgH = Math.round(parsed.daily.reduce((a, b) => a + b.avgHumidity, 0) / parsed.daily.length);
+              const totalRain = Math.round(parsed.daily.reduce((a, b) => a + (b.precipitation || 0), 0) * 10) / 10;
 
               document.getElementById('summaryMaxTemp').textContent = `${max}°C`;
               document.getElementById('summaryMinTemp').textContent = `${min}°C`;
               document.getElementById('summaryAvgHumidity').textContent = `${avgH}%`;
+              document.getElementById('summaryTotalRain').textContent = `${totalRain} mm`;
             }
           })
           .catch(err => {

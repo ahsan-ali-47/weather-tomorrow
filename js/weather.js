@@ -335,22 +335,13 @@ const WeatherRenderer = {
     `;
   },
 
-  // Render full 10-day forecast grid (SVG icons) + summary tiles (real data only)
+  // Render full 10-day forecast grid (SVG icons).
+  // NOTE: the summary tiles live in forecast-10day.html as static markup
+  // (Max/Min/Avg Humidity + Total Rain) — do NOT add them here (duplicates).
   render10DayGrid(container, dailyList) {
     if (!container || !dailyList) return;
-    const n = dailyList.length || 1;
-    const avgHigh = Math.round(dailyList.reduce((s, d) => s + d.maxTemp, 0) / n);
-    const avgLow = Math.round(dailyList.reduce((s, d) => s + d.minTemp, 0) / n);
-    const totalRain = Math.round(dailyList.reduce((s, d) => s + (d.precipitation || 0), 0) * 10) / 10;
-    const avgHum = Math.round(dailyList.reduce((s, d) => s + (d.avgHumidity || 0), 0) / n);
 
     container.innerHTML = `
-      <div class="tenday-summary" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px;">
-        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 14px; text-align: center;"><span style="display: block; font-size: 12px; color: var(--text-muted);">Average High</span><span style="display: block; font-size: 20px; font-weight: 800; color: var(--text-main);">${avgHigh}°C</span></div>
-        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 14px; text-align: center;"><span style="display: block; font-size: 12px; color: var(--text-muted);">Average Low</span><span style="display: block; font-size: 20px; font-weight: 800; color: var(--text-main);">${avgLow}°C</span></div>
-        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 14px; text-align: center;"><span style="display: block; font-size: 12px; color: var(--text-muted);">Total Rain (10 days)</span><span style="display: block; font-size: 20px; font-weight: 800; color: var(--text-main);">${totalRain} mm</span></div>
-        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 14px; text-align: center;"><span style="display: block; font-size: 12px; color: var(--text-muted);">Average Humidity</span><span style="display: block; font-size: 20px; font-weight: 800; color: var(--text-main);">${avgHum}%</span></div>
-      </div>
       <div class="tenday-list">
         ${dailyList.map(d => {
           const dt = (typeof UI !== 'undefined' && UI.formatDayDate) ? UI.formatDayDate(d.time) : { day: d.date, date: '' };
