@@ -192,11 +192,17 @@ const WeatherRenderer = {
               <span class="temp-big">${current.temp}°C</span>
               <span class="cond-label">${condText}</span>
               <span class="feels-label">${feelsLikeLabel} ${current.feelsLike}°C</span>
+              <span class="feels-label">H: ${daily[0] ? daily[0].maxTemp : current.temp}° &nbsp;/&nbsp; L: ${daily[0] ? daily[0].minTemp : current.temp}°</span>
             </div>
           </div>
 
-          <!-- 6 Metrics Grid with SVG vector icons -->
+          <!-- 4 Metrics Grid (reference design: Feels like, Humidity, Wind, UV Index) -->
           <div class="metrics-grid">
+            <div class="metric-item">
+              <span class="metric-icon">${(typeof UI !== 'undefined' && UI.svg) ? UI.svg.thermometer : ''}</span>
+              <span class="metric-label">${feelsLikeLabel}</span>
+              <span class="metric-val">${current.feelsLike}°C</span>
+            </div>
             <div class="metric-item">
               <span class="metric-icon">${(typeof UI !== 'undefined' && UI.svg) ? UI.svg.humidity : ''}</span>
               <span class="metric-label">${humidityLabel}</span>
@@ -206,21 +212,6 @@ const WeatherRenderer = {
               <span class="metric-icon">${(typeof UI !== 'undefined' && UI.svg) ? UI.svg.wind : ''}</span>
               <span class="metric-label">${windSpeedLabel}</span>
               <span class="metric-val">${current.windSpeedKmh} km/h</span>
-            </div>
-            <div class="metric-item">
-              <span class="metric-icon">${(typeof UI !== 'undefined' && UI.svg) ? UI.svg.compass : ''}</span>
-              <span class="metric-label">${windDirLabel}</span>
-              <span class="metric-val">${current.windDir}</span>
-            </div>
-            <div class="metric-item">
-              <span class="metric-icon">${(typeof UI !== 'undefined' && UI.svg) ? UI.svg.pressure : ''}</span>
-              <span class="metric-label">${pressureLabel}</span>
-              <span class="metric-val">${current.pressure} hPa</span>
-            </div>
-            <div class="metric-item">
-              <span class="metric-icon">${(typeof UI !== 'undefined' && UI.svg) ? UI.svg.visibility : ''}</span>
-              <span class="metric-label">${visibilityLabel}</span>
-              <span class="metric-val">${current.visibilityKm} km</span>
             </div>
             <div class="metric-item">
               <span class="metric-icon">${(typeof UI !== 'undefined' && UI.svg) ? UI.svg.uv : ''}</span>
@@ -253,6 +244,7 @@ const WeatherRenderer = {
                   <div class="day-icon">${dayIcon}</div>
                   <span class="day-temps">${d.maxTemp}° / ${d.minTemp}°</span>
                   <span class="day-cond">${dayText}</span>
+                  <span class="day-rain"><span class="inline-svg-tiny">${(typeof UI !== 'undefined' && UI.svg) ? UI.svg.humidity : ''}</span> ${d.precipitation} mm</span>
                 </div>
               `;
             }).join('')}
@@ -283,12 +275,13 @@ const WeatherRenderer = {
             const dayCond = (typeof I18N !== 'undefined' && I18N.getCondition) ? I18N.getCondition(d.symbolCode) : { en: d.symbolCode, ur: '' };
             const dayText = (typeof I18N !== 'undefined' && I18N.currentLang === 'ur') ? dayCond.ur : dayCond.en;
             return `
-              <div class="day-col-card" style="background: #F8FAFC; border: 1px solid var(--border-color); border-radius: 12px; padding: 16px 10px; text-align: center;">
+              <div class="day-col-card" style="background: var(--card-bg-soft); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px 10px; text-align: center;">
                 <span class="day-name" style="font-size: 14px; font-weight: 700; color: var(--text-main); display: block;">${dt.day}</span>
                 <span class="day-date" style="font-size: 12px; color: var(--text-muted); display: block; margin-bottom: 8px;">${dt.date}</span>
                 <div class="day-icon" style="width: 36px; height: 36px; margin: 0 auto 8px;">${dayIcon}</div>
                 <span class="day-temps" style="font-size: 14px; font-weight: 700; color: var(--text-main); display: block;">${d.maxTemp}° / ${d.minTemp}°</span>
                 <span class="day-cond" style="font-size: 12px; color: var(--text-muted); display: block; margin-top: 4px;">${dayText}</span>
+                <span class="day-rain" style="font-size: 12px; color: var(--accent-sky); display: block; margin-top: 4px;"><span class="inline-svg-tiny">${(typeof UI !== 'undefined' && UI.svg) ? UI.svg.humidity : ''}</span> ${d.precipitation} mm</span>
               </div>
             `;
           }).join('')}
@@ -297,12 +290,33 @@ const WeatherRenderer = {
     `;
   },
 
-  // Render hourly forecast cards (SVG icons)
+  // Render hourly forecast cards (SVG icons) + temperature curve (real temps)
   renderHourlyStrip(container, hourlyList) {
     if (!container || !hourlyList) return;
     const hours = hourlyList.slice(0, 24);
+    const temps = hours.map(h => h.temp);
+    const tMin = Math.min.apply(null, temps);
+    const tMax = Math.max.apply(null, temps);
+    const tRange = (tMax - tMin) || 1;
+    const W = 720, H = 120, PAD = 28;
+    const pts = temps.map((tp, i) => {
+      const x = PAD + (i * (W - PAD * 2)) / Math.max(hours.length - 1, 1);
+      const y = H - PAD - ((tp - tMin) / tRange) * (H - PAD * 2);
+      return [Math.round(x * 10) / 10, Math.round(y * 10) / 10];
+    });
+    const line = pts.map(p => p.join(',')).join(' ');
+    const area = PAD + ',' + (H - PAD) + ' ' + line + ' ' + (W - PAD) + ',' + (H - PAD);
+    const curveSvg = '<svg viewBox="0 0 ' + W + ' ' + H + '" style="width: 100%; height: auto; display: block;" role="img" aria-label="Temperature curve">' +
+      '<polygon points="' + area + '" style="fill: rgba(56,189,248,0.15);" />' +
+      '<polyline points="' + line + '" fill="none" style="stroke: var(--accent-sky); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round;" />' +
+      pts.map((p, i) => '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="3.5" style="fill: var(--accent-sky);" /><text x="' + p[0] + '" y="' + (p[1] - 9) + '" text-anchor="middle" style="font-size: 11px; font-weight: 700; fill: var(--text-main);">' + temps[i] + '°</text>').join('') +
+      '</svg>';
 
     container.innerHTML = `
+      <div class="hourly-curve" style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--card-radius); padding: 20px 16px 8px; margin-bottom: 16px; box-shadow: var(--shadow-sm);">
+        <h3 style="font-size: 16px; font-weight: 700; color: var(--text-main); margin: 0 0 8px 0;">Temperature curve — next 24 hours</h3>
+        ${curveSvg}
+      </div>
       <div class="hourly-cards-scroll">
         ${hours.map(h => {
           const timeLabel = (typeof UI !== 'undefined' && UI.formatHourLabel) ? UI.formatHourLabel(h.time) : h.time;
@@ -321,11 +335,22 @@ const WeatherRenderer = {
     `;
   },
 
-  // Render full 10-day forecast grid (SVG icons)
+  // Render full 10-day forecast grid (SVG icons) + summary tiles (real data only)
   render10DayGrid(container, dailyList) {
     if (!container || !dailyList) return;
+    const n = dailyList.length || 1;
+    const avgHigh = Math.round(dailyList.reduce((s, d) => s + d.maxTemp, 0) / n);
+    const avgLow = Math.round(dailyList.reduce((s, d) => s + d.minTemp, 0) / n);
+    const totalRain = Math.round(dailyList.reduce((s, d) => s + (d.precipitation || 0), 0) * 10) / 10;
+    const avgHum = Math.round(dailyList.reduce((s, d) => s + (d.avgHumidity || 0), 0) / n);
 
     container.innerHTML = `
+      <div class="tenday-summary" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px;">
+        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 14px; text-align: center;"><span style="display: block; font-size: 12px; color: var(--text-muted);">Average High</span><span style="display: block; font-size: 20px; font-weight: 800; color: var(--text-main);">${avgHigh}°C</span></div>
+        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 14px; text-align: center;"><span style="display: block; font-size: 12px; color: var(--text-muted);">Average Low</span><span style="display: block; font-size: 20px; font-weight: 800; color: var(--text-main);">${avgLow}°C</span></div>
+        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 14px; text-align: center;"><span style="display: block; font-size: 12px; color: var(--text-muted);">Total Rain (10 days)</span><span style="display: block; font-size: 20px; font-weight: 800; color: var(--text-main);">${totalRain} mm</span></div>
+        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 14px; text-align: center;"><span style="display: block; font-size: 12px; color: var(--text-muted);">Average Humidity</span><span style="display: block; font-size: 20px; font-weight: 800; color: var(--text-main);">${avgHum}%</span></div>
+      </div>
       <div class="tenday-list">
         ${dailyList.map(d => {
           const dt = (typeof UI !== 'undefined' && UI.formatDayDate) ? UI.formatDayDate(d.time) : { day: d.date, date: '' };
@@ -369,9 +394,9 @@ const WeatherRenderer = {
     if (!container) return;
     const msg = message || "Weather data could not be loaded, please try again";
     container.innerHTML = `
-      <div class="weather-error" style="background: #1E293B; color: #F87171; border-radius: var(--card-radius); padding: 36px 20px; text-align: center; border: 1px solid rgba(239, 68, 68, 0.3);">
-        <h3 style="margin: 0 0 8px 0; font-size: 18px; font-weight: 700; color: #FFFFFF;">${escapeHtml(msg)}</h3>
-        <p style="margin: 0; color: #94A3B8; font-size: 14px;">Live MET Norway telemetry is currently unavailable. Please check your connection or try again.</p>
+      <div class="weather-error" style="background: var(--card-bg); color: var(--text-main); border-radius: var(--card-radius); padding: 36px 20px; text-align: center; border: 1px solid rgba(239, 68, 68, 0.3);">
+        <h3 style="margin: 0 0 8px 0; font-size: 18px; font-weight: 700; color: #EF4444;">${escapeHtml(msg)}</h3>
+        <p style="margin: 0; color: var(--text-muted); font-size: 14px;">Live MET Norway telemetry is currently unavailable. Please check your connection or try again.</p>
       </div>
     `;
   },
@@ -388,6 +413,37 @@ const WeatherRenderer = {
     const leafSvg = (typeof UI !== 'undefined' && UI.svg) ? UI.svg.leaf : '';
     const aqiTitle = (typeof I18N !== 'undefined' && I18N.t) ? I18N.t('aqiTitle') : 'Air Quality Index';
 
+    // Overall AQI from the PM2.5 sensor (US EPA breakpoints, linear in-band).
+    // No PM2.5 sensor -> no gauge, only the sensor pills below.
+    const pm25 = (aqiData.sensors || []).find(s => (s.parameter && /pm2.?5/i.test(s.parameter.name || '')) || /pm2.?5/i.test(s.name || ''));
+    let gaugeHtml = '';
+    if (pm25 && pm25.latest && typeof pm25.latest.value === 'number') {
+      const c = pm25.latest.value;
+      const bands = [[0, 12, 0, 50, 'Good', '#22C55E'], [12.1, 35.4, 51, 100, 'Moderate', '#EAB308'], [35.5, 55.4, 101, 150, 'Unhealthy for Sensitive Groups', '#F97316'], [55.5, 150.4, 151, 200, 'Unhealthy', '#EF4444'], [150.5, 250.4, 201, 300, 'Very Unhealthy', '#A855F7'], [250.5, 500, 301, 500, 'Hazardous', '#7F1D1D']];
+      let band = bands[bands.length - 1];
+      for (const b of bands) { if (c >= b[0] && c <= b[1]) { band = b; break; } }
+      const aqi = Math.round(((band[3] - band[2]) / (band[1] - band[0])) * (c - band[0]) + band[2]);
+      const frac = Math.min(aqi, 500) / 500;
+      const R = 52, CIRC = 2 * Math.PI * R;
+      gaugeHtml = `
+        <div class="aqi-gauge" style="display: flex; align-items: center; gap: 20px; padding: 8px 0 16px;">
+          <svg width="132" height="132" viewBox="0 0 132 132" role="img" aria-label="Air Quality Index ${aqi}, ${band[4]}">
+            <circle cx="66" cy="66" r="${R}" fill="none" stroke="var(--border-color)" stroke-width="11" />
+            <circle cx="66" cy="66" r="${R}" fill="none" stroke="${band[5]}" stroke-width="11" stroke-linecap="round" stroke-dasharray="${(CIRC * frac).toFixed(1)} ${CIRC.toFixed(1)}" transform="rotate(-90 66 66)" />
+            <text x="66" y="62" text-anchor="middle" style="font-size: 30px; font-weight: 800; fill: var(--text-main);">${aqi}</text>
+            <text x="66" y="84" text-anchor="middle" style="font-size: 11px; font-weight: 700; fill: ${band[5]};">${band[4]}</text>
+          </svg>
+          <div>
+            <div style="font-size: 14px; font-weight: 700; color: var(--text-main);">PM2.5: ${c} µg/m³</div>
+            <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Overall AQI is calculated from the PM2.5 reading (US EPA scale).</div>
+            <div class="aqi-scale" style="display: flex; height: 8px; border-radius: 99px; overflow: hidden; margin-top: 10px; width: 180px;">
+              <span style="flex: 1; background: #22C55E;"></span><span style="flex: 1; background: #EAB308;"></span><span style="flex: 1; background: #F97316;"></span><span style="flex: 1; background: #EF4444;"></span><span style="flex: 1; background: #A855F7;"></span><span style="flex: 1; background: #7F1D1D;"></span>
+            </div>
+            <div style="display: flex; justify-content: space-between; width: 180px; font-size: 10px; color: var(--text-muted); margin-top: 4px;"><span>0 Good</span><span>500 Hazardous</span></div>
+          </div>
+        </div>`;
+    }
+
     container.style.display = 'block';
     container.innerHTML = `
       <div class="aqi-card">
@@ -396,6 +452,7 @@ const WeatherRenderer = {
           <h3 class="aqi-title">${aqiTitle}</h3>
           <span class="aqi-station">Station: ${escapeHtml(aqiData.stationName || 'OpenAQ Station')}</span>
         </div>
+        ${gaugeHtml}
         <div class="aqi-sensors-row">
           ${(aqiData.sensors || []).map(s => `
             <div class="sensor-pill">

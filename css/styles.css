@@ -2588,3 +2588,19 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ---- Part 2: day rain line + 10-day summary responsive ---- */
+.day-rain {
+  font-size: 12px;
+  color: var(--accent-sky);
+  display: block;
+  margin-top: 4px;
+}
+.day-rain .inline-svg-tiny {
+  vertical-align: -2px;
+}
+@media (max-width: 640px) {
+  .tenday-summary {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
