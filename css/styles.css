@@ -662,7 +662,7 @@ img {
   position: relative;
   z-index: 50;
   min-height: 440px;
-  background: url('../images/hero-mountain-lake.jpg') no-repeat center 35% / cover;
+  background: url('../images/hero-mountain-lake.webp') no-repeat center 35% / cover;
   color: #FFFFFF;
   padding-top: 64px;
   padding-bottom: 64px;
@@ -1170,7 +1170,7 @@ body.lang-ur .city-urdu {
   position: relative;
   z-index: 50;
   min-height: 270px;
-  background: url('../images/hero-mountain-lake.jpg') no-repeat center 30% / cover;
+  background: url('../images/hero-mountain-lake.webp') no-repeat center 30% / cover;
   color: #FFFFFF;
   padding: 56px 0 68px 0;
   text-align: center;
@@ -2194,7 +2194,7 @@ body {
 /* ---- Hero (Home) ---- */
 .hero-section {
   min-height: 480px;
-  background: url('../images/hero-mountain-lake.jpg') no-repeat center 30% / cover;
+  background: url('../images/hero-mountain-lake.webp') no-repeat center 30% / cover;
 }
 .hero-section::before {
   content: "";
@@ -2204,7 +2204,7 @@ body {
   z-index: 1;
 }
 [data-theme="dark"] .hero-section {
-  background: url('../images/hero-globe-dark.jpg') no-repeat center right / cover;
+  background: url('../images/hero-globe-dark.webp') no-repeat center right / cover;
 }
 
 .hero-title {
@@ -2344,7 +2344,7 @@ body {
   color: #FFFFFF;
 }
 [data-theme="light"] .page-banner {
-  background: url('../images/hero-mountain-lake.jpg') no-repeat center 30% / cover;
+  background: url('../images/hero-mountain-lake.webp') no-repeat center 30% / cover;
 }
 [data-theme="light"] .page-banner::before {
   content: "";
@@ -2366,34 +2366,34 @@ body {
 
 /* ---- Per-page banner images (reference-style backgrounds) ---- */
 [data-theme="light"] .page-banner.banner-countries {
-  background: url('../images/banner-countries-light.jpg') no-repeat center / cover;
+  background: url('../images/banner-countries-light.webp') no-repeat center / cover;
 }
 [data-theme="light"] .page-banner.banner-10day {
-  background: url('../images/banner-10day-light.jpg') no-repeat center / cover;
+  background: url('../images/banner-10day-light.webp') no-repeat center / cover;
 }
 [data-theme="dark"] .page-banner.banner-countries {
-  background: url('../images/banner-countries-dark.jpg') no-repeat center / cover;
+  background: url('../images/banner-countries-dark.webp') no-repeat center / cover;
 }
 [data-theme="dark"] .page-banner.banner-10day {
-  background: url('../images/banner-10day-dark.jpg') no-repeat center / cover;
+  background: url('../images/banner-10day-dark.webp') no-repeat center / cover;
 }
 [data-theme="light"] .page-banner.banner-hourly {
-  background: url('../images/banner-hourly-light.jpg') no-repeat center / cover;
+  background: url('../images/banner-hourly-light.webp') no-repeat center / cover;
 }
 [data-theme="light"] .page-banner.banner-aqi {
-  background: url('../images/banner-aqi-light.jpg') no-repeat center / cover;
+  background: url('../images/banner-aqi-light.webp') no-repeat center / cover;
 }
 [data-theme="light"] .page-banner.banner-about {
-  background: url('../images/about-globe.jpg') no-repeat center / cover;
+  background: url('../images/about-globe.webp') no-repeat center / cover;
 }
 [data-theme="dark"] .page-banner.banner-hourly {
-  background: url('../images/banner-hourly-dark.jpg') no-repeat center / cover;
+  background: url('../images/banner-hourly-dark.webp') no-repeat center / cover;
 }
 [data-theme="dark"] .page-banner.banner-aqi {
-  background: url('../images/banner-aqi-dark.jpg') no-repeat center / cover;
+  background: url('../images/banner-aqi-dark.webp') no-repeat center / cover;
 }
 [data-theme="dark"] .page-banner.banner-about {
-  background: url('../images/hero-globe-dark.jpg') no-repeat center / cover;
+  background: url('../images/hero-globe-dark.webp') no-repeat center / cover;
 }
 [data-theme="dark"] .page-banner::before {
   content: "";

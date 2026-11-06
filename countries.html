@@ -14,12 +14,12 @@
   <meta property="og:title" content="World Weather Directory — Weather Tomorrow">
   <meta property="og:description" content="Explore real-time weather forecasts across world countries and global cities.">
   <meta property="og:url" content="https://www.weathertomorrow.website/countries">
-  <meta property="og:image" content="https://www.weathertomorrow.website/images/hero-mountain-lake.jpg">
+  <meta property="og:image" content="https://www.weathertomorrow.website/images/hero-mountain-lake.webp">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="World Weather Directory — Weather Tomorrow">
   <meta name="twitter:description" content="Explore real-time weather forecasts across world countries and global cities.">
-  <meta name="twitter:image" content="https://www.weathertomorrow.website/images/hero-mountain-lake.jpg">
+  <meta name="twitter:image" content="https://www.weathertomorrow.website/images/hero-mountain-lake.webp">
 
   <script>try{var __wt=localStorage.getItem('wt-theme');if(__wt==='dark'||__wt==='light')document.documentElement.setAttribute('data-theme',__wt);}catch(e){}</script>
   <link rel="stylesheet" href="css/styles.css?v=blog1">
@@ -338,7 +338,7 @@
         container.innerHTML = countries.map(c => `
           <article class="country-card" data-region="${c.region}" id="country-${c.code.toLowerCase()}">
             <div class="country-card-thumb">
-              <img src="images/countries/${c.code.toLowerCase()}.jpg" onerror="this.src='images/about-globe.jpg'" alt="${escapeHtml(c.name)} Weather" loading="lazy" width="600" height="250">
+              <img src="images/countries/${c.code.toLowerCase()}.jpg" onerror="this.src='images/about-globe.webp'" alt="${escapeHtml(c.name)} Weather" loading="lazy" width="600" height="250">
               <span class="country-card-badge">${c.code}</span>
             </div>
             <div class="country-card-body">
