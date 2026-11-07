@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Core Main Pages -->
   <url>
     <loc>https://www.weathertomorrow.website/</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
@@ -16,19 +15,19 @@
   <url>
     <loc>https://www.weathertomorrow.website/forecast-10day</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/hourly</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/aqi</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
@@ -50,239 +49,238 @@
     <priority>0.3</priority>
   </url>
 
-  <!-- 15 Global Pre-Built City Pages -->
   <url>
     <loc>https://www.weathertomorrow.website/london</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/new-york</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/tokyo</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/paris</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/dubai</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/sydney</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/toronto</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/berlin</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/rome</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/singapore</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/istanbul</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/riyadh</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/cairo</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/madrid</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/karachi</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/lahore</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/islamabad</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/rawalpindi</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/multan</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/faisalabad</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/peshawar</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/quetta</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/gujrat</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/sialkot</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/hyderabad</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/bahawalpur</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/sargodha</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/murree</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/mardan</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/layyah</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/mansehra</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/haripur</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/jhelum</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/mirpur</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/rawalakot</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/narowal</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/toba-tek-singh</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/rahim-yar-khan</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.weathertomorrow.website/abbottabad</loc>
     <lastmod>2026-11-07</lastmod>
-    <changefreq>hourly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
