@@ -251,6 +251,18 @@ const CONFIG = {
         { slug: "turbat", name: "Turbat", lat: 26.0028, lon: 63.0506, region: "Balochistan", elevation: "142 m" },
         { slug: "wazirabad", name: "Wazirabad", lat: 32.4417, lon: 74.1182, region: "Punjab", elevation: "236 m" },
         { slug: "ahmadpur-east", name: "Ahmadpur East", lat: 29.2612, lon: 71.4765, region: "Punjab", elevation: "113 m" },
+        { slug: "gujranwala", name: "Gujranwala", lat: 32.1525, lon: 74.1934, region: "Punjab", elevation: "225 m" },
+        { slug: "sahiwal", name: "Sahiwal", lat: 30.6715, lon: 73.1111, region: "Punjab", elevation: "173 m" },
+        { slug: "chakwal", name: "Chakwal", lat: 32.9328, lon: 72.8630, region: "Punjab", elevation: "519 m" },
+        { slug: "sheikhupura", name: "Sheikhupura", lat: 31.7085, lon: 73.9864, region: "Punjab", elevation: "207 m" },
+        { slug: "muzaffarabad", name: "Muzaffarabad", lat: 34.3735, lon: 73.4702, region: "Azad Jammu & Kashmir", elevation: "743 m" },
+        { slug: "kasur", name: "Kasur", lat: 31.1175, lon: 74.4478, region: "Punjab", elevation: "210 m" },
+        { slug: "skardu", name: "Skardu", lat: 35.2871, lon: 75.6553, region: "Gilgit-Baltistan", elevation: "2,255 m" },
+        { slug: "swat", name: "Swat", lat: 34.7725, lon: 72.3608, region: "Khyber Pakhtunkhwa", elevation: "932 m" },
+        { slug: "kohat", name: "Kohat", lat: 33.5967, lon: 71.4400, region: "Khyber Pakhtunkhwa", elevation: "522 m" },
+        { slug: "okara", name: "Okara", lat: 30.8091, lon: 73.4493, region: "Punjab", elevation: "184 m" },
+        { slug: "gilgit", name: "Gilgit", lat: 35.9208, lon: 74.3140, region: "Gilgit-Baltistan", elevation: "1,469 m" },
+        { slug: "vehari", name: "Vehari", lat: 30.0449, lon: 72.3501, region: "Punjab", elevation: "138 m" },
       ]
     },
     {
@@ -343,6 +355,18 @@ const CONFIG = {
     { slug: "turbat", name: "Turbat", country: "Pakistan", countryCode: "PK", lat: 26.0028, lon: 63.0506, region: "Balochistan", elevation: "142 m" },
     { slug: "wazirabad", name: "Wazirabad", country: "Pakistan", countryCode: "PK", lat: 32.4417, lon: 74.1182, region: "Punjab", elevation: "236 m" },
     { slug: "ahmadpur-east", name: "Ahmadpur East", country: "Pakistan", countryCode: "PK", lat: 29.2612, lon: 71.4765, region: "Punjab", elevation: "113 m" },
+    { slug: "gujranwala", name: "Gujranwala", country: "Pakistan", countryCode: "PK", lat: 32.1525, lon: 74.1934, region: "Punjab", elevation: "225 m" },
+    { slug: "sahiwal", name: "Sahiwal", country: "Pakistan", countryCode: "PK", lat: 30.6715, lon: 73.1111, region: "Punjab", elevation: "173 m" },
+    { slug: "chakwal", name: "Chakwal", country: "Pakistan", countryCode: "PK", lat: 32.9328, lon: 72.8630, region: "Punjab", elevation: "519 m" },
+    { slug: "sheikhupura", name: "Sheikhupura", country: "Pakistan", countryCode: "PK", lat: 31.7085, lon: 73.9864, region: "Punjab", elevation: "207 m" },
+    { slug: "muzaffarabad", name: "Muzaffarabad", country: "Pakistan", countryCode: "PK", lat: 34.3735, lon: 73.4702, region: "Azad Jammu & Kashmir", elevation: "743 m" },
+    { slug: "kasur", name: "Kasur", country: "Pakistan", countryCode: "PK", lat: 31.1175, lon: 74.4478, region: "Punjab", elevation: "210 m" },
+    { slug: "skardu", name: "Skardu", country: "Pakistan", countryCode: "PK", lat: 35.2871, lon: 75.6553, region: "Gilgit-Baltistan", elevation: "2,255 m" },
+    { slug: "swat", name: "Swat", country: "Pakistan", countryCode: "PK", lat: 34.7725, lon: 72.3608, region: "Khyber Pakhtunkhwa", elevation: "932 m" },
+    { slug: "kohat", name: "Kohat", country: "Pakistan", countryCode: "PK", lat: 33.5967, lon: 71.4400, region: "Khyber Pakhtunkhwa", elevation: "522 m" },
+    { slug: "okara", name: "Okara", country: "Pakistan", countryCode: "PK", lat: 30.8091, lon: 73.4493, region: "Punjab", elevation: "184 m" },
+    { slug: "gilgit", name: "Gilgit", country: "Pakistan", countryCode: "PK", lat: 35.9208, lon: 74.3140, region: "Gilgit-Baltistan", elevation: "1,469 m" },
+    { slug: "vehari", name: "Vehari", country: "Pakistan", countryCode: "PK", lat: 30.0449, lon: 72.3501, region: "Punjab", elevation: "138 m" },
   ]
 };
 
