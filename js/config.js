@@ -263,6 +263,10 @@ const CONFIG = {
         { slug: "okara", name: "Okara", lat: 30.8091, lon: 73.4493, region: "Punjab", elevation: "184 m" },
         { slug: "gilgit", name: "Gilgit", lat: 35.9208, lon: 74.3140, region: "Gilgit-Baltistan", elevation: "1,469 m" },
         { slug: "vehari", name: "Vehari", lat: 30.0449, lon: 72.3501, region: "Punjab", elevation: "138 m" },
+        { slug: "naran", name: "Naran", lat: 34.9061, lon: 73.6507, region: "Khyber Pakhtunkhwa", elevation: "2,409 m" },
+        { slug: "jhang", name: "Jhang", lat: 31.2729, lon: 72.3103, region: "Punjab", elevation: "158 m" },
+        { slug: "mandi-bahauddin", name: "Mandi Bahauddin", lat: 32.5846, lon: 73.4914, region: "Punjab", elevation: "204 m" },
+        { slug: "khanewal", name: "Khanewal", lat: 30.3023, lon: 71.9279, region: "Punjab", elevation: "128 m" },
       ]
     },
     {
@@ -367,6 +371,10 @@ const CONFIG = {
     { slug: "okara", name: "Okara", country: "Pakistan", countryCode: "PK", lat: 30.8091, lon: 73.4493, region: "Punjab", elevation: "184 m" },
     { slug: "gilgit", name: "Gilgit", country: "Pakistan", countryCode: "PK", lat: 35.9208, lon: 74.3140, region: "Gilgit-Baltistan", elevation: "1,469 m" },
     { slug: "vehari", name: "Vehari", country: "Pakistan", countryCode: "PK", lat: 30.0449, lon: 72.3501, region: "Punjab", elevation: "138 m" },
+    { slug: "naran", name: "Naran", country: "Pakistan", countryCode: "PK", lat: 34.9061, lon: 73.6507, region: "Khyber Pakhtunkhwa", elevation: "2,409 m" },
+    { slug: "jhang", name: "Jhang", country: "Pakistan", countryCode: "PK", lat: 31.2729, lon: 72.3103, region: "Punjab", elevation: "158 m" },
+    { slug: "mandi-bahauddin", name: "Mandi Bahauddin", country: "Pakistan", countryCode: "PK", lat: 32.5846, lon: 73.4914, region: "Punjab", elevation: "204 m" },
+    { slug: "khanewal", name: "Khanewal", country: "Pakistan", countryCode: "PK", lat: 30.3023, lon: 71.9279, region: "Punjab", elevation: "128 m" },
   ]
 };
 
