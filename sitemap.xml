@@ -320,6 +320,30 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.weathertomorrow.website/snowfall-murree</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.weathertomorrow.website/snowfall-skardu</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.weathertomorrow.website/snowfall-naran</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.weathertomorrow.website/will-it-snow-tomorrow</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.weathertomorrow.website/khushab</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
