@@ -267,6 +267,10 @@ const CONFIG = {
         { slug: "jhang", name: "Jhang", lat: 31.2729, lon: 72.3103, region: "Punjab", elevation: "158 m" },
         { slug: "mandi-bahauddin", name: "Mandi Bahauddin", lat: 32.5846, lon: 73.4914, region: "Punjab", elevation: "204 m" },
         { slug: "khanewal", name: "Khanewal", lat: 30.3023, lon: 71.9279, region: "Punjab", elevation: "128 m" },
+        { slug: "hafizabad", name: "Hafizabad", lat: 32.0719, lon: 73.6885, region: "Punjab", elevation: "215 m" },
+        { slug: "jaranwala", name: "Jaranwala", lat: 31.3330, lon: 73.4183, region: "Punjab", elevation: "196 m" },
+        { slug: "burewala", name: "Burewala", lat: 30.1553, lon: 72.6815, region: "Punjab", elevation: "147 m" },
+        { slug: "mianwali", name: "Mianwali", lat: 32.5794, lon: 71.5353, region: "Punjab", elevation: "208 m" },
       ]
     },
     {
@@ -375,6 +379,10 @@ const CONFIG = {
     { slug: "jhang", name: "Jhang", country: "Pakistan", countryCode: "PK", lat: 31.2729, lon: 72.3103, region: "Punjab", elevation: "158 m" },
     { slug: "mandi-bahauddin", name: "Mandi Bahauddin", country: "Pakistan", countryCode: "PK", lat: 32.5846, lon: 73.4914, region: "Punjab", elevation: "204 m" },
     { slug: "khanewal", name: "Khanewal", country: "Pakistan", countryCode: "PK", lat: 30.3023, lon: 71.9279, region: "Punjab", elevation: "128 m" },
+    { slug: "hafizabad", name: "Hafizabad", country: "Pakistan", countryCode: "PK", lat: 32.0719, lon: 73.6885, region: "Punjab", elevation: "215 m" },
+    { slug: "jaranwala", name: "Jaranwala", country: "Pakistan", countryCode: "PK", lat: 31.3330, lon: 73.4183, region: "Punjab", elevation: "196 m" },
+    { slug: "burewala", name: "Burewala", country: "Pakistan", countryCode: "PK", lat: 30.1553, lon: 72.6815, region: "Punjab", elevation: "147 m" },
+    { slug: "mianwali", name: "Mianwali", country: "Pakistan", countryCode: "PK", lat: 32.5794, lon: 71.5353, region: "Punjab", elevation: "208 m" },
   ]
 };
 
