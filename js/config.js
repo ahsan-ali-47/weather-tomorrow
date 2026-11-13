@@ -271,6 +271,10 @@ const CONFIG = {
         { slug: "jaranwala", name: "Jaranwala", lat: 31.3330, lon: 73.4183, region: "Punjab", elevation: "196 m" },
         { slug: "burewala", name: "Burewala", lat: 30.1553, lon: 72.6815, region: "Punjab", elevation: "147 m" },
         { slug: "mianwali", name: "Mianwali", lat: 32.5794, lon: 71.5353, region: "Punjab", elevation: "208 m" },
+        { slug: "wah-cantt", name: "Wah Cantt", lat: 33.7708, lon: 72.7519, region: "Punjab", elevation: "469 m" },
+        { slug: "malakand", name: "Malakand", lat: 34.5730, lon: 71.9319, region: "Khyber Pakhtunkhwa", elevation: "789 m" },
+        { slug: "bhakkar", name: "Bhakkar", lat: 31.6303, lon: 71.0677, region: "Punjab", elevation: "173 m" },
+        { slug: "larkana", name: "Larkana", lat: 27.5565, lon: 68.2102, region: "Sindh", elevation: "54 m" },
       ]
     },
     {
@@ -383,6 +387,10 @@ const CONFIG = {
     { slug: "jaranwala", name: "Jaranwala", country: "Pakistan", countryCode: "PK", lat: 31.3330, lon: 73.4183, region: "Punjab", elevation: "196 m" },
     { slug: "burewala", name: "Burewala", country: "Pakistan", countryCode: "PK", lat: 30.1553, lon: 72.6815, region: "Punjab", elevation: "147 m" },
     { slug: "mianwali", name: "Mianwali", country: "Pakistan", countryCode: "PK", lat: 32.5794, lon: 71.5353, region: "Punjab", elevation: "208 m" },
+    { slug: "wah-cantt", name: "Wah Cantt", country: "Pakistan", countryCode: "PK", lat: 33.7708, lon: 72.7519, region: "Punjab", elevation: "469 m" },
+    { slug: "malakand", name: "Malakand", country: "Pakistan", countryCode: "PK", lat: 34.5730, lon: 71.9319, region: "Khyber Pakhtunkhwa", elevation: "789 m" },
+    { slug: "bhakkar", name: "Bhakkar", country: "Pakistan", countryCode: "PK", lat: 31.6303, lon: 71.0677, region: "Punjab", elevation: "173 m" },
+    { slug: "larkana", name: "Larkana", country: "Pakistan", countryCode: "PK", lat: 27.5565, lon: 68.2102, region: "Sindh", elevation: "54 m" },
   ]
 };
 
