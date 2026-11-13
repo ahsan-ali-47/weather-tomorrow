@@ -54,7 +54,7 @@ const I18N = {
       navAqi: "AQI & Smog",
       navAbout: "About",
       heroTitle: "Weather, at a glance.",
-      heroSubtitle: "Get the weather today and the weather tomorrow for any city in the world — live temperature, hourly forecast, 10-day forecast, rain in millimetres and air quality, powered by MET Norway.",
+      heroSubtitle: "See the weather tomorrow and the weather today for any city in the world. Check weather Karachi, weather Islamabad, Lahore weather, weather Gujranwala, weather Sahiwal and weather Chakwal — with live temperature, hourly forecast, 10-day forecast, rain in millimetres and air quality, powered by MET Norway.",
       searchPlaceholder: "Enter city name...",
       searchButton: "Search",
       searchAttribution: "Search data © OpenStreetMap contributors",
