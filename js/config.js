@@ -275,6 +275,10 @@ const CONFIG = {
         { slug: "malakand", name: "Malakand", lat: 34.5730, lon: 71.9319, region: "Khyber Pakhtunkhwa", elevation: "789 m" },
         { slug: "bhakkar", name: "Bhakkar", lat: 31.6303, lon: 71.0677, region: "Punjab", elevation: "173 m" },
         { slug: "larkana", name: "Larkana", lat: 27.5565, lon: 68.2102, region: "Sindh", elevation: "54 m" },
+        { slug: "nathia-gali", name: "Nathia Gali", lat: 34.0683, lon: 73.3927, region: "Khyber Pakhtunkhwa", elevation: "2406 m" },
+        { slug: "gojra", name: "Gojra", lat: 31.1482, lon: 72.6859, region: "Punjab", elevation: "175 m" },
+        { slug: "shahdara", name: "Shahdara", lat: 31.6153, lon: 74.2909, region: "Punjab", elevation: "212 m" },
+        { slug: "samundri", name: "Samundri", lat: 31.0651, lon: 72.9588, region: "Punjab", elevation: "175 m" },
       ]
     },
     {
@@ -391,6 +395,10 @@ const CONFIG = {
     { slug: "malakand", name: "Malakand", country: "Pakistan", countryCode: "PK", lat: 34.5730, lon: 71.9319, region: "Khyber Pakhtunkhwa", elevation: "789 m" },
     { slug: "bhakkar", name: "Bhakkar", country: "Pakistan", countryCode: "PK", lat: 31.6303, lon: 71.0677, region: "Punjab", elevation: "173 m" },
     { slug: "larkana", name: "Larkana", country: "Pakistan", countryCode: "PK", lat: 27.5565, lon: 68.2102, region: "Sindh", elevation: "54 m" },
+    { slug: "nathia-gali", name: "Nathia Gali", country: "Pakistan", countryCode: "PK", lat: 34.0683, lon: 73.3927, region: "Khyber Pakhtunkhwa", elevation: "2406 m" },
+    { slug: "gojra", name: "Gojra", country: "Pakistan", countryCode: "PK", lat: 31.1482, lon: 72.6859, region: "Punjab", elevation: "175 m" },
+    { slug: "shahdara", name: "Shahdara", country: "Pakistan", countryCode: "PK", lat: 31.6153, lon: 74.2909, region: "Punjab", elevation: "212 m" },
+    { slug: "samundri", name: "Samundri", country: "Pakistan", countryCode: "PK", lat: 31.0651, lon: 72.9588, region: "Punjab", elevation: "175 m" },
   ]
 };
 
