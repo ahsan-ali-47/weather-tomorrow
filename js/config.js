@@ -279,6 +279,10 @@ const CONFIG = {
         { slug: "gojra", name: "Gojra", lat: 31.1482, lon: 72.6859, region: "Punjab", elevation: "175 m" },
         { slug: "shahdara", name: "Shahdara", lat: 31.6153, lon: 74.2909, region: "Punjab", elevation: "212 m" },
         { slug: "samundri", name: "Samundri", lat: 31.0651, lon: 72.9588, region: "Punjab", elevation: "175 m" },
+        { slug: "mian-channu", name: "Mian Channu", lat: 30.4389, lon: 72.3551, region: "Punjab", elevation: "153 m" },
+        { slug: "nawabshah", name: "Nawabshah", lat: 26.2453, lon: 68.4040, region: "Sindh", elevation: "31 m" },
+        { slug: "muridke", name: "Muridke", lat: 31.8011, lon: 74.2541, region: "Punjab", elevation: "220 m" },
+        { slug: "sarai-alamgir", name: "Sarai Alamgir", lat: 32.9019, lon: 73.7535, region: "Punjab", elevation: "241 m" },
       ]
     },
     {
@@ -399,6 +403,10 @@ const CONFIG = {
     { slug: "gojra", name: "Gojra", country: "Pakistan", countryCode: "PK", lat: 31.1482, lon: 72.6859, region: "Punjab", elevation: "175 m" },
     { slug: "shahdara", name: "Shahdara", country: "Pakistan", countryCode: "PK", lat: 31.6153, lon: 74.2909, region: "Punjab", elevation: "212 m" },
     { slug: "samundri", name: "Samundri", country: "Pakistan", countryCode: "PK", lat: 31.0651, lon: 72.9588, region: "Punjab", elevation: "175 m" },
+    { slug: "mian-channu", name: "Mian Channu", country: "Pakistan", countryCode: "PK", lat: 30.4389, lon: 72.3551, region: "Punjab", elevation: "153 m" },
+    { slug: "nawabshah", name: "Nawabshah", country: "Pakistan", countryCode: "PK", lat: 26.2453, lon: 68.4040, region: "Sindh", elevation: "31 m" },
+    { slug: "muridke", name: "Muridke", country: "Pakistan", countryCode: "PK", lat: 31.8011, lon: 74.2541, region: "Punjab", elevation: "220 m" },
+    { slug: "sarai-alamgir", name: "Sarai Alamgir", country: "Pakistan", countryCode: "PK", lat: 32.9019, lon: 73.7535, region: "Punjab", elevation: "241 m" },
   ]
 };
 
