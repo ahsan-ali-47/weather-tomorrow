@@ -283,6 +283,10 @@ const CONFIG = {
         { slug: "nawabshah", name: "Nawabshah", lat: 26.2453, lon: 68.4040, region: "Sindh", elevation: "31 m" },
         { slug: "muridke", name: "Muridke", lat: 31.8011, lon: 74.2541, region: "Punjab", elevation: "220 m" },
         { slug: "sarai-alamgir", name: "Sarai Alamgir", lat: 32.9019, lon: 73.7535, region: "Punjab", elevation: "241 m" },
+        { slug: "sadiqabad", name: "Sadiqabad", lat: 28.3087, lon: 70.1283, region: "Punjab", elevation: "82 m" },
+        { slug: "lalamusa", name: "Lalamusa", lat: 32.6995, lon: 73.9577, region: "Punjab", elevation: "263 m" },
+        { slug: "chaman", name: "Chaman", lat: 30.9249, lon: 66.4405, region: "Balochistan", elevation: "1307 m" },
+        { slug: "khanpur", name: "Khanpur", lat: 28.6477, lon: 70.6560, region: "Punjab", elevation: "91 m" },
       ]
     },
     {
@@ -407,6 +411,10 @@ const CONFIG = {
     { slug: "nawabshah", name: "Nawabshah", country: "Pakistan", countryCode: "PK", lat: 26.2453, lon: 68.4040, region: "Sindh", elevation: "31 m" },
     { slug: "muridke", name: "Muridke", country: "Pakistan", countryCode: "PK", lat: 31.8011, lon: 74.2541, region: "Punjab", elevation: "220 m" },
     { slug: "sarai-alamgir", name: "Sarai Alamgir", country: "Pakistan", countryCode: "PK", lat: 32.9019, lon: 73.7535, region: "Punjab", elevation: "241 m" },
+    { slug: "sadiqabad", name: "Sadiqabad", country: "Pakistan", countryCode: "PK", lat: 28.3087, lon: 70.1283, region: "Punjab", elevation: "82 m" },
+    { slug: "lalamusa", name: "Lalamusa", country: "Pakistan", countryCode: "PK", lat: 32.6995, lon: 73.9577, region: "Punjab", elevation: "263 m" },
+    { slug: "chaman", name: "Chaman", country: "Pakistan", countryCode: "PK", lat: 30.9249, lon: 66.4405, region: "Balochistan", elevation: "1307 m" },
+    { slug: "khanpur", name: "Khanpur", country: "Pakistan", countryCode: "PK", lat: 28.6477, lon: 70.6560, region: "Punjab", elevation: "91 m" },
   ]
 };
 
