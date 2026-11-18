@@ -6,7 +6,7 @@
   <link rel="icon" type="image/png" href="images/logo.png">
   <link rel="apple-touch-icon" href="images/logo.png">
   <title>Weather Tomorrow — Live Weather &amp; 10-Day Forecast</title>
-  <meta name="description" content="Live weather for any city worldwide — temperature, humidity, wind, rain and 10-day forecast, powered by MET Norway.">
+  <meta name="description" content="Live weather for any city worldwide — local weather, temperature, humidity, wind, rain and 10-day forecast, powered by MET Norway.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.weathertomorrow.website/">
 
@@ -69,6 +69,14 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Search queries access OpenStreetMap Nominatim's worldwide database, sorting by importance and geographic relevance to return your exact city or district."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Whats the weather tomorrow?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Open your city page on Weather Tomorrow and look at the 10-day outlook: tomorrow's expected high and low, rain in millimetres, humidity and wind are shown there, updated hourly from MET Norway."
             }
           }
         ]
@@ -244,6 +252,19 @@
         <a href="dubai" class="popular-city-card"><img src="images/countries/ae.jpg" alt="Dubai weather" loading="lazy"><span class="popular-city-name">Dubai</span></a>
         <a href="karachi" class="popular-city-card"><img src="images/karachi.webp" alt="Karachi weather" loading="lazy"><span class="popular-city-name">Karachi</span></a>
         <a href="paris" class="popular-city-card"><img src="images/countries/fr.jpg" alt="Paris weather" loading="lazy"><span class="popular-city-name">Paris</span></a>
+        <a href="chicago" class="popular-city-card"><img src="images/countries/us.jpg" alt="Chicago weather" loading="lazy"><span class="popular-city-name">Chicago</span></a>
+        <a href="houston" class="popular-city-card"><img src="images/countries/us.jpg" alt="Houston weather" loading="lazy"><span class="popular-city-name">Houston</span></a>
+        <a href="atlanta" class="popular-city-card"><img src="images/countries/us.jpg" alt="Atlanta weather" loading="lazy"><span class="popular-city-name">Atlanta</span></a>
+        <a href="dallas" class="popular-city-card"><img src="images/countries/us.jpg" alt="Dallas weather" loading="lazy"><span class="popular-city-name">Dallas</span></a>
+        <a href="las-vegas" class="popular-city-card"><img src="images/countries/us.jpg" alt="Las Vegas weather" loading="lazy"><span class="popular-city-name">Las Vegas</span></a>
+        <a href="nashville" class="popular-city-card"><img src="images/countries/us.jpg" alt="Nashville weather" loading="lazy"><span class="popular-city-name">Nashville</span></a>
+        <a href="orlando" class="popular-city-card"><img src="images/countries/us.jpg" alt="Orlando weather" loading="lazy"><span class="popular-city-name">Orlando</span></a>
+        <a href="san-diego" class="popular-city-card"><img src="images/countries/us.jpg" alt="San Diego weather" loading="lazy"><span class="popular-city-name">San Diego</span></a>
+        <a href="philadelphia" class="popular-city-card"><img src="images/countries/us.jpg" alt="Philadelphia weather" loading="lazy"><span class="popular-city-name">Philadelphia</span></a>
+        <a href="minneapolis" class="popular-city-card"><img src="images/countries/us.jpg" alt="Minneapolis weather" loading="lazy"><span class="popular-city-name">Minneapolis</span></a>
+        <a href="sacramento" class="popular-city-card"><img src="images/countries/us.jpg" alt="Sacramento weather" loading="lazy"><span class="popular-city-name">Sacramento</span></a>
+        <a href="los-angeles" class="popular-city-card"><img src="images/countries/us.jpg" alt="Los Angeles weather" loading="lazy"><span class="popular-city-name">Los Angeles</span></a>
+        <a href="portland" class="popular-city-card"><img src="images/countries/us.jpg" alt="Portland weather" loading="lazy"><span class="popular-city-name">Portland</span></a>
       </div>
     </section>
 
@@ -517,6 +538,7 @@
         <p>The weather report on each city page is built around the numbers that actually matter. Temperature is measured in degrees Celsius. Feels-like temperature tells you how hot or cold it really feels, after wind and humidity are counted. Humidity tells you how much moisture is in the air. Wind speed and direction tell you how strong the wind is and where it comes from. Rain is shown in millimetres, not a vague percentage, so you know exactly how much rain is expected: 1 mm is a light shower, 5 mm is steady rain, and 20 mm or more in a day is heavy rain. The UV index tells you how strong the sun is, so you know when to stay in the shade.</p>
         <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 24px 0 10px 0;">Weather Today, Weather Tomorrow and the 10-Day Forecast</h3>
         <p>Today's forecast is the most accurate forecast there is, because today is already happening and the weather model has fresh measurements. Tomorrow's forecast is almost as reliable — tomorrow is only one day away, so the model has little time to go wrong. The 10-day forecast is best used in a different way: trust the first three days in detail, use days four to seven for the general trend, and treat days eight to ten as a rough direction. If you want the full explanation of how accurate the 10-day forecast really is, read our guide on the <a href="blog-10-day-forecast">10-day forecast accuracy</a>.</p>
+        <p>Our <a href="forecast-10day">10 day forecast</a> page shows the weather this week at a glance — the full outlook for the next ten days, so you can see the pattern for the whole week ahead before you pick a day.</p>
         <p>The hourly forecast is the most useful tool for planning a single day. It shows the temperature hour by hour, with a curve you can read at a glance, and rain hour by hour, so you can see exactly when the rain starts and stops. If you are planning a morning walk, an afternoon journey, or an evening event, the hourly forecast tells you the best hour to go out. The <a href="hourly">hourly forecast page</a> explains how to read it in detail.</p>
         <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 24px 0 10px 0;">Rain, Smog and Air Quality</h3>
         <p>Rain and air quality are the two things that change a day more than temperature. Rain in millimetres is shown on every city page and on the hourly page. Air quality is shown on the <a href="aqi">AQI &amp; Smog page</a>, where the Air Quality Index turns pollution into one simple number: below 50 is good, 101 to 150 is unhealthy for sensitive people, 151 to 200 is unhealthy for everyone, and above 300 is hazardous. In winter, Lahore and other cities in Punjab face heavy smog, and our <a href="blog-smog-lahore">smog in Lahore guide</a> explains what causes it and how to stay safe.</p>
@@ -524,6 +546,9 @@
         <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 24px 0 10px 0;">What's the Weather</h3>
         <p>
           If you are asking what's the weather, start with the search box at the top of this page or pick your city from the list below. Every city page shows the current temperature, what it feels like, humidity, wind, rain in millimetres, and the UV index — all live from MET Norway.
+        </p>
+        <p>
+          You can also check the weather near me with one tap: the <a href="current-location">current location page</a> finds where you are and shows your local weather, temperature, and hourly forecast instantly.
         </p>
         <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 24px 0 10px 0;">Temp Today</h3>
         <p>
@@ -533,6 +558,7 @@
         <p>
           For the weather forecast tomorrow, every city page shows tomorrow's expected high and low temperatures, rain in millimetres, humidity, and wind in the 10-day outlook. Tomorrow's forecast is almost as reliable as today's, because tomorrow is only one day away.
         </p>
+        <p>Every city page also has a live weather radar view, so you can watch rain and storms move across the map in real time before you step outside. And if severe weather is coming, the <a href="alerts">weather alerts guide</a> explains every warning, watch and advisory in plain words.</p>
       </div>
     </article>
 
@@ -564,6 +590,7 @@
             <li><a href="hourly" class="footer-link">Hourly Forecast</a></li>
             <li><a href="aqi" class="footer-link">AQI &amp; Smog</a></li>
             <li><a href="blog" class="footer-link">Blog</a></li>
+            <li><a href="alerts" class="footer-link">Weather Alerts</a></li>
           </ul>
         </div>
 
