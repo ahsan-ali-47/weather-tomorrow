@@ -824,6 +824,12 @@
     <priority>0.80</priority>
   </url>
   <url>
+    <loc>https://www.weathertomorrow.website/severe-weather-california-florida-flooding</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
     <loc>https://www.weathertomorrow.website/will-it-snow-tomorrow</loc>
     <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
