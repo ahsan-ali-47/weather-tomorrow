@@ -6,17 +6,540 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "X-XSS-Protection", "value": "1; mode=block" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
       ]
     },
     {
       "source": "/images/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/abbottabad",
+      "destination": "/pakistan/abbottabad",
+      "permanent": true
+    },
+    {
+      "source": "/ahmadpur-east",
+      "destination": "/pakistan/ahmadpur-east",
+      "permanent": true
+    },
+    {
+      "source": "/attock",
+      "destination": "/pakistan/attock",
+      "permanent": true
+    },
+    {
+      "source": "/bahawalnagar",
+      "destination": "/pakistan/bahawalnagar",
+      "permanent": true
+    },
+    {
+      "source": "/bahawalpur",
+      "destination": "/pakistan/bahawalpur",
+      "permanent": true
+    },
+    {
+      "source": "/bangalore",
+      "destination": "/india/bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/bannu",
+      "destination": "/pakistan/bannu",
+      "permanent": true
+    },
+    {
+      "source": "/berlin",
+      "destination": "/germany/berlin",
+      "permanent": true
+    },
+    {
+      "source": "/bhakkar",
+      "destination": "/pakistan/bhakkar",
+      "permanent": true
+    },
+    {
+      "source": "/burewala",
+      "destination": "/pakistan/burewala",
+      "permanent": true
+    },
+    {
+      "source": "/cairo",
+      "destination": "/egypt/cairo",
+      "permanent": true
+    },
+    {
+      "source": "/cape-town",
+      "destination": "/south-africa/cape-town",
+      "permanent": true
+    },
+    {
+      "source": "/chakwal",
+      "destination": "/pakistan/chakwal",
+      "permanent": true
+    },
+    {
+      "source": "/chaman",
+      "destination": "/pakistan/chaman",
+      "permanent": true
+    },
+    {
+      "source": "/chicago",
+      "destination": "/usa/chicago",
+      "permanent": true
+    },
+    {
+      "source": "/chichawatni",
+      "destination": "/pakistan/chichawatni",
+      "permanent": true
+    },
+    {
+      "source": "/delhi",
+      "destination": "/india/delhi",
+      "permanent": true
+    },
+    {
+      "source": "/dera-ghazi-khan",
+      "destination": "/pakistan/dera-ghazi-khan",
+      "permanent": true
+    },
+    {
+      "source": "/dera-ismail-khan",
+      "destination": "/pakistan/dera-ismail-khan",
+      "permanent": true
+    },
+    {
+      "source": "/dubai",
+      "destination": "/united-arab-emirates/dubai",
+      "permanent": true
+    },
+    {
+      "source": "/faisalabad",
+      "destination": "/pakistan/faisalabad",
+      "permanent": true
+    },
+    {
+      "source": "/gilgit",
+      "destination": "/pakistan/gilgit",
+      "permanent": true
+    },
+    {
+      "source": "/gojra",
+      "destination": "/pakistan/gojra",
+      "permanent": true
+    },
+    {
+      "source": "/gujranwala",
+      "destination": "/pakistan/gujranwala",
+      "permanent": true
+    },
+    {
+      "source": "/gujrat",
+      "destination": "/pakistan/gujrat",
+      "permanent": true
+    },
+    {
+      "source": "/hafizabad",
+      "destination": "/pakistan/hafizabad",
+      "permanent": true
+    },
+    {
+      "source": "/haripur",
+      "destination": "/pakistan/haripur",
+      "permanent": true
+    },
+    {
+      "source": "/hyderabad",
+      "destination": "/pakistan/hyderabad",
+      "permanent": true
+    },
+    {
+      "source": "/islamabad",
+      "destination": "/pakistan/islamabad",
+      "permanent": true
+    },
+    {
+      "source": "/istanbul",
+      "destination": "/turkey/istanbul",
+      "permanent": true
+    },
+    {
+      "source": "/jaranwala",
+      "destination": "/pakistan/jaranwala",
+      "permanent": true
+    },
+    {
+      "source": "/jhang",
+      "destination": "/pakistan/jhang",
+      "permanent": true
+    },
+    {
+      "source": "/jhelum",
+      "destination": "/pakistan/jhelum",
+      "permanent": true
+    },
+    {
+      "source": "/kamoke",
+      "destination": "/pakistan/kamoke",
+      "permanent": true
+    },
+    {
+      "source": "/karachi",
+      "destination": "/pakistan/karachi",
+      "permanent": true
+    },
+    {
+      "source": "/karak",
+      "destination": "/pakistan/karak",
+      "permanent": true
+    },
+    {
+      "source": "/kasur",
+      "destination": "/pakistan/kasur",
+      "permanent": true
+    },
+    {
+      "source": "/khanewal",
+      "destination": "/pakistan/khanewal",
+      "permanent": true
+    },
+    {
+      "source": "/khanpur",
+      "destination": "/pakistan/khanpur",
+      "permanent": true
+    },
+    {
+      "source": "/khushab",
+      "destination": "/pakistan/khushab",
+      "permanent": true
+    },
+    {
+      "source": "/kohat",
+      "destination": "/pakistan/kohat",
+      "permanent": true
+    },
+    {
+      "source": "/lahore",
+      "destination": "/pakistan/lahore",
+      "permanent": true
+    },
+    {
+      "source": "/lalamusa",
+      "destination": "/pakistan/lalamusa",
+      "permanent": true
+    },
+    {
+      "source": "/larkana",
+      "destination": "/pakistan/larkana",
+      "permanent": true
+    },
+    {
+      "source": "/layyah",
+      "destination": "/pakistan/layyah",
+      "permanent": true
+    },
+    {
+      "source": "/london",
+      "destination": "/united-kingdom/london",
+      "permanent": true
+    },
+    {
+      "source": "/los-angeles",
+      "destination": "/usa/los-angeles",
+      "permanent": true
+    },
+    {
+      "source": "/madrid",
+      "destination": "/spain/madrid",
+      "permanent": true
+    },
+    {
+      "source": "/malakand",
+      "destination": "/pakistan/malakand",
+      "permanent": true
+    },
+    {
+      "source": "/mandi-bahauddin",
+      "destination": "/pakistan/mandi-bahauddin",
+      "permanent": true
+    },
+    {
+      "source": "/mansehra",
+      "destination": "/pakistan/mansehra",
+      "permanent": true
+    },
+    {
+      "source": "/mardan",
+      "destination": "/pakistan/mardan",
+      "permanent": true
+    },
+    {
+      "source": "/melbourne",
+      "destination": "/australia/melbourne",
+      "permanent": true
+    },
+    {
+      "source": "/miami",
+      "destination": "/usa/miami",
+      "permanent": true
+    },
+    {
+      "source": "/mian-channu",
+      "destination": "/pakistan/mian-channu",
+      "permanent": true
+    },
+    {
+      "source": "/mianwali",
+      "destination": "/pakistan/mianwali",
+      "permanent": true
+    },
+    {
+      "source": "/mirpur",
+      "destination": "/pakistan/mirpur",
+      "permanent": true
+    },
+    {
+      "source": "/multan",
+      "destination": "/pakistan/multan",
+      "permanent": true
+    },
+    {
+      "source": "/mumbai",
+      "destination": "/india/mumbai",
+      "permanent": true
+    },
+    {
+      "source": "/muridke",
+      "destination": "/pakistan/muridke",
+      "permanent": true
+    },
+    {
+      "source": "/murree",
+      "destination": "/pakistan/murree",
+      "permanent": true
+    },
+    {
+      "source": "/muzaffarabad",
+      "destination": "/pakistan/muzaffarabad",
+      "permanent": true
+    },
+    {
+      "source": "/naran",
+      "destination": "/pakistan/naran",
+      "permanent": true
+    },
+    {
+      "source": "/narowal",
+      "destination": "/pakistan/narowal",
+      "permanent": true
+    },
+    {
+      "source": "/nathia-gali",
+      "destination": "/pakistan/nathia-gali",
+      "permanent": true
+    },
+    {
+      "source": "/nawabshah",
+      "destination": "/pakistan/nawabshah",
+      "permanent": true
+    },
+    {
+      "source": "/new-york",
+      "destination": "/usa/new-york",
+      "permanent": true
+    },
+    {
+      "source": "/nowshera",
+      "destination": "/pakistan/nowshera",
+      "permanent": true
+    },
+    {
+      "source": "/okara",
+      "destination": "/pakistan/okara",
+      "permanent": true
+    },
+    {
+      "source": "/paris",
+      "destination": "/france/paris",
+      "permanent": true
+    },
+    {
+      "source": "/peshawar",
+      "destination": "/pakistan/peshawar",
+      "permanent": true
+    },
+    {
+      "source": "/quetta",
+      "destination": "/pakistan/quetta",
+      "permanent": true
+    },
+    {
+      "source": "/rahim-yar-khan",
+      "destination": "/pakistan/rahim-yar-khan",
+      "permanent": true
+    },
+    {
+      "source": "/rawalakot",
+      "destination": "/pakistan/rawalakot",
+      "permanent": true
+    },
+    {
+      "source": "/rawalpindi",
+      "destination": "/pakistan/rawalpindi",
+      "permanent": true
+    },
+    {
+      "source": "/riyadh",
+      "destination": "/saudi-arabia/riyadh",
+      "permanent": true
+    },
+    {
+      "source": "/rome",
+      "destination": "/italy/rome",
+      "permanent": true
+    },
+    {
+      "source": "/sadiqabad",
+      "destination": "/pakistan/sadiqabad",
+      "permanent": true
+    },
+    {
+      "source": "/sahiwal",
+      "destination": "/pakistan/sahiwal",
+      "permanent": true
+    },
+    {
+      "source": "/samundri",
+      "destination": "/pakistan/samundri",
+      "permanent": true
+    },
+    {
+      "source": "/san-francisco",
+      "destination": "/usa/san-francisco",
+      "permanent": true
+    },
+    {
+      "source": "/sao-paulo",
+      "destination": "/brazil/sao-paulo",
+      "permanent": true
+    },
+    {
+      "source": "/sarai-alamgir",
+      "destination": "/pakistan/sarai-alamgir",
+      "permanent": true
+    },
+    {
+      "source": "/sargodha",
+      "destination": "/pakistan/sargodha",
+      "permanent": true
+    },
+    {
+      "source": "/shahdara",
+      "destination": "/pakistan/shahdara",
+      "permanent": true
+    },
+    {
+      "source": "/sheikhupura",
+      "destination": "/pakistan/sheikhupura",
+      "permanent": true
+    },
+    {
+      "source": "/shikarpur",
+      "destination": "/pakistan/shikarpur",
+      "permanent": true
+    },
+    {
+      "source": "/sialkot",
+      "destination": "/pakistan/sialkot",
+      "permanent": true
+    },
+    {
+      "source": "/skardu",
+      "destination": "/pakistan/skardu",
+      "permanent": true
+    },
+    {
+      "source": "/swabi",
+      "destination": "/pakistan/swabi",
+      "permanent": true
+    },
+    {
+      "source": "/swat",
+      "destination": "/pakistan/swat",
+      "permanent": true
+    },
+    {
+      "source": "/sydney",
+      "destination": "/australia/sydney",
+      "permanent": true
+    },
+    {
+      "source": "/taxila",
+      "destination": "/pakistan/taxila",
+      "permanent": true
+    },
+    {
+      "source": "/thatta",
+      "destination": "/pakistan/thatta",
+      "permanent": true
+    },
+    {
+      "source": "/toba-tek-singh",
+      "destination": "/pakistan/toba-tek-singh",
+      "permanent": true
+    },
+    {
+      "source": "/tokyo",
+      "destination": "/japan/tokyo",
+      "permanent": true
+    },
+    {
+      "source": "/toronto",
+      "destination": "/canada/toronto",
+      "permanent": true
+    },
+    {
+      "source": "/turbat",
+      "destination": "/pakistan/turbat",
+      "permanent": true
+    },
+    {
+      "source": "/vancouver",
+      "destination": "/canada/vancouver",
+      "permanent": true
+    },
+    {
+      "source": "/vehari",
+      "destination": "/pakistan/vehari",
+      "permanent": true
+    },
+    {
+      "source": "/wah-cantt",
+      "destination": "/pakistan/wah-cantt",
+      "permanent": true
+    },
+    {
+      "source": "/wazirabad",
+      "destination": "/pakistan/wazirabad",
+      "permanent": true
     }
   ]
 }
-
