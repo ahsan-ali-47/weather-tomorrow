@@ -1,3 +1,5 @@
+const COUNTRY_PAGE_SLUGS = {"GB": "united-kingdom", "US": "usa", "AE": "united-arab-emirates", "FR": "france", "DE": "germany", "JP": "japan", "CA": "canada", "AU": "australia", "SA": "saudi-arabia", "TR": "turkey", "IT": "italy", "ES": "spain", "SG": "singapore", "EG": "egypt", "BR": "brazil", "IN": "india", "PK": "pakistan", "CH": "switzerland", "ZA": "south-africa", "NL": "netherlands"};
+const COUNTRY_PAGE_SLUGS_BY_NAME = {"United Kingdom": "united-kingdom", "United States": "usa", "United Arab Emirates": "united-arab-emirates", "France": "france", "Germany": "germany", "Japan": "japan", "Canada": "canada", "Australia": "australia", "Saudi Arabia": "saudi-arabia", "Turkey": "turkey", "Italy": "italy", "Spain": "spain", "Singapore": "singapore", "Egypt": "egypt", "Brazil": "brazil", "India": "india", "Pakistan": "pakistan", "Switzerland": "switzerland", "South Africa": "south-africa", "Netherlands": "netherlands"};
 // ============================================================
 // Autocomplete Search Component with Rich Instant Suggestions
 // js/search.js
@@ -184,7 +186,9 @@ function initSearch(inputSelector, dropdownSelector, onSelect) {
       : null;
 
     if (matched) {
-      window.location.href = `${matched.slug}`;
+      const cSlug = COUNTRY_PAGE_SLUGS[(matched.countryCode || '').toUpperCase()]
+        || COUNTRY_PAGE_SLUGS_BY_NAME[matched.country || ''];
+      window.location.href = cSlug ? `/${cSlug}/${matched.slug}` : `${matched.slug}`;
     } else {
       const q = new URLSearchParams({
         name: place.name || place.city,
@@ -193,7 +197,7 @@ function initSearch(inputSelector, dropdownSelector, onSelect) {
         country: place.country || '',
         state: place.state || place.region || ''
       });
-      window.location.href = `city?${q.toString()}`;
+      window.location.href = `/city?${q.toString()}`;
     }
   }
 

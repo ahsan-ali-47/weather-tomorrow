@@ -1,3 +1,4 @@
+const COUNTRY_PAGE_SLUGS = {"GB": "united-kingdom", "US": "usa", "AE": "united-arab-emirates", "FR": "france", "DE": "germany", "JP": "japan", "CA": "canada", "AU": "australia", "SA": "saudi-arabia", "TR": "turkey", "IT": "italy", "ES": "spain", "SG": "singapore", "EG": "egypt", "BR": "brazil", "IN": "india", "PK": "pakistan", "CH": "switzerland", "ZA": "south-africa", "NL": "netherlands"};
 // ============================================================
 // Country Navbar Selector Controller — Weather Tomorrow
 // js/countries.js
@@ -169,9 +170,10 @@ const CountryNav = {
     // Otherwise navigate to city weather
     const isPrebuilt = (CONFIG.FEATURED_CITIES || []).some(fc => fc.slug === firstCity.slug);
     if (isPrebuilt && firstCity.slug) {
-      window.location.href = `${firstCity.slug}`;
+      const cSlug = COUNTRY_PAGE_SLUGS[code.toUpperCase()];
+      window.location.href = cSlug ? `/${cSlug}/${firstCity.slug}` : `${firstCity.slug}`;
     } else {
-      window.location.href = `city?name=${encodeURIComponent(firstCity.name)}&lat=${firstCity.lat}&lon=${firstCity.lon}&country=${encodeURIComponent(countryObj.name)}`;
+      window.location.href = `/city?name=${encodeURIComponent(firstCity.name)}&lat=${firstCity.lat}&lon=${firstCity.lon}&country=${encodeURIComponent(countryObj.name)}`;
     }
   },
 

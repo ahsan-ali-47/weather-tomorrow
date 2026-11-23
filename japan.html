@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="apple-touch-icon" href="images/logo.png">
+  <title>Japan Weather Today &amp; 10-Day Forecast — Weather Tomorrow</title>
+  <meta name="description" content="Live Japan weather: current temperature in Tokyo and 4 cities, hourly forecast, rain in millimetres and 10-day outlook from MET Norway.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.weathertomorrow.website/japan">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Japan Weather Today &amp; 10-Day Forecast — Weather Tomorrow">
+  <meta property="og:description" content="Live Japan weather: current temperature in Tokyo and 4 cities, hourly forecast, rain in millimetres and 10-day outlook from MET Norway.">
+  <meta property="og:url" content="https://www.weathertomorrow.website/japan">
+  <meta property="og:image" content="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/View_of_Mount_Fuji_from_%C5%8Cwakudani_20211202.jpg/1280px-View_of_Mount_Fuji_from_%C5%8Cwakudani_20211202.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Japan Weather — Weather Tomorrow">
+  <meta name="twitter:description" content="Live Japan weather: current temperature in Tokyo and 4 cities, hourly forecast, rain in millimetres and 10-day outlook from MET Norway.">
+  <meta name="twitter:image" content="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/View_of_Mount_Fuji_from_%C5%8Cwakudani_20211202.jpg/1280px-View_of_Mount_Fuji_from_%C5%8Cwakudani_20211202.jpg">
+
+  <script>try{var __wt=localStorage.getItem('wt-theme');if(__wt==='dark'||__wt==='light')document.documentElement.setAttribute('data-theme',__wt);}catch(e){}</script>
+  <link rel="stylesheet" href="css/styles.css?v=blog2">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.weathertomorrow.website/japan#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.weathertomorrow.website/" },
+          { "@type": "ListItem", "position": 2, "name": "Countries", "item": "https://www.weathertomorrow.website/countries" },
+          { "@type": "ListItem", "position": 3, "name": "Japan", "item": "https://www.weathertomorrow.website/japan" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#38BDF8">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Weather Tomorrow">
+  <script src="/pwa.js" defer></script>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index" class="brand" aria-label="Weather Tomorrow Home">
+        <div class="brand-icon">
+          <img src="images/logo.png" alt="Weather Tomorrow logo" width="34" height="34">
+        </div>
+        <div class="brand-text">Weather<span>Tomorrow</span></div>
+      </a>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="index" class="nav-link">Home</a>
+        <a href="countries" class="nav-link active">Countries</a>
+        <a href="forecast-10day" class="nav-link">10-Day</a>
+        <a href="hourly" class="nav-link">Hourly</a>
+        <a href="aqi" class="nav-link">AQI/Smog</a>
+        <a href="about" class="nav-link">About</a>
+        <a href="blog" class="nav-link">Blog</a>
+      </nav>
+
+      <div class="header-actions">
+
+        <!-- Language Dropdown Button -->
+        <button id="langTrigger" class="lang-btn" type="button" aria-haspopup="dialog" aria-expanded="false" title="Select Language">
+          <span id="currentLangLabel">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" class="svg-ico"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span>English</span>
+          </span>
+          <span class="lang-caret">▼</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <!-- Theme Toggle (Light / Dark) -->
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Dark mode">
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+        <button id="mobileMenuToggle" class="mobile-toggle" type="button" aria-label="Toggle navigation menu">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileDrawer" class="mobile-drawer" role="menu">
+      <a href="index" class="mobile-nav-link">Home</a>
+      <a href="countries" class="mobile-nav-link">Countries</a>
+      <a href="forecast-10day" class="mobile-nav-link">10-Day</a>
+      <a href="hourly" class="mobile-nav-link">Hourly</a>
+      <a href="aqi" class="mobile-nav-link">AQI/Smog</a>
+      <a href="about" class="mobile-nav-link">About</a>
+      <a href="blog" class="mobile-nav-link">Blog</a>
+    </div>
+
+
+    <!-- Language Searchable Modal -->
+    <div id="langModal" class="lang-modal" role="dialog" aria-label="Select Language">
+      <div class="lang-search-box">
+        <input type="text" id="langSearchInput" placeholder="Search language..." aria-label="Search language">
+      </div>
+      <ul id="langList" class="lang-list"></ul>
+    </div>
+  </header>
+  <main class="container" style="margin-top: 24px; margin-bottom: 50px;">
+    <section class="ctry-hero">
+      <img class="ctry-hero-img" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/View_of_Mount_Fuji_from_%C5%8Cwakudani_20211202.jpg/1280px-View_of_Mount_Fuji_from_%C5%8Cwakudani_20211202.jpg" alt="Mount Fuji, Japan" width="1200" height="500" fetchpriority="high">
+      <div class="ctry-hero-overlay">
+        <a class="ctry-back" href="countries">&larr; Back to Countries</a>
+        <div class="ctry-hero-title-row">
+          <img class="ctry-hero-flag" src="https://flagcdn.com/w320/jp.png" alt="Japan flag" width="64" height="44">
+          <div>
+            <h1>Weather in Japan</h1>
+            <p class="ctry-hero-sub">Explore weather forecasts across Japan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ctry-capital-card" aria-label="Capital weather summary">
+      <div>
+        <div class="ctry-capital-name">Tokyo</div>
+        <div class="ctry-capital-sub">Capital City</div>
+      </div>
+      <div class="ctry-capital-temp wt-live" data-lat="35.6762" data-lon="139.6503">
+        <span data-wt-temp>&mdash;</span>
+      </div>
+      <div class="ctry-capital-cond wt-live" data-lat="35.6762" data-lon="139.6503">
+        <span data-wt-icon></span><span data-wt-cond>Loading&hellip;</span>
+      </div>
+      <a class="ctry-cities-pill" href="#all-cities">4 cities</a>
+    </section>
+
+    <input type="text" id="countrySearchInput" class="ctry-search-input" placeholder="Search cities in Japan..." autocomplete="off" aria-label="Search cities in Japan">
+
+    <h2 class="seo-title" style="margin-bottom: 14px;">Popular Cities</h2>
+    <div class="wtc-pop-grid">
+          <a class="wtc-pop-card" href="/japan/tokyo" data-city-name="Tokyo">
+            <span class="wtc-pop-thumb"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Skyscrapers_of_Shinjuku_2009_January.jpg/960px-Skyscrapers_of_Shinjuku_2009_January.jpg" alt="Tokyo, Japan" loading="lazy" width="640" height="360"></span>
+            <span class="wtc-pop-body">
+              <span class="wtc-pop-name">Tokyo</span>
+              <span class="wtc-pop-weather wt-live" data-lat="35.6762" data-lon="139.6503">
+                <span class="wtc-pop-temp" data-wt-temp>&mdash;</span>
+                <span class="wtc-pop-icon" data-wt-icon></span>
+                <span class="wtc-pop-cond" data-wt-cond>Loading&hellip;</span>
+              </span>
+              <span class="wtc-pop-link">View Forecast &rarr;</span>
+            </span>
+          </a>
+          <a class="wtc-pop-card" href="/city?name=Osaka&lat=34.6937&lon=135.5023&country=Japan" data-city-name="Osaka">
+            <span class="wtc-pop-thumb"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Osaka_Castle_03bs3200.jpg/960px-Osaka_Castle_03bs3200.jpg" alt="Osaka, Japan" loading="lazy" width="640" height="360"></span>
+            <span class="wtc-pop-body">
+              <span class="wtc-pop-name">Osaka</span>
+              <span class="wtc-pop-weather wt-live" data-lat="34.6937" data-lon="135.5023">
+                <span class="wtc-pop-temp" data-wt-temp>&mdash;</span>
+                <span class="wtc-pop-icon" data-wt-icon></span>
+                <span class="wtc-pop-cond" data-wt-cond>Loading&hellip;</span>
+              </span>
+              <span class="wtc-pop-link">View Forecast &rarr;</span>
+            </span>
+          </a>
+          <a class="wtc-pop-card" href="/city?name=Kyoto&lat=35.0116&lon=135.7681&country=Japan" data-city-name="Kyoto">
+            <span class="wtc-pop-thumb"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Kiyomizu-dera%2C_Kyoto%2C_November_2016_-02.jpg/960px-Kiyomizu-dera%2C_Kyoto%2C_November_2016_-02.jpg" alt="Kyoto, Japan" loading="lazy" width="640" height="360"></span>
+            <span class="wtc-pop-body">
+              <span class="wtc-pop-name">Kyoto</span>
+              <span class="wtc-pop-weather wt-live" data-lat="35.0116" data-lon="135.7681">
+                <span class="wtc-pop-temp" data-wt-temp>&mdash;</span>
+                <span class="wtc-pop-icon" data-wt-icon></span>
+                <span class="wtc-pop-cond" data-wt-cond>Loading&hellip;</span>
+              </span>
+              <span class="wtc-pop-link">View Forecast &rarr;</span>
+            </span>
+          </a>
+          <a class="wtc-pop-card" href="/city?name=Sapporo&lat=43.0618&lon=141.3545&country=Japan" data-city-name="Sapporo">
+            <span class="wtc-pop-thumb"><img src="https://upload.wikimedia.org/wikipedia/commons/5/54/SapporoCity_Skylines2020.jpg" alt="Sapporo, Japan" loading="lazy" width="640" height="360"></span>
+            <span class="wtc-pop-body">
+              <span class="wtc-pop-name">Sapporo</span>
+              <span class="wtc-pop-weather wt-live" data-lat="43.0618" data-lon="141.3545">
+                <span class="wtc-pop-temp" data-wt-temp>&mdash;</span>
+                <span class="wtc-pop-icon" data-wt-icon></span>
+                <span class="wtc-pop-cond" data-wt-cond>Loading&hellip;</span>
+              </span>
+              <span class="wtc-pop-link">View Forecast &rarr;</span>
+            </span>
+          </a>
+    </div>
+    <p class="ctry-empty-note" id="countryEmptyNote">No cities match your search.</p>
+
+    <a class="wtc-viewall" href="#all-cities">View All 4 cities &rarr;</a>
+
+    <section id="all-cities" aria-label="All cities in Japan">
+      <h2 class="seo-title" style="margin-bottom: 12px;">All 4 cities in Japan</h2>
+      <div class="country-chips-list">
+                  <a href="/japan/tokyo" class="country-city-chip" data-city-name="Tokyo">Tokyo</a>
+                  <a href="/city?name=Osaka&lat=34.6937&lon=135.5023&country=Japan" class="country-city-chip" data-city-name="Osaka">Osaka</a>
+                  <a href="/city?name=Kyoto&lat=35.0116&lon=135.7681&country=Japan" class="country-city-chip" data-city-name="Kyoto">Kyoto</a>
+                  <a href="/city?name=Sapporo&lat=43.0618&lon=141.3545&country=Japan" class="country-city-chip" data-city-name="Sapporo">Sapporo</a>
+      </div>
+    </section>
+
+    <p class="ctry-footnote">Temperatures are live and may vary by location.</p>
+
+    <article class="seo-section" style="margin-top: 40px;">
+      <h2 class="seo-title">Japan Weather</h2>
+      <div class="seo-prose">
+        <p>Japan weather, live from MET Norway. This page brings together the weather for all 4 cities in Japan — the capital Tokyo and every major city — each with its own page showing the current temperature, the hourly forecast, rain in millimetres, and the 10-day outlook. Pick a city above to open its full forecast.</p>
+        <p>Asia holds every climate on Earth, from tropical Singapore to the cold mountains of Pakistan and the snowy winters of Japan — the weather changes completely from one city to the next.</p>
+        <p>Check three things before any journey: the weather today, the weather tomorrow, and the 10-day forecast. The 10-day outlook shows the pattern for a whole trip, so you can see whether to pack for rain, heat, or cold — and the hourly forecast shows exactly which hours will be wet.</p>
+      </div>
+    </article>
+  </main>
+
+    <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-brand-title">Weather<span>Tomorrow</span></div>
+          <p class="footer-desc">
+            Accurate, real-time meteorological intelligence and multi-day forecasts for countries and cities worldwide.
+          </p>
+          <div class="footer-attribution">
+            Data from MET Norway (api.met.no, CC BY 4.0)
+          </div>
+          <div style="font-size: 11px; color: #64748B; margin-top: 2px;">
+            Search data © OpenStreetMap contributors
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index" class="footer-link">Home</a></li>
+            <li><a href="countries" class="footer-link">Countries</a></li>
+            <li><a href="forecast-10day" class="footer-link">10-Day Forecast</a></li>
+            <li><a href="hourly" class="footer-link">Hourly Forecast</a></li>
+            <li><a href="aqi" class="footer-link">AQI &amp; Smog</a></li>
+            <li><a href="blog" class="footer-link">Blog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about" class="footer-link">About Us</a></li>
+            <li><a href="privacy" class="footer-link">Privacy Policy</a></li>
+            <li><a href="terms" class="footer-link">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Worldwide Coverage</h4>
+          <div class="footer-desc" style="font-size: 13px;">
+            Connecting millions of cities worldwide to live meteorological telemetry.
+          </div>
+</div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Weather Tomorrow. All rights reserved.</div>
+        <div class="footer-credit">Made with <svg viewBox="0 0 24 24" width="14" height="14" fill="#EF4444" style="vertical-align: -2px; display: inline-block;" aria-label="love"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> by Ahsan Ali</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/theme.js"></script>
+  <script src="js/config.js?v=3"></script>
+  <script src="js/country-meta.js"></script>
+  <script src="js/i18n.js?v=3"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/search.js?v=3"></script>
+  <script src="js/weather.js?v=4"></script>
+  <script src="js/countries.js?v=3"></script>
+  <script src="js/language.js"></script>
+  <script src="js/live-temps.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initLanguage();
+
+      const mobileBtn = document.getElementById('mobileMenuToggle');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+      if (mobileBtn && mobileDrawer) {
+        mobileBtn.addEventListener('click', () => mobileDrawer.classList.toggle('is-open'));
+      }
+
+      // Filter this country's cities by name (popular cards + full chip list).
+      const searchInput = document.getElementById('countrySearchInput');
+      const emptyNote = document.getElementById('countryEmptyNote');
+      const items = Array.prototype.slice.call(document.querySelectorAll('[data-city-name]'));
+      if (searchInput) {
+        searchInput.addEventListener('input', () => {
+          const q = searchInput.value.trim().toLowerCase();
+          let visible = 0;
+          items.forEach(el => {
+            const show = !q || (el.getAttribute('data-city-name') || '').toLowerCase().includes(q);
+            el.style.display = show ? '' : 'none';
+            if (show) visible++;
+          });
+          if (emptyNote) emptyNote.style.display = (q && visible === 0) ? 'block' : 'none';
+        });
+      }
+    });
+  </script>
+</body>
+</html>

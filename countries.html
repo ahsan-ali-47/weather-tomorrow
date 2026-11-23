@@ -22,7 +22,7 @@
   <meta name="twitter:image" content="https://www.weathertomorrow.website/images/hero-mountain-lake.webp">
 
   <script>try{var __wt=localStorage.getItem('wt-theme');if(__wt==='dark'||__wt==='light')document.documentElement.setAttribute('data-theme',__wt);}catch(e){}</script>
-  <link rel="stylesheet" href="css/styles.css?v=blog1">
+  <link rel="stylesheet" href="css/styles.css?v=blog2">
 
   <script type="application/ld+json">
   {
@@ -150,8 +150,8 @@
       <div class="banner-icon">
         <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg>
       </div>
-      <h1 class="banner-title">World Countries &amp; Cities Weather Directory</h1>
-      <p class="banner-subtitle">Explore live meteorological observations and 10-day numerical forecasts for destinations around the globe.</p>
+      <h1 class="banner-title">Explore Countries</h1>
+      <p class="banner-subtitle">Discover weather forecasts by country and find cities around the world.</p>
 
       <div class="banner-search-wrap">
         <div class="search-container" style="max-width: 520px; width: 100%; margin-bottom: 0;">
@@ -167,20 +167,9 @@
   </section>
 
   <main class="container" style="margin-top: 30px; margin-bottom: 50px;">
-    <!-- Region Jump Links -->
-    <nav class="region-filter-bar" aria-label="Browse by region" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px;">
-      <a class="prov-pill-btn is-active" href="#countriesDirectoryGrid">All Regions</a>
-      <a class="prov-pill-btn" href="#region-europe">Europe</a>
-      <a class="prov-pill-btn" href="#region-americas">Americas</a>
-      <a class="prov-pill-btn" href="#region-asia">Asia</a>
-      <a class="prov-pill-btn" href="#region-middle-east">Middle East</a>
-      <a class="prov-pill-btn" href="#region-africa">Africa</a>
-      <a class="prov-pill-btn" href="#region-oceania">Oceania</a>
-    </nav>
-
-    <!-- Countries Directory List -->
-    <div id="countriesDirectoryGrid">
-      <!-- Generated via JS from CONFIG.COUNTRIES -->
+    <!-- Country Cards (mockup design: flag, live capital temperature, Explore button) -->
+    <div class="wtc-grid" id="countriesCardsGrid">
+      <!-- Generated via JS from CONFIG.COUNTRIES + COUNTRY_META -->
     </div>
 
     <!-- Global SEO Article -->
@@ -245,8 +234,8 @@
     <article class="seo-section">
       <h2 class="seo-title">Browse All Cities</h2>
       <div class="seo-prose">
-        <p><strong>Pakistan:</strong> <a href="lahore">Lahore</a> &middot; <a href="karachi">Karachi</a> &middot; <a href="islamabad">Islamabad</a> &middot; <a href="rawalpindi">Rawalpindi</a> &middot; <a href="multan">Multan</a> &middot; <a href="faisalabad">Faisalabad</a> &middot; <a href="peshawar">Peshawar</a> &middot; <a href="quetta">Quetta</a> &middot; <a href="gujrat">Gujrat</a> &middot; <a href="sialkot">Sialkot</a> &middot; <a href="hyderabad">Hyderabad</a> &middot; <a href="bahawalpur">Bahawalpur</a> &middot; <a href="sargodha">Sargodha</a> &middot; <a href="murree">Murree</a> &middot; <a href="mardan">Mardan</a> &middot; <a href="layyah">Layyah</a> &middot; <a href="mansehra">Mansehra</a> &middot; <a href="haripur">Haripur</a> &middot; <a href="jhelum">Jhelum</a> &middot; <a href="mirpur">Mirpur</a> &middot; <a href="rawalakot">Rawalakot</a> &middot; <a href="narowal">Narowal</a> &middot; <a href="toba-tek-singh">Toba Tek Singh</a> &middot; <a href="rahim-yar-khan">Rahim Yar Khan</a> &middot; <a href="abbottabad">Abbottabad</a> &middot; <a href="khushab">Khushab</a> &middot; <a href="attock">Attock</a> &middot; <a href="dera-ghazi-khan">Dera Ghazi Khan</a> &middot; <a href="kamoke">Kamoke</a> &middot; <a href="karak">Karak</a> &middot; <a href="nowshera">Nowshera</a> &middot; <a href="swabi">Swabi</a> &middot; <a href="taxila">Taxila</a> &middot; <a href="bahawalnagar">Bahawalnagar</a> &middot; <a href="bannu">Bannu</a> &middot; <a href="chichawatni">Chichawatni</a> &middot; <a href="dera-ismail-khan">Dera Ismail Khan</a> &middot; <a href="shikarpur">Shikarpur</a> &middot; <a href="thatta">Thatta</a> &middot; <a href="turbat">Turbat</a> &middot; <a href="wazirabad">Wazirabad</a> &middot; <a href="ahmadpur-east">Ahmadpur East</a> &middot; <a href="gujranwala">Gujranwala</a> &middot; <a href="sahiwal">Sahiwal</a> &middot; <a href="chakwal">Chakwal</a> &middot; <a href="sheikhupura">Sheikhupura</a> &middot; <a href="muzaffarabad">Muzaffarabad</a> &middot; <a href="kasur">Kasur</a> &middot; <a href="skardu">Skardu</a> &middot; <a href="swat">Swat</a> &middot; <a href="kohat">Kohat</a> &middot; <a href="okara">Okara</a> &middot; <a href="gilgit">Gilgit</a> &middot; <a href="vehari">Vehari</a> &middot; <a href="naran">Naran</a> &middot; <a href="jhang">Jhang</a> &middot; <a href="mandi-bahauddin">Mandi Bahauddin</a> &middot; <a href="khanewal">Khanewal</a> &middot; <a href="hafizabad">Hafizabad</a> &middot; <a href="jaranwala">Jaranwala</a> &middot; <a href="burewala">Burewala</a> &middot; <a href="mianwali">Mianwali</a> &middot; <a href="wah-cantt">Wah Cantt</a> &middot; <a href="malakand">Malakand</a> &middot; <a href="bhakkar">Bhakkar</a> &middot; <a href="larkana">Larkana</a> &middot; <a href="nathia-gali">Nathia Gali</a> &middot; <a href="gojra">Gojra</a> &middot; <a href="shahdara">Shahdara</a> &middot; <a href="samundri">Samundri</a> &middot; <a href="mian-channu">Mian Channu</a> &middot; <a href="nawabshah">Nawabshah</a> &middot; <a href="muridke">Muridke</a> &middot; <a href="sarai-alamgir">Sarai Alamgir</a> &middot; <a href="sadiqabad">Sadiqabad</a> &middot; <a href="lalamusa">Lalamusa</a> &middot; <a href="chaman">Chaman</a> &middot; <a href="khanpur">Khanpur</a></p>
-        <p><strong>Around the world:</strong> <a href="berlin">Berlin</a> &middot; <a href="cairo">Cairo</a> &middot; <a href="dubai">Dubai</a> &middot; <a href="istanbul">Istanbul</a> &middot; <a href="london">London</a> &middot; <a href="madrid">Madrid</a> &middot; <a href="new-york">New York</a> &middot; <a href="paris">Paris</a> &middot; <a href="riyadh">Riyadh</a> &middot; <a href="rome">Rome</a> &middot; <a href="singapore">Singapore</a> &middot; <a href="sydney">Sydney</a> &middot; <a href="tokyo">Tokyo</a> &middot; <a href="toronto">Toronto</a></p>
+        <p><strong>Pakistan:</strong> <a href="/pakistan/lahore">Lahore</a> &middot; <a href="/pakistan/karachi">Karachi</a> &middot; <a href="/pakistan/islamabad">Islamabad</a> &middot; <a href="/pakistan/rawalpindi">Rawalpindi</a> &middot; <a href="/pakistan/multan">Multan</a> &middot; <a href="/pakistan/faisalabad">Faisalabad</a> &middot; <a href="/pakistan/peshawar">Peshawar</a> &middot; <a href="/pakistan/quetta">Quetta</a> &middot; <a href="/pakistan/gujrat">Gujrat</a> &middot; <a href="/pakistan/sialkot">Sialkot</a> &middot; <a href="/pakistan/hyderabad">Hyderabad</a> &middot; <a href="/pakistan/bahawalpur">Bahawalpur</a> &middot; <a href="/pakistan/sargodha">Sargodha</a> &middot; <a href="/pakistan/murree">Murree</a> &middot; <a href="/pakistan/mardan">Mardan</a> &middot; <a href="/pakistan/layyah">Layyah</a> &middot; <a href="/pakistan/mansehra">Mansehra</a> &middot; <a href="/pakistan/haripur">Haripur</a> &middot; <a href="/pakistan/jhelum">Jhelum</a> &middot; <a href="/pakistan/mirpur">Mirpur</a> &middot; <a href="/pakistan/rawalakot">Rawalakot</a> &middot; <a href="/pakistan/narowal">Narowal</a> &middot; <a href="/pakistan/toba-tek-singh">Toba Tek Singh</a> &middot; <a href="/pakistan/rahim-yar-khan">Rahim Yar Khan</a> &middot; <a href="/pakistan/abbottabad">Abbottabad</a> &middot; <a href="/pakistan/khushab">Khushab</a> &middot; <a href="/pakistan/attock">Attock</a> &middot; <a href="/pakistan/dera-ghazi-khan">Dera Ghazi Khan</a> &middot; <a href="/pakistan/kamoke">Kamoke</a> &middot; <a href="/pakistan/karak">Karak</a> &middot; <a href="/pakistan/nowshera">Nowshera</a> &middot; <a href="/pakistan/swabi">Swabi</a> &middot; <a href="/pakistan/taxila">Taxila</a> &middot; <a href="/pakistan/bahawalnagar">Bahawalnagar</a> &middot; <a href="/pakistan/bannu">Bannu</a> &middot; <a href="/pakistan/chichawatni">Chichawatni</a> &middot; <a href="/pakistan/dera-ismail-khan">Dera Ismail Khan</a> &middot; <a href="/pakistan/shikarpur">Shikarpur</a> &middot; <a href="/pakistan/thatta">Thatta</a> &middot; <a href="/pakistan/turbat">Turbat</a> &middot; <a href="/pakistan/wazirabad">Wazirabad</a> &middot; <a href="/pakistan/ahmadpur-east">Ahmadpur East</a> &middot; <a href="/pakistan/gujranwala">Gujranwala</a> &middot; <a href="/pakistan/sahiwal">Sahiwal</a> &middot; <a href="/pakistan/chakwal">Chakwal</a> &middot; <a href="/pakistan/sheikhupura">Sheikhupura</a> &middot; <a href="/pakistan/muzaffarabad">Muzaffarabad</a> &middot; <a href="/pakistan/kasur">Kasur</a> &middot; <a href="/pakistan/skardu">Skardu</a> &middot; <a href="/pakistan/swat">Swat</a> &middot; <a href="/pakistan/kohat">Kohat</a> &middot; <a href="/pakistan/okara">Okara</a> &middot; <a href="/pakistan/gilgit">Gilgit</a> &middot; <a href="/pakistan/vehari">Vehari</a> &middot; <a href="/pakistan/naran">Naran</a> &middot; <a href="/pakistan/jhang">Jhang</a> &middot; <a href="/pakistan/mandi-bahauddin">Mandi Bahauddin</a> &middot; <a href="/pakistan/khanewal">Khanewal</a> &middot; <a href="/pakistan/hafizabad">Hafizabad</a> &middot; <a href="/pakistan/jaranwala">Jaranwala</a> &middot; <a href="/pakistan/burewala">Burewala</a> &middot; <a href="/pakistan/mianwali">Mianwali</a> &middot; <a href="/pakistan/wah-cantt">Wah Cantt</a> &middot; <a href="/pakistan/malakand">Malakand</a> &middot; <a href="/pakistan/bhakkar">Bhakkar</a> &middot; <a href="/pakistan/larkana">Larkana</a> &middot; <a href="/pakistan/nathia-gali">Nathia Gali</a> &middot; <a href="/pakistan/gojra">Gojra</a> &middot; <a href="/pakistan/shahdara">Shahdara</a> &middot; <a href="/pakistan/samundri">Samundri</a> &middot; <a href="/pakistan/mian-channu">Mian Channu</a> &middot; <a href="/pakistan/nawabshah">Nawabshah</a> &middot; <a href="/pakistan/muridke">Muridke</a> &middot; <a href="/pakistan/sarai-alamgir">Sarai Alamgir</a> &middot; <a href="/pakistan/sadiqabad">Sadiqabad</a> &middot; <a href="/pakistan/lalamusa">Lalamusa</a> &middot; <a href="/pakistan/chaman">Chaman</a> &middot; <a href="/pakistan/khanpur">Khanpur</a></p>
+        <p><strong>Around the world:</strong> <a href="/germany/berlin">Berlin</a> &middot; <a href="/egypt/cairo">Cairo</a> &middot; <a href="/united-arab-emirates/dubai">Dubai</a> &middot; <a href="/turkey/istanbul">Istanbul</a> &middot; <a href="/united-kingdom/london">London</a> &middot; <a href="/spain/madrid">Madrid</a> &middot; <a href="/usa/new-york">New York</a> &middot; <a href="/france/paris">Paris</a> &middot; <a href="/saudi-arabia/riyadh">Riyadh</a> &middot; <a href="/italy/rome">Rome</a> &middot; <a href="/singapore/singapore">Singapore</a> &middot; <a href="/australia/sydney">Sydney</a> &middot; <a href="/japan/tokyo">Tokyo</a> &middot; <a href="/canada/toronto">Toronto</a></p>
       </div>
     </article>
 
@@ -307,12 +296,14 @@
 
   <script src="js/theme.js"></script>
   <script src="js/config.js?v=3"></script>
+  <script src="js/country-meta.js"></script>
   <script src="js/ui.js"></script>
   <script src="js/api.js"></script>
   <script src="js/i18n.js?v=3"></script>
-  <script src="js/search.js?v=2"></script>
-  <script src="js/countries.js?v=2"></script>
+  <script src="js/search.js?v=3"></script>
+  <script src="js/countries.js?v=3"></script>
   <script src="js/language.js"></script>
+  <script src="js/live-temps.js"></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -326,184 +317,43 @@
 
       initSearch('#directorySearchInput', '#directorySearchDropdown');
 
-      // Render Country Directory List (region-grouped, no image cards)
-      const container = document.getElementById('countriesDirectoryGrid');
-
-      // Slugs with a real static city page (verified live 2026-11-23).
-      // Cities without one link to the dynamic city.html page, which
-      // always loads — so no chip on this page is ever a dead link.
-      const STATIC_CITY_PAGES = new Set([
-        "london",
-        "new-york",
-        "los-angeles",
-        "chicago",
-        "miami",
-        "san-francisco",
-        "dubai",
-        "paris",
-        "berlin",
-        "tokyo",
-        "toronto",
-        "vancouver",
-        "sydney",
-        "melbourne",
-        "riyadh",
-        "istanbul",
-        "rome",
-        "madrid",
-        "singapore",
-        "cairo",
-        "sao-paulo",
-        "delhi",
-        "mumbai",
-        "bangalore",
-        "karachi",
-        "lahore",
-        "islamabad",
-        "rawalpindi",
-        "multan",
-        "faisalabad",
-        "peshawar",
-        "quetta",
-        "gujrat",
-        "sialkot",
-        "hyderabad",
-        "bahawalpur",
-        "sargodha",
-        "murree",
-        "mardan",
-        "layyah",
-        "mansehra",
-        "haripur",
-        "jhelum",
-        "mirpur",
-        "rawalakot",
-        "narowal",
-        "toba-tek-singh",
-        "rahim-yar-khan",
-        "abbottabad",
-        "khushab",
-        "attock",
-        "dera-ghazi-khan",
-        "kamoke",
-        "karak",
-        "nowshera",
-        "swabi",
-        "taxila",
-        "bahawalnagar",
-        "bannu",
-        "chichawatni",
-        "dera-ismail-khan",
-        "shikarpur",
-        "thatta",
-        "turbat",
-        "wazirabad",
-        "ahmadpur-east",
-        "gujranwala",
-        "sahiwal",
-        "chakwal",
-        "sheikhupura",
-        "muzaffarabad",
-        "kasur",
-        "skardu",
-        "swat",
-        "kohat",
-        "okara",
-        "gilgit",
-        "vehari",
-        "naran",
-        "jhang",
-        "mandi-bahauddin",
-        "khanewal",
-        "hafizabad",
-        "jaranwala",
-        "burewala",
-        "mianwali",
-        "wah-cantt",
-        "malakand",
-        "bhakkar",
-        "larkana",
-        "nathia-gali",
-        "gojra",
-        "shahdara",
-        "samundri",
-        "mian-channu",
-        "nawabshah",
-        "muridke",
-        "sarai-alamgir",
-        "sadiqabad",
-        "lalamusa",
-        "chaman",
-        "khanpur",
-        "cape-town"
-      ]);
-
-      const REGION_ORDER = ['Europe', 'Americas', 'Asia', 'Middle East', 'Africa', 'Oceania'];
-
-      function regionSlug(region) {
-        return 'region-' + region.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      // Render country cards (flag, real city count, live capital temperature).
+      const grid = document.getElementById('countriesCardsGrid');
+      function capitalCoords(country) {
+        const m = (typeof COUNTRY_META !== 'undefined') ? COUNTRY_META[country.code] : null;
+        if (m) return [m.capitalLat, m.capitalLon];
+        const city = (country.cities || []).find(x => x.name === country.capital);
+        return city ? [city.lat, city.lon] : [0, 0];
       }
-
-      // A country belongs to the first region in REGION_ORDER that its
-      // region string includes, so "Europe/Asia" (Turkey) appears once,
-      // under Europe, and every country id stays unique.
-      function sectionFor(country) {
-        for (const r of REGION_ORDER) {
-          if (country.region.includes(r)) return r;
-        }
-        return country.region;
-      }
-
-      function cityHref(city, countryName) {
-        if (city.slug && STATIC_CITY_PAGES.has(city.slug)) return city.slug;
-        const q = `name=${encodeURIComponent(city.name)}&lat=${city.lat}&lon=${city.lon}&country=${encodeURIComponent(countryName)}`;
-        return `city?${q}`;
-      }
-
-      function renderDirectory() {
-        const sections = REGION_ORDER.map(region => {
-          const countries = CONFIG.COUNTRIES.filter(c => sectionFor(c) === region);
-          if (countries.length === 0) return '';
-          const rows = countries.map(c => {
-            const cities = c.cities || [];
-            const chips = cities.map(city => `
-                  <a href="${cityHref(city, c.name)}" class="country-city-chip">${escapeHtml(city.name)}</a>
-                `).join('');
-            return `
-          <div class="ctry-row" id="country-${c.code.toLowerCase()}">
-            <div class="ctry-row-head">
-              <span class="ctry-code">${escapeHtml(c.code)}</span>
-              <span class="ctry-name">${escapeHtml(c.name)}</span>
-              <span class="ctry-meta">Capital: ${escapeHtml(c.capital)}</span>
-              <span class="ctry-city-count">${cities.length} ${cities.length === 1 ? 'city' : 'cities'}</span>
-            </div>
-            <div class="country-chips-list">
-              ${chips}
-            </div>
-          </div>
-        `;
-          }).join('');
+      function renderCards() {
+        grid.innerHTML = CONFIG.COUNTRIES.map(c => {
+          const m = (typeof COUNTRY_META !== 'undefined') ? COUNTRY_META[c.code] : {};
+          const latLon = capitalCoords(c);
+          const n = (c.cities || []).length;
           return `
-        <section class="ctry-region" id="${regionSlug(region)}" aria-labelledby="${regionSlug(region)}-heading">
-          <h2 class="ctry-region-heading" id="${regionSlug(region)}-heading">${escapeHtml(region)} <span class="ctry-region-count">${countries.length} ${countries.length === 1 ? 'country' : 'countries'}</span></h2>
-          <div class="ctry-list">
-            ${rows}
-          </div>
-        </section>
-      `;
+          <article class="country-card" id="country-${c.code.toLowerCase()}">
+            <div class="country-card-thumb">
+              <img src="${m.hero || ''}" alt="${escapeHtml(m.heroAlt || c.name)}" loading="lazy" width="640" height="260">
+              <span class="country-card-badge">${n} ${n === 1 ? 'City' : 'Cities'}</span>
+            </div>
+            <div class="country-card-body">
+              <div class="wtc-head">
+                <img class="wtc-flag" src="${m.flag || ''}" alt="${escapeHtml(c.name)} flag" loading="lazy" width="48" height="32">
+                <span class="country-card-name">${escapeHtml(c.name)}</span>
+              </div>
+              <div class="country-card-meta">Capital: ${escapeHtml(c.capital)} &middot; ${escapeHtml(c.region)}</div>
+              <div class="wtc-temp wt-live" data-lat="${latLon[0]}" data-lon="${latLon[1]}">
+                <span class="wtc-temp-big" data-wt-temp>&mdash;</span>
+                <span class="wtc-temp-icon" data-wt-icon></span>
+                <span class="wtc-temp-cond" data-wt-cond>Loading&hellip;</span>
+              </div>
+              <a class="wtc-explore" href="/${m.slug || ''}">Explore ${escapeHtml(c.name)} &rarr;</a>
+            </div>
+          </article>
+        `;
         }).join('');
-        container.innerHTML = sections;
       }
-
-      // Region jump-link pills: move the active highlight on click.
-      document.querySelectorAll('.region-filter-bar .prov-pill-btn').forEach(pill => {
-        pill.addEventListener('click', () => {
-          document.querySelectorAll('.region-filter-bar .prov-pill-btn').forEach(p => p.classList.remove('is-active'));
-          pill.classList.add('is-active');
-        });
-      });
-
-      renderDirectory();
+      renderCards();
 
       // FAQs toggle
       document.querySelectorAll('.faq-question').forEach(btn => {
