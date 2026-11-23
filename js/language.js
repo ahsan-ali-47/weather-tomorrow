@@ -53,7 +53,7 @@ function initLanguage() {
     updateActiveBadge(code);
     applyTranslations();
     if (typeof Weather !== 'undefined' && Weather.lastRendered) {
-      Weather.renderHeroCard(Weather.lastRendered.container, Weather.lastRendered.cityInfo, Weather.lastRendered.parsed);
+      Weather.renderHeroCard(Weather.lastRendered.container, Weather.lastRendered.cityInfo, Weather.lastRendered.parsed, Weather.lastRendered.variant);
     }
     closeModal();
   }

@@ -151,7 +151,7 @@ const CountryNav = {
             region: firstCity.region || countryObj.name,
             lat: firstCity.lat,
             lon: firstCity.lon
-          }, parsed);
+          }, parsed, 'home');
           if (forecastContainer) Weather.render7DayRow(forecastContainer, parsed.daily);
         }
       }).catch(err => console.error('Country weather switch error:', err));

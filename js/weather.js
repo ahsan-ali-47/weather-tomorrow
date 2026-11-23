@@ -139,10 +139,22 @@ const WeatherRenderer = {
     return this.parseForecast(data);
   },
 
+  // Homepage-only gradient theme for the redesigned dashboard (variant 'home').
+  // City pages call renderHeroCard without a variant and keep the legacy markup.
+  wt2Theme(symbolCode) {
+    const code = (symbolCode || '').toLowerCase();
+    const night = code.indexOf('_night') !== -1 || code.indexOf('polartwilight') !== -1;
+    const wet = code.indexOf('thunder') !== -1 || code.indexOf('rain') !== -1 || code.indexOf('shower') !== -1 || code.indexOf('sleet') !== -1 || code.indexOf('snow') !== -1;
+    if (night) return wet ? 'wt2--rain' : 'wt2--night';
+    if (code.indexOf('clearsky') !== -1 || code.indexOf('fair') !== -1) return 'wt2--sunny';
+    if (wet) return 'wt2--rain';
+    return 'wt2--cloudy';
+  },
+
   // Render hero card matching reference image (pure SVG vector icons)
-  renderHeroCard(container, cityInfo, parsed) {
+  renderHeroCard(container, cityInfo, parsed, variant) {
     if (!container) return;
-    this.lastRendered = { container, cityInfo, parsed };
+    this.lastRendered = { container, cityInfo, parsed, variant };
 
     const { current, daily } = parsed;
     const cond = (typeof I18N !== 'undefined' && I18N.getCondition) ? I18N.getCondition(current.symbolCode) : { en: current.symbolCode, ur: '' };
@@ -171,6 +183,52 @@ const WeatherRenderer = {
     const uvLabel = (typeof I18N !== 'undefined' && I18N.t) ? I18N.t('uvIndex') : 'UV Index';
     const forecast7DaysLabel = (typeof I18N !== 'undefined' && I18N.t) ? I18N.t('forecast7Days') : '7 Days Forecast';
     const viewAllLabel = (typeof I18N !== 'undefined' && I18N.t) ? I18N.t('viewAll') : 'View All &rarr;';
+
+    // Redesigned homepage dashboard (variant 'home'): gradient card, stat pills,
+    // one-row 7-day strip. All values/units/labels identical to the legacy card.
+    if (variant === 'home') {
+      const themeClass = this.wt2Theme(current.symbolCode);
+      const dayCards = daily.slice(0, 7).map((d, i) => {
+        const dt = (typeof UI !== 'undefined' && UI.formatDayDate) ? UI.formatDayDate(d.time) : { day: d.date, date: '' };
+        const dayIcon = (typeof UI !== 'undefined' && UI.getWeatherIcon) ? UI.getWeatherIcon(d.symbolCode) : '';
+        const dayCond = (typeof I18N !== 'undefined' && I18N.getCondition) ? I18N.getCondition(d.symbolCode) : { en: d.symbolCode, ur: '' };
+        const dayText = (typeof I18N !== 'undefined' && I18N.currentLang === 'ur') ? dayCond.ur : dayCond.en;
+        return '<div class="wt2-day' + (i === 0 ? ' is-today' : '') + '">'
+          + '<span class="wt2-day-name">' + dt.day + '</span>'
+          + '<span class="wt2-day-date">' + dt.date + '</span>'
+          + '<div class="wt2-day-icon">' + dayIcon + '</div>'
+          + '<span class="wt2-day-temps">' + d.maxTemp + '\u00b0 / ' + d.minTemp + '\u00b0</span>'
+          + '<span class="wt2-day-cond">' + dayText + '</span>'
+          + '<span class="wt2-day-rain"><span class="inline-svg-tiny">' + ((typeof UI !== 'undefined' && UI.svg) ? UI.svg.humidity : '') + '</span> ' + d.precipitation + ' mm</span>'
+          + '</div>';
+      }).join('');
+      container.innerHTML =
+        '<div class="wt2-hero ' + themeClass + '">'
+        + '<div class="wt2-top">'
+        + '<div class="wt2-city"><span class="location-pin">' + pinSvg + '</span><span class="city-name">' + escapeHtml(cityInfo.name) + (cityInfo.country ? ', ' + escapeHtml(cityInfo.country) : '') + '</span>'
+        + ((typeof I18N !== 'undefined' && I18N.currentLang === 'ur' && cityInfo.urduName) ? '<span class="city-urdu">(' + escapeHtml(cityInfo.urduName) + ')</span>' : '')
+        + '</div>'
+        + '<div class="updated-time">' + lastUpdatedLabel + ': ' + timeFormatted + '</div>'
+        + '</div>'
+        + '<div class="wt2-main">'
+        + '<div class="wt2-icon">' + iconSvg + '</div>'
+        + '<div class="wt2-tempblock"><span class="wt2-temp">' + current.temp + '\u00b0C</span>'
+        + '<span class="wt2-cond">' + condText + '</span>'
+        + '<span class="wt2-sub">' + feelsLikeLabel + ' ' + current.feelsLike + '\u00b0C</span>'
+        + '<span class="wt2-sub">H: ' + (daily[0] ? daily[0].maxTemp : current.temp) + '\u00b0 &nbsp;/&nbsp; L: ' + (daily[0] ? daily[0].minTemp : current.temp) + '\u00b0</span></div>'
+        + '</div>'
+        + '<div class="wt2-stats">'
+        + '<div class="wt2-stat"><span class="wt2-stat-top"><span class="wt2-stat-icon">' + ((typeof UI !== 'undefined' && UI.svg) ? UI.svg.thermometer : '') + '</span><span class="wt2-stat-label">' + feelsLikeLabel + '</span></span><span class="wt2-stat-val">' + current.feelsLike + '\u00b0C</span></div>'
+        + '<div class="wt2-stat"><span class="wt2-stat-top"><span class="wt2-stat-icon">' + ((typeof UI !== 'undefined' && UI.svg) ? UI.svg.humidity : '') + '</span><span class="wt2-stat-label">' + humidityLabel + '</span></span><span class="wt2-stat-val">' + current.humidity + '%</span></div>'
+        + '<div class="wt2-stat"><span class="wt2-stat-top"><span class="wt2-stat-icon">' + ((typeof UI !== 'undefined' && UI.svg) ? UI.svg.wind : '') + '</span><span class="wt2-stat-label">' + windSpeedLabel + '</span></span><span class="wt2-stat-val">' + current.windSpeedKmh + ' km/h</span></div>'
+        + '<div class="wt2-stat"><span class="wt2-stat-top"><span class="wt2-stat-icon">' + ((typeof UI !== 'undefined' && UI.svg) ? UI.svg.uv : '') + '</span><span class="wt2-stat-label">' + uvLabel + '</span></span><span class="wt2-stat-val">' + current.uvIndex + '</span></div>'
+        + '</div>'
+        + '<div class="wt2-days">'
+        + '<div class="wt2-days-head"><span class="wt2-days-title">' + forecast7DaysLabel + '</span><a href="forecast-10day" class="wt2-viewall">' + viewAllLabel + '</a></div>'
+        + '<div class="wt2-days-row">' + dayCards + '</div>'
+        + '</div></div>';
+      return;
+    }
 
     container.innerHTML = `
       <div class="weather-hero-card">
