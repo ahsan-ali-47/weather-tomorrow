@@ -25,6 +25,16 @@
 
   <script>try{var __wt=localStorage.getItem('wt-theme');if(__wt==='dark'||__wt==='light')document.documentElement.setAttribute('data-theme',__wt);}catch(e){}</script>
   <link rel="stylesheet" href="css/styles.css?v=blog1">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <style>
+    /* Homepage live radar map (scoped to this section only) */
+    #wt-radar-map { width: 100%; height: 340px; background: #0B1E3A; z-index: 0; }
+    #wt-radar-map .leaflet-control-attribution { font-size: 11px; }
+    #wt-radar-map .leaflet-control-zoom a { color: #0F172A; }
+    #wt-radar-play { border: 0; font: inherit; }
+    .wt-radar-fallback { display: flex; align-items: center; justify-content: center; height: 100%; color: #FFFFFF; font-size: 14px; padding: 0 20px; text-align: center; }
+    @media (max-width: 640px) { #wt-radar-map { height: 300px; } }
+  </style>
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
@@ -162,7 +172,7 @@
     <div class="container hero-inner">
       <h1 class="hero-title">Weather <span class="hero-accent">Tomorrow</span></h1>
       <p class="hero-subtitle" data-i18n="heroSubtitle">
-        See the weather tomorrow and the weather today for any city in the world. Check weather Karachi, weather Islamabad, Lahore weather, weather Gujranwala, weather Sahiwal and weather Chakwal — with live temperature, hourly forecast, 10-day forecast, rain in millimetres and air quality, powered by MET Norway.
+        See the weather tomorrow and the weather today for any city. Check weather Karachi, weather Islamabad, Lahore weather, weather Gujranwala, weather Sahiwal and weather Chakwal — with live temperature, hourly forecast, 10-day forecast, rain in millimetres and air quality, powered by MET Norway.
       </p>
 
       <!-- Autocomplete Search Bar -->
@@ -314,166 +324,28 @@
       </div>
     </section>
 
-    <!-- World Countries Grid Section -->
+    <!-- Live Weather Radar Section -->
     <section class="popular-cities-section" style="margin-top: 50px;">
       <div class="section-header">
         <div>
-          <h2 class="section-title">Explore Weather by Country</h2>
-          <p class="section-subtitle">Live forecasts and multi-day projections for major global economic and cultural centers</p>
+          <h2 class="section-title">Live Weather Radar</h2>
+          <p class="section-subtitle">Watch live rain and storms move across the map, updated every 10 minutes.</p>
         </div>
-        <a href="countries" class="section-link">View All Countries →</a>
       </div>
 
-      <div class="cities-grid" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px;">
-        <!-- United Kingdom -->
-        <article class="country-card">
-          <div class="country-card-thumb">
-            <img src="images/countries/gb.jpg" alt="United Kingdom Weather - Big Ben London" loading="lazy" width="600" height="250">
-            <span class="country-card-badge">GB</span>
+      <div class="radar-visual-card">
+        <div class="radar-card-header">
+          <span style="display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; color: var(--text-main);"><span class="live-pulse-dot"></span>Live radar</span>
+          <div class="radar-layer-pills" role="group" aria-label="Radar animation controls">
+            <button type="button" class="radar-pill" id="wt-radar-play" aria-pressed="false">&#9654; Play</button>
+            <span class="radar-pill" id="wt-radar-time" style="cursor: default;">Loading&hellip;</span>
           </div>
-          <div class="country-card-body">
-            <div class="country-card-name">United Kingdom</div>
-            <div class="country-card-meta">Europe • Capital: London</div>
-            <div class="country-chips-list">
-              <a href="london" class="country-city-chip">London</a>
-              <a href="city?name=Manchester&lat=53.4808&lon=-2.2426&country=United+Kingdom" class="country-city-chip">Manchester</a>
-              <a href="city?name=Edinburgh&lat=55.9533&lon=-3.1883&country=United+Kingdom" class="country-city-chip">Edinburgh</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- United States -->
-        <article class="country-card">
-          <div class="country-card-thumb">
-            <img src="images/countries/us.jpg" alt="United States Weather - New York Manhattan" loading="lazy" width="600" height="250">
-            <span class="country-card-badge">US</span>
-          </div>
-          <div class="country-card-body">
-            <div class="country-card-name">United States</div>
-            <div class="country-card-meta">Americas • Capital: Washington, D.C.</div>
-            <div class="country-chips-list">
-              <a href="new-york" class="country-city-chip">New York</a>
-              <a href="city?name=Los+Angeles&lat=34.0522&lon=-118.2437&country=United+States" class="country-city-chip">Los Angeles</a>
-              <a href="city?name=Chicago&lat=41.8781&lon=-87.6298&country=United+States" class="country-city-chip">Chicago</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Japan -->
-        <article class="country-card">
-          <div class="country-card-thumb">
-            <img src="images/countries/jp.jpg" alt="Japan Weather - Mount Fuji" loading="lazy" width="600" height="250">
-            <span class="country-card-badge">JP</span>
-          </div>
-          <div class="country-card-body">
-            <div class="country-card-name">Japan</div>
-            <div class="country-card-meta">Asia • Capital: Tokyo</div>
-            <div class="country-chips-list">
-              <a href="tokyo" class="country-city-chip">Tokyo</a>
-              <a href="city?name=Osaka&lat=34.6937&lon=135.5023&country=Japan" class="country-city-chip">Osaka</a>
-              <a href="city?name=Kyoto&lat=35.0116&lon=135.7681&country=Japan" class="country-city-chip">Kyoto</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- France -->
-        <article class="country-card">
-          <div class="country-card-thumb">
-            <img src="images/countries/fr.jpg" alt="France Weather - Eiffel Tower Paris" loading="lazy" width="600" height="250">
-            <span class="country-card-badge">FR</span>
-          </div>
-          <div class="country-card-body">
-            <div class="country-card-name">France</div>
-            <div class="country-card-meta">Europe • Capital: Paris</div>
-            <div class="country-chips-list">
-              <a href="paris" class="country-city-chip">Paris</a>
-              <a href="city?name=Marseille&lat=43.2965&lon=5.3698&country=France" class="country-city-chip">Marseille</a>
-              <a href="city?name=Lyon&lat=45.7640&lon=4.8357&country=France" class="country-city-chip">Lyon</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- United Arab Emirates -->
-        <article class="country-card">
-          <div class="country-card-thumb">
-            <img src="images/countries/ae.jpg" alt="United Arab Emirates Weather - Dubai Burj Khalifa" loading="lazy" width="600" height="250">
-            <span class="country-card-badge">AE</span>
-          </div>
-          <div class="country-card-body">
-            <div class="country-card-name">United Arab Emirates</div>
-            <div class="country-card-meta">Middle East • Capital: Abu Dhabi</div>
-            <div class="country-chips-list">
-              <a href="dubai" class="country-city-chip">Dubai</a>
-              <a href="city?name=Abu+Dhabi&lat=24.4539&lon=54.3773&country=United+Arab+Emirates" class="country-city-chip">Abu Dhabi</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Germany -->
-        <article class="country-card">
-          <div class="country-card-thumb">
-            <img src="images/countries/de.jpg" alt="Germany Weather - Berlin Landmark" loading="lazy" width="600" height="250">
-            <span class="country-card-badge">DE</span>
-          </div>
-          <div class="country-card-body">
-            <div class="country-card-name">Germany</div>
-            <div class="country-card-meta">Europe • Capital: Berlin</div>
-            <div class="country-chips-list">
-              <a href="berlin" class="country-city-chip">Berlin</a>
-              <a href="city?name=Munich&lat=48.1351&lon=11.5820&country=Germany" class="country-city-chip">Munich</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Australia -->
-        <article class="country-card">
-          <div class="country-card-thumb">
-            <img src="images/countries/au.jpg" alt="Australia Weather - Sydney Opera House" loading="lazy" width="600" height="250">
-            <span class="country-card-badge">AU</span>
-          </div>
-          <div class="country-card-body">
-            <div class="country-card-name">Australia</div>
-            <div class="country-card-meta">Oceania • Capital: Canberra</div>
-            <div class="country-chips-list">
-              <a href="sydney" class="country-city-chip">Sydney</a>
-              <a href="city?name=Melbourne&lat=-37.8136&lon=144.9631&country=Australia" class="country-city-chip">Melbourne</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Canada -->
-        <article class="country-card">
-          <div class="country-card-thumb">
-            <img src="images/countries/ca.jpg" alt="Canada Weather - Banff Rocky Mountains" loading="lazy" width="600" height="250">
-            <span class="country-card-badge">CA</span>
-          </div>
-          <div class="country-card-body">
-            <div class="country-card-name">Canada</div>
-            <div class="country-card-meta">Americas • Capital: Ottawa</div>
-            <div class="country-chips-list">
-              <a href="toronto" class="country-city-chip">Toronto</a>
-              <a href="city?name=Vancouver&lat=49.2827&lon=-123.1207&country=Canada" class="country-city-chip">Vancouver</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Pakistan -->
-        <article class="country-card">
-          <div class="country-card-thumb">
-            <img src="images/about-globe.webp" alt="Pakistan Weather" loading="lazy" width="600" height="250">
-            <span class="country-card-badge">PK</span>
-          </div>
-          <div class="country-card-body">
-            <div class="country-card-name">Pakistan</div>
-            <div class="country-card-meta">Asia • Capital: Islamabad</div>
-            <div class="country-chips-list">
-              <a href="karachi" class="country-city-chip">Karachi</a>
-              <a href="lahore" class="country-city-chip">Lahore</a>
-              <a href="islamabad" class="country-city-chip">Islamabad</a>
-              <a href="multan" class="country-city-chip">Multan</a>
-            </div>
-          </div>
-        </article>
+        </div>
+        <div id="wt-radar-map" role="application" aria-label="Live weather radar map"></div>
+        <div class="radar-card-footer">
+          <span>Radar data &copy; RainViewer, map &copy; OpenStreetMap contributors</span>
+          <span id="wt-radar-updated"></span>
+        </div>
       </div>
     </section>
 
@@ -632,6 +504,7 @@
   <script src="js/weather.js?v=4"></script>
   <script src="js/countries.js?v=2"></script>
   <script src="js/language.js"></script>
+  <script src="js/radar.js?v=1"></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
