@@ -2824,17 +2824,18 @@ body {
 .wt2-day-rain .inline-svg-tiny { display: inline-flex; vertical-align: -2px; }
 .wt2-day-rain .inline-svg-tiny .svg-ico { width: 12px; height: 12px; }
 
-/* Small screens: stats become 2x2, day row scrolls sideways inside the card */
+/* Small screens: stats become 2x2, day cards wrap into rows below (no sideways scroll) */
 @media (max-width: 760px) {
   .wt2-hero { padding: 22px 18px; }
   .wt2-days-row {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 4px;
-    -webkit-overflow-scrolling: touch;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    overflow-x: visible;
+    scroll-snap-type: none;
+    padding-bottom: 0;
   }
-  .wt2-day { flex: 0 0 104px; scroll-snap-align: start; }
+  .wt2-day { scroll-snap-align: none; }
 }
 @media (max-width: 640px) {
   .wt2-top { flex-direction: column; align-items: flex-start; }
