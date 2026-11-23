@@ -295,7 +295,7 @@
   </footer>
 
   <script src="js/theme.js"></script>
-  <script src="js/config.js?v=3"></script>
+  <script src="js/config.js?v=4"></script>
   <script src="js/country-meta.js"></script>
   <script src="js/ui.js"></script>
   <script src="js/api.js"></script>
@@ -354,6 +354,11 @@
         }).join('');
       }
       renderCards();
+
+      // Cards are rendered above, after live-temps.js already scanned the
+      // (then empty) grid at DOMContentLoaded — re-run the temp scan now
+      // that the .wt-live groups exist, so capital temps render.
+      if (typeof window.wtInitLiveTemps === 'function') window.wtInitLiveTemps();
 
       // FAQs toggle
       document.querySelectorAll('.faq-question').forEach(btn => {

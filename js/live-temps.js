@@ -2,6 +2,13 @@
 // Fills every .wt-live group: [data-wt-temp], [data-wt-cond], [data-wt-icon].
 // Batched (4 at a time) so a 20-card page does not hammer the proxy. Graceful
 // "—" placeholder on any failure — never a fake number.
+//
+// NOTE: on /countries the cards are rendered by JS after this file loads, so
+// a scan at DOMContentLoaded alone finds an empty grid there. The page calls
+// window.wtInitLiveTemps() after rendering its cards; the DOMContentLoaded
+// handler below covers pages whose .wt-live markup is static HTML (country
+// pages). Groups already started are skipped, so calling the init twice is
+// harmless.
 (function () {
   function fill(group, temp, condLabel, iconSvg) {
     const t = group.querySelector('[data-wt-temp]');
@@ -38,8 +45,10 @@
     }
   }
 
-  document.addEventListener('DOMContentLoaded', function () {
-    const groups = Array.prototype.slice.call(document.querySelectorAll('.wt-live'));
+  function initLiveTemps() {
+    const groups = Array.prototype.slice.call(document.querySelectorAll('.wt-live'))
+      .filter(function (g) { return !g.dataset.wtStarted; });
+    groups.forEach(function (g) { g.dataset.wtStarted = '1'; });
     if (!groups.length) return;
     let idx = 0;
     const workers = [];
@@ -53,5 +62,8 @@
       })());
     }
     Promise.all(workers).catch(function () { /* placeholders already shown */ });
-  });
+  }
+
+  window.wtInitLiveTemps = initLiveTemps;
+  document.addEventListener('DOMContentLoaded', initLiveTemps);
 })();
