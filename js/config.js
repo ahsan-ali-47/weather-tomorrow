@@ -198,9 +198,9 @@ const CONFIG = {
       region: "Asia",
       capital: "New Delhi",
       cities: [
-        { slug: "new-delhi", name: "New Delhi", lat: 28.6139, lon: 77.2090, region: "Delhi", elevation: "216 m" },
+        { slug: "delhi", name: "New Delhi", lat: 28.6139, lon: 77.2090, region: "Delhi", elevation: "216 m" },
         { slug: "mumbai", name: "Mumbai", lat: 19.0760, lon: 72.8777, region: "Maharashtra", elevation: "14 m" },
-        { slug: "bengaluru", name: "Bengaluru", lat: 12.9716, lon: 77.5946, region: "Karnataka", elevation: "920 m" }
+        { slug: "bangalore", name: "Bengaluru", lat: 12.9716, lon: 77.5946, region: "Karnataka", elevation: "920 m" }
       ]
     },
     {

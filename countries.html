@@ -226,7 +226,7 @@
       <h2 class="seo-title">Weather Around the World — Browse by Country</h2>
       <div class="seo-prose">
         <p>The weather is different everywhere, and this page helps you find the weather for any country in the world. Weather Tomorrow covers 20 countries with live weather for their major cities, all powered by MET Norway. Pick a country below and you will see its cities, each with its own weather page showing the current temperature, the hourly forecast, the 10-day forecast, rain in millimetres, and the air quality. Whether you are planning a holiday, checking on family abroad, or just curious about the weather on the other side of the planet, this is where to start.</p>
-        <p>Pakistan is our home and our biggest coverage: 29 city pages, from Lahore, Karachi, Islamabad, Rawalpindi and Multan to smaller cities like Layyah, Mansehra, Haripur, Murree, Toba Tek Singh and Abbottabad. The United Arab Emirates, Saudi Arabia, the United Kingdom, the United States, Japan, Australia, Canada, Germany, France, Italy, Spain, Turkey, Egypt, Singapore and more are all covered too. Every country page works the same way: tap a city and its full forecast opens.</p>
+        <p>Pakistan is our home and our biggest coverage: 78 city pages, from Lahore, Karachi, Islamabad, Rawalpindi and Multan to smaller cities like Layyah, Mansehra, Haripur, Murree, Toba Tek Singh and Abbottabad. The United Arab Emirates, Saudi Arabia, the United Kingdom, the United States, Japan, Australia, Canada, Germany, France, Italy, Spain, Turkey, Egypt, Singapore and more are all covered too. Every country page works the same way: tap a city and its full forecast opens.</p>
         <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 24px 0 10px 0;">How the Weather Changes Around the World</h3>
         <p>The world has very different climates, and the same month can mean opposite weather in different places. When it is winter in Pakistan and Europe, it is summer in Australia and South Africa, because the southern hemisphere has its seasons reversed. When Lahore is covered in smog in November, Sydney is heading into summer. When Dubai is hot and dry, London is cool and rainy. That is why a world weather page is useful: the weather where you are tells you nothing about the weather where you are going.</p>
         <p>Desert countries like the United Arab Emirates and Saudi Arabia have very hot summers, mild winters, and almost no rain for most of the year. Tropical countries near the equator, like Singapore, stay warm all year with frequent rain. Temperate countries like the United Kingdom, Germany and France have four clear seasons: a cool winter, a mild spring, a warm summer and a cool autumn. Mountain cities like Murree and Abbottabad are much colder than the plains below them, and the temperature can drop several degrees in a short drive uphill. Always check the weather for the exact city, not just the country, because the weather changes with altitude, distance from the sea, and local geography.</p>
@@ -330,12 +330,136 @@
       const container = document.getElementById('countriesDirectoryGrid');
       const filterBtns = document.querySelectorAll('.region-filter-bar .prov-pill-btn');
 
+      // Slugs with a real static city page (verified live 2026-11-23).
+      // Cities without one link to the dynamic city.html page, which
+      // always loads — so no chip on this page is ever a dead link.
+      const STATIC_CITY_PAGES = new Set([
+        "london",
+        "new-york",
+        "los-angeles",
+        "chicago",
+        "miami",
+        "san-francisco",
+        "dubai",
+        "paris",
+        "berlin",
+        "tokyo",
+        "toronto",
+        "vancouver",
+        "sydney",
+        "melbourne",
+        "riyadh",
+        "istanbul",
+        "rome",
+        "madrid",
+        "singapore",
+        "cairo",
+        "sao-paulo",
+        "delhi",
+        "mumbai",
+        "bangalore",
+        "karachi",
+        "lahore",
+        "islamabad",
+        "rawalpindi",
+        "multan",
+        "faisalabad",
+        "peshawar",
+        "quetta",
+        "gujrat",
+        "sialkot",
+        "hyderabad",
+        "bahawalpur",
+        "sargodha",
+        "murree",
+        "mardan",
+        "layyah",
+        "mansehra",
+        "haripur",
+        "jhelum",
+        "mirpur",
+        "rawalakot",
+        "narowal",
+        "toba-tek-singh",
+        "rahim-yar-khan",
+        "abbottabad",
+        "khushab",
+        "attock",
+        "dera-ghazi-khan",
+        "kamoke",
+        "karak",
+        "nowshera",
+        "swabi",
+        "taxila",
+        "bahawalnagar",
+        "bannu",
+        "chichawatni",
+        "dera-ismail-khan",
+        "shikarpur",
+        "thatta",
+        "turbat",
+        "wazirabad",
+        "ahmadpur-east",
+        "gujranwala",
+        "sahiwal",
+        "chakwal",
+        "sheikhupura",
+        "muzaffarabad",
+        "kasur",
+        "skardu",
+        "swat",
+        "kohat",
+        "okara",
+        "gilgit",
+        "vehari",
+        "naran",
+        "jhang",
+        "mandi-bahauddin",
+        "khanewal",
+        "hafizabad",
+        "jaranwala",
+        "burewala",
+        "mianwali",
+        "wah-cantt",
+        "malakand",
+        "bhakkar",
+        "larkana",
+        "nathia-gali",
+        "gojra",
+        "shahdara",
+        "samundri",
+        "mian-channu",
+        "nawabshah",
+        "muridke",
+        "sarai-alamgir",
+        "sadiqabad",
+        "lalamusa",
+        "chaman",
+        "khanpur",
+        "cape-town"
+      ]);
+      const VISIBLE_CHIPS = 8;
+
+      function cityHref(city, countryName) {
+        if (city.slug && STATIC_CITY_PAGES.has(city.slug)) return city.slug;
+        const q = `name=${encodeURIComponent(city.name)}&lat=${city.lat}&lon=${city.lon}&country=${encodeURIComponent(countryName)}`;
+        return `city?${q}`;
+      }
+
       function renderDirectory(region = 'all') {
         const countries = (region === 'all')
           ? CONFIG.COUNTRIES
           : CONFIG.COUNTRIES.filter(c => c.region.includes(region));
 
-        container.innerHTML = countries.map(c => `
+        container.innerHTML = countries.map(c => {
+          const cities = c.cities || [];
+          const chips = cities.map((city, idx) => `
+                  <a href="${cityHref(city, c.name)}" class="country-city-chip${idx >= VISIBLE_CHIPS ? ' country-chip-extra' : ''}"${idx >= VISIBLE_CHIPS ? ' hidden' : ''}>
+                    ${city.name}
+                  </a>
+                `).join('');
+          const extra = cities.length - VISIBLE_CHIPS;
+          return `
           <article class="country-card" data-region="${c.region}" id="country-${c.code.toLowerCase()}">
             <div class="country-card-thumb">
               <img src="images/countries/${c.code.toLowerCase()}.jpg" onerror="this.src='images/about-globe.webp'" alt="${escapeHtml(c.name)} Weather" loading="lazy" width="600" height="250">
@@ -344,24 +468,29 @@
             <div class="country-card-body">
               <div class="country-card-name">${escapeHtml(c.name)}</div>
               <div class="country-card-meta">${escapeHtml(c.region)} • Capital: ${escapeHtml(c.capital)}</div>
-              <div class="country-chips-list">
-                ${(c.cities || []).map(city => `
-                  <a href="${city.slug}" class="country-city-chip">
-                    ${city.name}
-                  </a>
-                `).join('')}
+              <div class="country-chips-list" id="chips-${c.code.toLowerCase()}">
+                ${chips}
               </div>
+              ${extra > 0 ? `
+              <div class="country-card-foot">
+                <button type="button" class="country-show-all-btn" aria-expanded="false" aria-controls="chips-${c.code.toLowerCase()}">Show all ${cities.length} cities</button>
+              </div>` : ''}
             </div>
           </article>
-        `).join('');
+        `;
+        }).join('');
       }
 
-      filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          filterBtns.forEach(b => b.classList.remove('is-active'));
-          btn.classList.add('is-active');
-          renderDirectory(btn.dataset.region);
-        });
+      // One delegated listener: survives re-renders from the region filter.
+      container.addEventListener('click', (e) => {
+        const btn = e.target.closest('.country-show-all-btn');
+        if (!btn) return;
+        const card = btn.closest('.country-card');
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        card.querySelectorAll('.country-chip-extra').forEach(chip => { chip.hidden = expanded; });
+        btn.setAttribute('aria-expanded', String(!expanded));
+        const total = card.querySelectorAll('.country-city-chip').length;
+        btn.textContent = expanded ? `Show all ${total} cities` : 'Show less';
       });
 
       renderDirectory();

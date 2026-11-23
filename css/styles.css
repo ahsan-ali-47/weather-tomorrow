@@ -2851,3 +2851,44 @@ body {
   .wt2-stat { padding: 10px 10px; }
   .wt2-stat-val { font-size: 15px; }
 }
+
+/* ============================================================
+   COUNTRIES DIRECTORY — equal-height cards + chip expander
+   (appended 2026-11-23; new classes only, no existing rule changed)
+   ============================================================ */
+#countriesDirectoryGrid {
+  align-items: stretch;
+}
+
+#countriesDirectoryGrid .country-card-body {
+  flex: 1;
+}
+
+#countriesDirectoryGrid .country-chip-extra[hidden] {
+  display: none;
+}
+
+.country-card-foot {
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.country-show-all-btn {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg-soft);
+  color: #0284C7;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.country-show-all-btn:hover,
+.country-show-all-btn:focus-visible {
+  background: #E0F2FE;
+  color: #0284C7;
+}
