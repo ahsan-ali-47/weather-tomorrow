@@ -167,19 +167,19 @@
   </section>
 
   <main class="container" style="margin-top: 30px; margin-bottom: 50px;">
-    <!-- Region Filter Pills -->
-    <div class="region-filter-bar" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px;">
-      <button type="button" class="prov-pill-btn is-active" data-region="all">All Regions</button>
-      <button type="button" class="prov-pill-btn" data-region="Europe">Europe</button>
-      <button type="button" class="prov-pill-btn" data-region="Americas">Americas</button>
-      <button type="button" class="prov-pill-btn" data-region="Asia">Asia</button>
-      <button type="button" class="prov-pill-btn" data-region="Middle East">Middle East</button>
-      <button type="button" class="prov-pill-btn" data-region="Africa">Africa</button>
-      <button type="button" class="prov-pill-btn" data-region="Oceania">Oceania</button>
-    </div>
+    <!-- Region Jump Links -->
+    <nav class="region-filter-bar" aria-label="Browse by region" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px;">
+      <a class="prov-pill-btn is-active" href="#countriesDirectoryGrid">All Regions</a>
+      <a class="prov-pill-btn" href="#region-europe">Europe</a>
+      <a class="prov-pill-btn" href="#region-americas">Americas</a>
+      <a class="prov-pill-btn" href="#region-asia">Asia</a>
+      <a class="prov-pill-btn" href="#region-middle-east">Middle East</a>
+      <a class="prov-pill-btn" href="#region-africa">Africa</a>
+      <a class="prov-pill-btn" href="#region-oceania">Oceania</a>
+    </nav>
 
-    <!-- Countries Directory Grid -->
-    <div id="countriesDirectoryGrid" class="cities-grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
+    <!-- Countries Directory List -->
+    <div id="countriesDirectoryGrid">
       <!-- Generated via JS from CONFIG.COUNTRIES -->
     </div>
 
@@ -326,9 +326,8 @@
 
       initSearch('#directorySearchInput', '#directorySearchDropdown');
 
-      // Render Country Directory Cards
+      // Render Country Directory List (region-grouped, no image cards)
       const container = document.getElementById('countriesDirectoryGrid');
-      const filterBtns = document.querySelectorAll('.region-filter-bar .prov-pill-btn');
 
       // Slugs with a real static city page (verified live 2026-11-23).
       // Cities without one link to the dynamic city.html page, which
@@ -438,7 +437,22 @@
         "khanpur",
         "cape-town"
       ]);
-      const VISIBLE_CHIPS = 8;
+
+      const REGION_ORDER = ['Europe', 'Americas', 'Asia', 'Middle East', 'Africa', 'Oceania'];
+
+      function regionSlug(region) {
+        return 'region-' + region.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      }
+
+      // A country belongs to the first region in REGION_ORDER that its
+      // region string includes, so "Europe/Asia" (Turkey) appears once,
+      // under Europe, and every country id stays unique.
+      function sectionFor(country) {
+        for (const r of REGION_ORDER) {
+          if (country.region.includes(r)) return r;
+        }
+        return country.region;
+      }
 
       function cityHref(city, countryName) {
         if (city.slug && STATIC_CITY_PAGES.has(city.slug)) return city.slug;
@@ -446,51 +460,47 @@
         return `city?${q}`;
       }
 
-      function renderDirectory(region = 'all') {
-        const countries = (region === 'all')
-          ? CONFIG.COUNTRIES
-          : CONFIG.COUNTRIES.filter(c => c.region.includes(region));
-
-        container.innerHTML = countries.map(c => {
-          const cities = c.cities || [];
-          const chips = cities.map((city, idx) => `
-                  <a href="${cityHref(city, c.name)}" class="country-city-chip${idx >= VISIBLE_CHIPS ? ' country-chip-extra' : ''}"${idx >= VISIBLE_CHIPS ? ' hidden' : ''}>
-                    ${city.name}
-                  </a>
+      function renderDirectory() {
+        const sections = REGION_ORDER.map(region => {
+          const countries = CONFIG.COUNTRIES.filter(c => sectionFor(c) === region);
+          if (countries.length === 0) return '';
+          const rows = countries.map(c => {
+            const cities = c.cities || [];
+            const chips = cities.map(city => `
+                  <a href="${cityHref(city, c.name)}" class="country-city-chip">${escapeHtml(city.name)}</a>
                 `).join('');
-          const extra = cities.length - VISIBLE_CHIPS;
-          return `
-          <article class="country-card" data-region="${c.region}" id="country-${c.code.toLowerCase()}">
-            <div class="country-card-thumb">
-              <img src="images/countries/${c.code.toLowerCase()}.jpg" onerror="this.src='images/about-globe.webp'" alt="${escapeHtml(c.name)} Weather" loading="lazy" width="600" height="250">
-              <span class="country-card-badge">${c.code}</span>
+            return `
+          <div class="ctry-row" id="country-${c.code.toLowerCase()}">
+            <div class="ctry-row-head">
+              <span class="ctry-code">${escapeHtml(c.code)}</span>
+              <span class="ctry-name">${escapeHtml(c.name)}</span>
+              <span class="ctry-meta">Capital: ${escapeHtml(c.capital)}</span>
+              <span class="ctry-city-count">${cities.length} ${cities.length === 1 ? 'city' : 'cities'}</span>
             </div>
-            <div class="country-card-body">
-              <div class="country-card-name">${escapeHtml(c.name)}</div>
-              <div class="country-card-meta">${escapeHtml(c.region)} • Capital: ${escapeHtml(c.capital)}</div>
-              <div class="country-chips-list" id="chips-${c.code.toLowerCase()}">
-                ${chips}
-              </div>
-              ${extra > 0 ? `
-              <div class="country-card-foot">
-                <button type="button" class="country-show-all-btn" aria-expanded="false" aria-controls="chips-${c.code.toLowerCase()}">Show all ${cities.length} cities</button>
-              </div>` : ''}
+            <div class="country-chips-list">
+              ${chips}
             </div>
-          </article>
+          </div>
         `;
+          }).join('');
+          return `
+        <section class="ctry-region" id="${regionSlug(region)}" aria-labelledby="${regionSlug(region)}-heading">
+          <h2 class="ctry-region-heading" id="${regionSlug(region)}-heading">${escapeHtml(region)} <span class="ctry-region-count">${countries.length} ${countries.length === 1 ? 'country' : 'countries'}</span></h2>
+          <div class="ctry-list">
+            ${rows}
+          </div>
+        </section>
+      `;
         }).join('');
+        container.innerHTML = sections;
       }
 
-      // One delegated listener: survives re-renders from the region filter.
-      container.addEventListener('click', (e) => {
-        const btn = e.target.closest('.country-show-all-btn');
-        if (!btn) return;
-        const card = btn.closest('.country-card');
-        const expanded = btn.getAttribute('aria-expanded') === 'true';
-        card.querySelectorAll('.country-chip-extra').forEach(chip => { chip.hidden = expanded; });
-        btn.setAttribute('aria-expanded', String(!expanded));
-        const total = card.querySelectorAll('.country-city-chip').length;
-        btn.textContent = expanded ? `Show all ${total} cities` : 'Show less';
+      // Region jump-link pills: move the active highlight on click.
+      document.querySelectorAll('.region-filter-bar .prov-pill-btn').forEach(pill => {
+        pill.addEventListener('click', () => {
+          document.querySelectorAll('.region-filter-bar .prov-pill-btn').forEach(p => p.classList.remove('is-active'));
+          pill.classList.add('is-active');
+        });
       });
 
       renderDirectory();

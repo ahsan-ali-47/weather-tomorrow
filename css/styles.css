@@ -2893,3 +2893,102 @@ body {
   background: #E0F2FE;
   color: #0284C7;
 }
+
+/* ============================================================
+   COUNTRIES DIRECTORY LIST — region-grouped, no image cards
+   (appended 2026-11-23; new classes only, no existing rule changed)
+   ============================================================ */
+#countriesDirectoryGrid {
+  scroll-margin-top: 84px;
+  margin: 0 0 40px 0;
+}
+
+.ctry-region {
+  margin: 0 0 28px 0;
+  scroll-margin-top: 84px;
+}
+
+.ctry-region-heading {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 0 0 12px 0;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ctry-region-count {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.ctry-list {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+}
+
+.ctry-row {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-color);
+  scroll-margin-top: 84px;
+}
+
+.ctry-list .ctry-row:last-child {
+  border-bottom: none;
+}
+
+.ctry-row-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.ctry-code {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 3px 7px;
+  line-height: 1.2;
+}
+
+.ctry-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.25;
+}
+
+.ctry-meta {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.ctry-city-count {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.region-filter-bar a.prov-pill-btn {
+  text-decoration: none;
+}
+
+@media (max-width: 560px) {
+  .ctry-row {
+    padding: 12px 12px;
+  }
+  .ctry-name {
+    font-size: 15px;
+  }
+}
