@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/images/logo.png">
+  <link rel="apple-touch-icon" href="/images/logo.png">
+  <title>Marseille Weather &amp; 10-Day Forecast — Weather Tomorrow</title>
+  <meta name="description" content="Live Marseille weather today: current temperature, hourly updates, rain in millimetres, humidity, wind, and the 10-day outlook from MET Norway.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.weathertomorrow.website/france/marseille">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Marseille Weather Today &amp; 10-Day Forecast — Weather Tomorrow">
+  <meta property="og:description" content="Live Marseille (France) weather updates, current conditions, and 10-day projections powered by MET Norway.">
+  <meta property="og:url" content="https://www.weathertomorrow.website/france/marseille">
+  <meta property="og:image" content="https://www.weathertomorrow.website/images/hero-mountain-lake.webp">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Marseille Weather — Weather Tomorrow">
+  <meta name="twitter:description" content="Current Marseille weather, the 7-day outlook, and the 10-day forecast.">
+  <meta name="twitter:image" content="https://www.weathertomorrow.website/images/hero-mountain-lake.webp">
+
+  <script>try{var __wt=localStorage.getItem('wt-theme');if(__wt==='dark'||__wt==='light')document.documentElement.setAttribute('data-theme',__wt);}catch(e){}</script>
+  <link rel="stylesheet" href="/css/styles.css?v=blog2">
+
+    <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.weathertomorrow.website/france/marseille#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.weathertomorrow.website/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Countries",
+          "item": "https://www.weathertomorrow.website/countries"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Marseille",
+          "item": "https://www.weathertomorrow.website/france/marseille"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.weathertomorrow.website/france/marseille#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the weather in Marseille today?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This page shows the live weather for Marseille, with the current temperature, wind speed and direction, dampness, and pressure, plus a 7-day outlook and a link to the 10-day forecast. The data comes from MET Norway and is updated every hour."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How accurate is the Marseille forecast?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Days 1 to 3 are generally the most reliable. Days 4 to 10 are ensemble model projections, which means the model is run more than once with small changes. They are a good guide for planning, and they are refreshed every hour."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it rain much in Marseille?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Rain falls mostly from autumn to early spring, and summers are dry. The forecast shows rain in millimetres, so you can see at once how much is due. Heavy rain can fall in short bursts when a storm moves in from the sea."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best time to visit Marseille?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Late spring and early autumn are the best times. The days are warm, the sun shines, and the rain is light. Summer is hot and busy, and winter is mild but can be windy when the Mistral blows."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Marseille get snow?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Snow is very rare in Marseille. It may fall once in a great many years, and it melts fast. The winters are mild, and the sea keeps the cold from settling over the city."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How hot does Marseille get in summer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Summers in Marseille are hot and dry, with strong sun and very little rain. The sea breeze in the afternoon brings a little relief near the port, but the inland parts of the city stay hot."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where does the Marseille weather data come from?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The data comes from MET Norway, the weather service of Norway, which runs a world weather model. It is free to use, it is updated every hour, and it covers the exact spot where Marseille stands."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I see the Marseille weather for the next 10 days?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The 10-day forecast page, linked from this page, shows ten full days for Marseille, with highs and lows, rain in millimetres, and average dampness. This page itself shows the 7-day outlook."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#38BDF8">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Weather Tomorrow">
+  <script src="/pwa.js" defer></script>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/index" class="brand" aria-label="Weather Tomorrow Home">
+        <div class="brand-icon">
+          <img src="/images/logo.png" alt="Weather Tomorrow logo" width="34" height="34">
+        </div>
+        <div class="brand-text">Weather<span>Tomorrow</span></div>
+      </a>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="/index" class="nav-link">Home</a>
+        <a href="/countries" class="nav-link">Countries</a>
+        <a href="/forecast-10day" class="nav-link">10-Day</a>
+        <a href="/hourly" class="nav-link">Hourly</a>
+        <a href="/aqi" class="nav-link">AQI/Smog</a>
+        <a href="/about" class="nav-link">About</a>
+        <a href="/blog" class="nav-link">Blog</a>
+      </nav>
+
+      <div class="header-actions">
+
+        <!-- Language Dropdown Button -->
+        <button id="langTrigger" class="lang-btn" type="button" aria-haspopup="dialog" aria-expanded="false" title="Select Language">
+          <span id="currentLangLabel">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" class="svg-ico"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span>English</span>
+          </span>
+          <span class="lang-caret">▼</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <!-- Theme Toggle (Light / Dark) -->
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Dark mode">
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+        <button id="mobileMenuToggle" class="mobile-toggle" type="button" aria-label="Toggle navigation menu">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileDrawer" class="mobile-drawer" role="menu">
+      <a href="/index" class="mobile-nav-link">Home</a>
+      <a href="/countries" class="mobile-nav-link">Countries</a>
+      <a href="/forecast-10day" class="mobile-nav-link">10-Day</a>
+      <a href="/hourly" class="mobile-nav-link">Hourly</a>
+      <a href="/aqi" class="mobile-nav-link">AQI/Smog</a>
+      <a href="/about" class="mobile-nav-link">About</a>
+      <a href="/blog" class="mobile-nav-link">Blog</a>
+    </div>
+
+
+    <!-- Language Searchable Modal -->
+    <div id="langModal" class="lang-modal" role="dialog" aria-label="Select Language">
+      <div class="lang-search-box">
+        <input type="text" id="langSearchInput" placeholder="Search language..." aria-label="Search language">
+      </div>
+      <ul id="langList" class="lang-list"></ul>
+    </div>
+  </header>
+
+  <!-- City Page Banner -->
+  <section class="page-banner">
+    <div class="container">
+      <div class="banner-icon"><svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="white" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg></div>
+      <h1 class="banner-title">Marseille Weather</h1>
+      <p class="banner-subtitle">Check the weather in Marseille today — live temperature, current conditions, the 7-day outlook, and the 10-day forecast for Marseille, France. See rain in Marseille, humidity and wind speed, powered by MET Norway.</p>
+      <p class="banner-subtitle">Marseille • France • Elevation: 12 m</p>
+
+      <div class="banner-search-wrap">
+        <div class="search-container" style="max-width: 520px; width: 100%; margin-bottom: 0;">
+          <div class="search-bar">
+            <span class="search-bar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
+            <input type="text" id="citySearchInput" class="search-input" placeholder="Search another world city..." autocomplete="off">
+            <button type="button" id="citySearchBtn" class="search-btn"><span>Search</span></button>
+          </div>
+          <div id="searchDropdown" class="search-dropdown"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container" style="margin-top: 30px; margin-bottom: 50px;">
+    <!-- Main Live Weather Card -->
+    <div id="weatherCardContainer">
+      <div class="weather-hero-card">
+        <div class="card-head">
+          <div class="city-title-group">
+            <span class="location-pin"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#2563EB" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg></span>
+            <span class="city-name">Marseille, France</span>
+          </div>
+          <div class="updated-time">Connecting to MET Norway Live Telemetry...</div>
+        </div>
+        <div class="card-body-row">
+          <div class="current-left">
+            <div class="weather-icon-large">
+              <svg viewBox="0 0 64 64" fill="none" class="w-icon"><circle cx="32" cy="32" r="16" fill="#FBBF24" /></svg>
+            </div>
+            <div class="temp-badge">
+              <span class="temp-big">--°C</span>
+              <span class="cond-label">Fetching live data...</span>
+              <span class="feels-label">Feels like --°C</span>
+            </div>
+          </div>
+          <div class="metrics-grid">
+            <div class="metric-item"><span class="metric-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#38BDF8" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg></span><span class="metric-label">Humidity</span><span class="metric-val">--%</span></div>
+            <div class="metric-item"><span class="metric-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#38BDF8" stroke-width="2"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"></path></svg></span><span class="metric-label">Wind Speed</span><span class="metric-val">-- km/h</span></div>
+            <div class="metric-item"><span class="metric-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#38BDF8" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg></span><span class="metric-label">Wind Direction</span><span class="metric-val">--</span></div>
+            <div class="metric-item"><span class="metric-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#38BDF8" stroke-width="2"><circle cx="12" cy="12" r="7"></circle><polyline points="12 9 12 12 13.5 13.5"></polyline><path d="M16.51 17.35l-.35 3.83a2 2 0 0 1-2 1.82H9.83a2 2 0 0 1-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 0 1 9.83 1h4.35a2 2 0 0 1 2 1.82l.35 3.83"></path></svg></span><span class="metric-label">Pressure</span><span class="metric-val">-- hPa</span></div>
+            <div class="metric-item"><span class="metric-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#38BDF8" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></span><span class="metric-label">Visibility</span><span class="metric-val">-- km</span></div>
+            <div class="metric-item"><span class="metric-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#F59E0B" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span><span class="metric-label">UV Index</span><span class="metric-val">--</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7-Day & 10-Day Projections Container -->
+    <div id="forecastContainer" style="margin-top: 24px;"></div>
+
+    <!-- Air Quality / Smog Block -->
+    <div id="aqiContainer" style="margin-top: 24px;"></div>
+
+    <!-- Live Doppler Radar & Satellite Map Section (Matching Reference Design) -->
+    <section class="radar-visual-card" aria-label="Live Weather Radar for Marseille">
+      <div class="radar-card-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span class="live-pulse-dot" aria-hidden="true"></span>
+          <div>
+            <p style="font-size: 17px; font-weight: 700; color: var(--text-main); margin: 0;">Live Doppler Weather Radar — Marseille</p>
+            <p style="font-size: 12px; color: var(--text-muted); margin: 2px 0 0 0;">Continuous satellite telemetry, precipitation reflectivity &amp; storm tracking</p>
+          </div>
+        </div>
+        <div class="radar-layer-pills" role="tablist">
+          <span class="radar-pill active" role="tab">Radar</span>
+          <span class="radar-pill" role="tab">Satellite</span>
+          <span class="radar-pill" role="tab">Precipitation</span>
+          <span class="radar-pill" role="tab">Wind Flow</span>
+        </div>
+      </div>
+
+      <div class="radar-viewport">
+        <img src="/images/maps-radar.webp" alt="Live Doppler Weather Radar and Satellite Cloud Imagery for Marseille" width="1200" height="340" loading="lazy">
+        <div class="radar-badge-active">
+          <span style="display: inline-block; width: 8px; height: 8px; background: #22C55E; border-radius: 50%;"></span>
+          <span>DOPPLER RADAR • MET NORWAY TELEMETRY</span>
+        </div>
+        <div class="radar-scale-bar">
+          <span style="color: #94A3B8;">Precipitation Intensity:</span>
+          <div class="scale-grad"></div>
+          <span style="font-weight: 700; color: #EF4444;">Severe</span>
+        </div>
+      </div>
+
+      <div class="radar-card-footer">
+        <span style="color: var(--text-muted); display: inline-flex; align-items: center; gap: 6px;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          Continuous real-time sweep • Live MET Norway location telemetry
+        </span>
+        <a href="/countries" style="color: var(--primary); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+          Explore Worldwide Radar Stations &rarr;
+        </a>
+      </div>
+    </section>
+  
+
+    <article class="seo-section" style="margin-top: 40px;">
+      <h2 class="seo-title">Weather Forecast for Marseille France</h2>
+      <div class="seo-prose">
+        <p>
+          Welcome to the weather page for <strong>Marseille</strong>, in Provence, France (Coordinates: 43.2965°N, 5.3698°E; elevation: 12 m). Marseille is a large port city on the Mediterranean Sea, and it is the oldest city in France. Greek traders built it long ago, and ships have come and gone from its old port ever since. The city spreads around a curved bay, with white limestone hills behind it and the rocky inlets of the Calanques to the east. A church with a tall statue stands on a hill above the port and can be seen from far out at sea. This page shows live weather data for the exact location of Marseille, from the MET Norway weather model, updated every hour.
+        </p>
+        <p>
+          Marseille has a Mediterranean climate. Summers are hot and dry, with strong sun and very little rain. Winters are mild and wet, with most of the year's rain falling in short bursts. The most famous wind here is the Mistral, a strong cold wind from the north-west that can blow for days, clear the sky, and make the air feel sharp. Spring and autumn are often the most pleasant seasons, with warm days and fresh breezes from the sea. The rest of this page explains each season in simple words, and shows how to use the 7-day outlook and the 10-day forecast.
+        </p>
+
+        <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 20px 0 10px 0;">Marseille Weather</h3>
+        <p>
+          Marseille weather is shaped by the sea, the hills, and the Mistral wind. The Mediterranean Sea keeps the winters mild, because the water holds warmth from the summer and gives it back slowly. The hills behind the city shelter it from some storms, but they also squeeze extra rain out of wet winds. When the Mistral blows, the sky turns a deep blue, the air dries out, and the wind can be strong enough to make walking hard near the port. The card at the top of this page shows the live temperature, wind speed and direction, dampness, and pressure for Marseille right now.
+        </p>
+
+        <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 20px 0 10px 0;">Weather in Marseille</h3>
+        <p>
+          The weather in Marseille follows the seasons of the Mediterranean. In summer, the sun is strong, the days are long, and rain is rare for weeks at a time. The sea breeze in the afternoon takes the edge off the heat near the port. In winter, the days are short and mild, with rain that comes in fast showers and then clears. Spring brings flowers to the hills and warm days that can still turn cool when the Mistral blows. Autumn is often warm at first, then turns wet, with heavy rain at times when storms move in from the sea.
+        </p>
+
+        <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 20px 0 10px 0;">Marseille France Weather</h3>
+        <p>
+          Marseille France weather is warmer and drier than the weather in the north of the country. Paris and the north get more cloud and more rain through the year, while Marseille gets more sun and longer dry spells. In the south of France, the sea and the hills make the weather local: one side of the city can be sunny while the other side catches a shower. That is why a live forecast for the exact spot matters more here than a broad regional outlook. This page uses the MET Norway model for the exact place where Marseille stands.
+        </p>
+
+        <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 20px 0 10px 0;">Weather Marseille France</h3>
+        <p>
+          Weather Marseille France searches often come from people who plan to sail, swim, or walk the coast. For sailing, the wind is the key fact, and the Mistral is the wind to watch. It can rise fast and make the sea rough, so check the wind speed and direction on the card before you go out on a boat. For swimming, the sea stays warm well into the autumn, because the water holds the summer heat. For walking the coastal paths, the best days are calm ones with no Mistral, when the air is still and the views are clear.
+        </p>
+
+        <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 20px 0 10px 0;">Weather of Marseille</h3>
+        <p>
+          The weather of Marseille has a clear rhythm through the year. The wet season runs from autumn to early spring, when storms from the Atlantic and the Mediterranean bring rain. The dry season runs from late spring to early autumn, when high pressure sits over the region and the sun rules the sky. Even in the dry season, a short storm can build over the hills on a hot afternoon. The hills and the sea make the weather change fast, so a morning forecast can look different by the evening. Checking the page again later in the day is always a good idea.
+        </p>
+
+        <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 20px 0 10px 0;">Weather in Marseille France</h3>
+        <p>
+          The weather in Marseille France is kind to people who love the outdoors. The city gets sun on most days of the year, and the mild winters mean that walking, cycling, and sitting outside are possible even in the cold months. The port stays busy all year, and the fish market opens early each morning no matter the season. In summer, the beaches fill up, and the water is warm enough to swim from late spring to mid-autumn. In winter, the city is quieter, the light is soft, and the hills behind the city are green after the rain.
+        </p>
+
+        <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 20px 0 10px 0;">Weather Marseille</h3>
+        <p>
+          Weather Marseille data on this page is live, not a long-term average. The top card shows the present conditions, and the 7-day outlook below it shows the expected high and low for each day, with rain in millimetres. If you need more days, the 10-day forecast page gives ten full days with a short summary. All of the numbers come from the MET Norway model, which is run every hour. That means a change in the weather, like the start of a Mistral or the arrival of a storm, shows up here fast.
+        </p>
+
+        <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 20px 0 10px 0;">Marseille Weather Today</h3>
+        <p>
+          For Marseille weather today, start with the card at the top of this page. It shows the live temperature, what it feels like when the wind blows, the dampness in the air, and how far you can see. The 7-day outlook below shows how today fits with the days around it. If the Mistral is blowing, the wind speed and direction on the card will show it at once. If rain is due, the outlook shows it in millimetres, so you can see how much is expected. For hour-by-hour detail, open the hourly page, which lists each hour of the day.
+        </p>
+
+        <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 20px 0 10px 0;">Marseille Weather by Month</h3>
+        <p>
+          Marseille weather by month moves from cool and wet to hot and dry and back again. Winter months are mild, with rain and the Mistral. Spring months warm up fast, with flowers on the hills and longer days. Summer months are hot and dry, with strong sun and very little rain. Autumn months start warm, then turn wet, and the first storms can bring heavy rain. The sea is warmest in late summer and early autumn, and coolest at the end of winter. The best months for walking and sitting outside are late spring and early autumn, when the heat is mild and the rain is light.
+        </p>
+
+        <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 20px 0 10px 0;">Marseille Weather 10 Days</h3>
+        <p>
+          The Marseille weather 10 days outlook is on the 10-day forecast page, linked from this page. It covers ten full days, with a high and a low, rain in millimetres, and average dampness for each day. The first three days are the most reliable. Days four to ten come from ensemble model projections, which are runs of the model with small changes, refreshed every hour. They are a good guide for planning a trip or a sailing day, but they are not a promise. For the days that are close, use the 7-day outlook on this page, which is the most solid view.
+        </p>
+
+        <h4 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 20px 0 10px 0;">Frequently Asked Questions About Marseille Weather</h4>
+
+        <div style="margin-bottom: 14px;">
+          <p style="font-weight: 700; color: var(--text-main); margin-bottom: 4px;">What is the weather in Marseille today?</p>
+          <p>This page shows the live weather for Marseille, with the current temperature, wind speed and direction, dampness, and pressure, plus a 7-day outlook and a link to the 10-day forecast. The data comes from MET Norway and is updated every hour.</p>
+        </div>
+
+        <div style="margin-bottom: 14px;">
+          <p style="font-weight: 700; color: var(--text-main); margin-bottom: 4px;">How accurate is the Marseille forecast?</p>
+          <p>Days 1 to 3 are generally the most reliable. Days 4 to 10 are ensemble model projections, which means the model is run more than once with small changes. They are a good guide for planning, and they are refreshed every hour.</p>
+        </div>
+
+        <div style="margin-bottom: 14px;">
+          <p style="font-weight: 700; color: var(--text-main); margin-bottom: 4px;">Does it rain much in Marseille?</p>
+          <p>Rain falls mostly from autumn to early spring, and summers are dry. The forecast shows rain in millimetres, so you can see at once how much is due. Heavy rain can fall in short bursts when a storm moves in from the sea.</p>
+        </div>
+
+        <div style="margin-bottom: 14px;">
+          <p style="font-weight: 700; color: var(--text-main); margin-bottom: 4px;">What is the best time to visit Marseille?</p>
+          <p>Late spring and early autumn are the best times. The days are warm, the sun shines, and the rain is light. Summer is hot and busy, and winter is mild but can be windy when the Mistral blows.</p>
+        </div>
+
+        <div style="margin-bottom: 14px;">
+          <p style="font-weight: 700; color: var(--text-main); margin-bottom: 4px;">Does Marseille get snow?</p>
+          <p>Snow is very rare in Marseille. It may fall once in a great many years, and it melts fast. The winters are mild, and the sea keeps the cold from settling over the city.</p>
+        </div>
+
+        <div style="margin-bottom: 14px;">
+          <p style="font-weight: 700; color: var(--text-main); margin-bottom: 4px;">How hot does Marseille get in summer?</p>
+          <p>Summers in Marseille are hot and dry, with strong sun and very little rain. The sea breeze in the afternoon brings a little relief near the port, but the inland parts of the city stay hot.</p>
+        </div>
+
+        <div style="margin-bottom: 14px;">
+          <p style="font-weight: 700; color: var(--text-main); margin-bottom: 4px;">Where does the Marseille weather data come from?</p>
+          <p>The data comes from MET Norway, the weather service of Norway, which runs a world weather model. It is free to use, it is updated every hour, and it covers the exact spot where Marseille stands.</p>
+        </div>
+
+        <div style="margin-bottom: 14px;">
+          <p style="font-weight: 700; color: var(--text-main); margin-bottom: 4px;">Can I see the Marseille weather for the next 10 days?</p>
+          <p>Yes. The 10-day forecast page, linked from this page, shows ten full days for Marseille, with highs and lows, rain in millimetres, and average dampness. This page itself shows the 7-day outlook.</p>
+        </div>
+<!-- Internal Links to Other Major World Cities -->
+        <div style="margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--border-color);">
+          <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 12px;">Explore Other Major World Cities</h4>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+            
+              <a href="/united-kingdom/london" class="badge-card" style="padding: 8px 14px; font-size: 13px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;display:inline-block;margin-right:4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> London (United Kingdom)
+              </a>
+              <a href="/pakistan/karachi" class="badge-card" style="padding: 8px 14px; font-size: 13px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;display:inline-block;margin-right:4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> Karachi (Pakistan)
+              </a>
+            
+              <a href="/usa/new-york" class="badge-card" style="padding: 8px 14px; font-size: 13px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;display:inline-block;margin-right:4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> New York (United States)
+              </a>
+            
+              <a href="/japan/tokyo" class="badge-card" style="padding: 8px 14px; font-size: 13px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;display:inline-block;margin-right:4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> Tokyo (Japan)
+              </a>
+            
+              <a href="/france/paris" class="badge-card" style="padding: 8px 14px; font-size: 13px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;display:inline-block;margin-right:4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> Paris (France)
+              </a>
+            
+              <a href="/united-arab-emirates/dubai" class="badge-card" style="padding: 8px 14px; font-size: 13px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;display:inline-block;margin-right:4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> Dubai (United Arab Emirates)
+              </a>
+            
+              <a href="/australia/sydney" class="badge-card" style="padding: 8px 14px; font-size: 13px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;display:inline-block;margin-right:4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> Sydney (Australia)
+              </a>
+            
+              <a href="/canada/toronto" class="badge-card" style="padding: 8px 14px; font-size: 13px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;display:inline-block;margin-right:4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> Toronto (Canada)
+              </a>
+            
+              <a href="/germany/berlin" class="badge-card" style="padding: 8px 14px; font-size: 13px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;display:inline-block;margin-right:4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> Berlin (Germany)
+              </a>
+            
+              <a href="/italy/rome" class="badge-card" style="padding: 8px 14px; font-size: 13px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;display:inline-block;margin-right:4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> Rome (Italy)
+              </a>
+            
+              <a href="/singapore/singapore" class="badge-card" style="padding: 8px 14px; font-size: 13px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;display:inline-block;margin-right:4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> Singapore (Singapore)
+              </a>
+            
+              <a href="/turkey/istanbul" class="badge-card" style="padding: 8px 14px; font-size: 13px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;display:inline-block;margin-right:4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> Istanbul (Turkey)
+              </a>
+            
+              <a href="/saudi-arabia/riyadh" class="badge-card" style="padding: 8px 14px; font-size: 13px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;display:inline-block;margin-right:4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> Riyadh (Saudi Arabia)
+              </a>
+            
+              <a href="/egypt/cairo" class="badge-card" style="padding: 8px 14px; font-size: 13px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;display:inline-block;margin-right:4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> Cairo (Egypt)
+              </a>
+            
+              <a href="/spain/madrid" class="badge-card" style="padding: 8px 14px; font-size: 13px; text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;display:inline-block;margin-right:4px;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg> Madrid (Spain)
+              </a>
+            
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-brand-title">Weather<span>Tomorrow</span></div>
+          <p class="footer-desc">
+            Accurate, real-time meteorological intelligence and multi-day forecasts for countries and cities worldwide.
+          </p>
+          <div class="footer-attribution">
+            Data from MET Norway (api.met.no, CC BY 4.0)
+          </div>
+          <div style="font-size: 11px; color: #64748B; margin-top: 2px;">
+            Search data © OpenStreetMap contributors
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="/index" class="footer-link">Home</a></li>
+            <li><a href="/countries" class="footer-link">Countries</a></li>
+            <li><a href="/forecast-10day" class="footer-link">10-Day Forecast</a></li>
+            <li><a href="/hourly" class="footer-link">Hourly Forecast</a></li>
+            <li><a href="/aqi" class="footer-link">AQI &amp; Smog</a></li>
+            <li><a href="/blog" class="footer-link">Blog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="/about" class="footer-link">About Us</a></li>
+            <li><a href="/privacy" class="footer-link">Privacy Policy</a></li>
+            <li><a href="/terms" class="footer-link">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Worldwide Coverage</h4>
+          <div class="footer-desc" style="font-size: 13px;">
+            Connecting cities worldwide to live meteorological telemetry.
+          </div>
+</div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Weather Tomorrow. All rights reserved.</div>
+        <div class="footer-credit">Made with <svg viewBox="0 0 24 24" width="14" height="14" fill="#EF4444" style="vertical-align: -2px; display: inline-block;" aria-label="love"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> by Ahsan Ali</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/theme.js"></script>
+  <script src="/js/config.js?v=3"></script>
+  <script src="/js/i18n.js?v=3"></script>
+  <script src="/js/ui.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/search.js?v=3"></script>
+  <script src="/js/weather.js?v=4"></script>
+  <script src="/js/countries.js?v=3"></script>
+  <script src="/js/language.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initLanguage();
+
+      const mobileBtn = document.getElementById('mobileMenuToggle');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+      if (mobileBtn && mobileDrawer) {
+        mobileBtn.addEventListener('click', () => mobileDrawer.classList.toggle('is-open'));
+      }
+
+      initSearch('#citySearchInput', '#searchDropdown');
+
+      const cityInfo = {
+        slug: 'marseille',
+        name: 'Marseille',
+        country: 'France',
+        region: 'Provence',
+        lat: 43.2965,
+        lon: 5.3698
+      };
+
+      const weatherContainer = document.getElementById('weatherCardContainer');
+      const forecastContainer = document.getElementById('forecastContainer');
+      const aqiContainer = document.getElementById('aqiContainer');
+
+      API.getWeather(cityInfo.lat, cityInfo.lon)
+        .then(data => {
+          if (!data) throw new Error('No weather data returned');
+          const parsed = Weather.parseWeatherData(data);
+          Weather.renderHeroCard(weatherContainer, cityInfo, parsed);
+          Weather.render7DayRow(forecastContainer, parsed.daily);
+        })
+        .catch(err => {
+          console.error('Weather load error:', err);
+          if (weatherContainer) {
+            Weather.renderError(weatherContainer, "Weather data could not be loaded, please try again");
+          }
+        });
+
+      API.getAqi(cityInfo.lat, cityInfo.lon)
+        .then(aqiData => {
+          Weather.renderAqiBlock(aqiContainer, aqiData);
+        })
+        .catch(() => {
+          if (aqiContainer) aqiContainer.style.display = 'none';
+        });
+    });
+  </script>
+</body>
+</html>
