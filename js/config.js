@@ -431,3 +431,16 @@ CONFIG.getCitiesForCountry = function(code) {
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { SITE_NAME, CONTACT_EMAIL, CONFIG };
 }
+
+// Google Analytics 4 — Measurement ID G-GG9FENVBEE (owner-supplied, 2026-11-26)
+(function () {
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', 'G-GG9FENVBEE');
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-GG9FENVBEE';
+  document.head.appendChild(s);
+})();
