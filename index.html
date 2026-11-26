@@ -38,62 +38,62 @@
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://www.weathertomorrow.website/#website",
-        "url": "https://www.weathertomorrow.website/",
-        "name": "Weather Tomorrow",
-        "description": "Accurate, real-time world weather information, hourly observations and 10-day forecasts powered by MET Norway.",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://www.weathertomorrow.website/city?name={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://www.weathertomorrow.website/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What is the source of Weather Tomorrow weather forecasts?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Every temperature, humidity, wind, and precipitation metric is retrieved directly from MET Norway Locationforecast 2.0 (Norwegian Meteorological Institute). No synthetic or sample numbers are ever displayed."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is Weather Tomorrow free to use?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, 100% free with unlimited access to live global weather forecasts and hourly projections for all countries."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How does the world cities search work?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Search queries access OpenStreetMap Nominatim's worldwide database, sorting by importance and geographic relevance to return your exact city or district."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Whats the weather tomorrow?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Open your city page on Weather Tomorrow and look at the 10-day outlook: tomorrow's expected high and low, rain in millimetres, humidity and wind are shown there, updated hourly from MET Norway."
-            }
-          }
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.weathertomorrow.website/#website",
+      "url": "https://www.weathertomorrow.website/",
+      "name": "Weather Tomorrow",
+      "description": "Accurate, real-time world weather information, hourly observations and 10-day forecasts powered by MET Norway.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.weathertomorrow.website/city?name={search_term_string}",
+        "query-input": "required name=search_term_string"
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.weathertomorrow.website/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where does Weather Tomorrow get its weather data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "All live data is computed by MET Norway Locationforecast 2.0 numerical models, adhering to strict CC BY 4.0 open scientific data standards."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How accurate is the 10-day forecast?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Days 1 to 3 are generally the most reliable, with temperature and general precipitation patterns usually close to what is observed. Projections for days 4 to 10 represent ensemble statistical models refreshed hourly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is air quality and smog measured?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Air quality is explained using the standard index bands for PM2.5 and other pollutants. Live sensor readings appear only when OpenAQ ground-station data is available for a city — no numbers are ever invented."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Whats the weather tomorrow?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Open your city page on Weather Tomorrow and look at the 10-day outlook: tomorrow's expected high and low, rain in millimetres, humidity and wind are shown there, updated hourly from MET Norway."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
   <link rel="manifest" href="/manifest.webmanifest">
   <meta name="theme-color" content="#38BDF8">
   <meta name="mobile-web-app-capable" content="yes">
@@ -259,7 +259,7 @@
         </div>
         <div>
           <div class="badge-title" data-i18n="worldwideCoverage">Worldwide Coverage</div>
-          <div class="badge-sub">Millions of global cities mapped via OpenStreetMap</div>
+          <div class="badge-sub">Cities around the world mapped via OpenStreetMap</div>
         </div>
       </div>
 
@@ -341,7 +341,7 @@
                 <span class="faq-toggle-icon">+</span>
               </button>
               <div class="faq-answer" style="display: none;">
-                Days 1 to 3 have verified forecast accuracy exceeding 95% for temperature and general precipitation patterns. Projections for days 4 to 10 represent ensemble statistical models refreshed hourly.
+                Days 1 to 3 are generally the most reliable, with temperature and general precipitation patterns usually close to what is observed. Projections for days 4 to 10 represent ensemble statistical models refreshed hourly.
               </div>
             </div>
 
@@ -351,7 +351,16 @@
                 <span class="faq-toggle-icon">+</span>
               </button>
               <div class="faq-answer" style="display: none;">
-                Ground-level air quality indices (PM2.5, PM10, Ozone, NO2) are obtained from OpenAQ verified ground sensors without speculative inflation.
+                Air quality is explained using the standard index bands for PM2.5 and other pollutants. Live sensor readings appear only when OpenAQ ground-station data is available for a city — no numbers are ever invented.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span>Whats the weather tomorrow?</span>
+                <span class="faq-toggle-icon">+</span>
+              </button>
+              <div class="faq-answer" style="display: none;">
+                Open your city page on Weather Tomorrow and look at the 10-day outlook: tomorrow's expected high and low, rain in millimetres, humidity and wind are shown there, updated hourly from MET Norway.
               </div>
             </div>
           </div>
@@ -373,7 +382,7 @@
         <p>Our <a href="forecast-10day">10 day forecast</a> page shows the weather this week at a glance — the full outlook for the next ten days, so you can see the pattern for the whole week ahead before you pick a day.</p>
         <p>The hourly forecast is the most useful tool for planning a single day. It shows the temperature hour by hour, with a curve you can read at a glance, and rain hour by hour, so you can see exactly when the rain starts and stops. If you are planning a morning walk, an afternoon journey, or an evening event, the hourly forecast tells you the best hour to go out. The <a href="hourly">hourly forecast page</a> explains how to read it in detail.</p>
         <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 24px 0 10px 0;">Rain, Smog and Air Quality</h3>
-        <p>Rain and air quality are the two things that change a day more than temperature. Rain in millimetres is shown on every city page and on the hourly page. Air quality is shown on the <a href="aqi">AQI &amp; Smog page</a>, where the Air Quality Index turns pollution into one simple number: below 50 is good, 101 to 150 is unhealthy for sensitive people, 151 to 200 is unhealthy for everyone, and above 300 is hazardous. In winter, Lahore and other cities in Punjab face heavy smog, and our <a href="blog-smog-lahore">smog in Lahore guide</a> explains what causes it and how to stay safe.</p>
+        <p>Rain is one of the things that change a day more than temperature. Rain in millimetres is shown on every city page and on the hourly page. Air quality is explained on the <a href="aqi">AQI &amp; Smog page</a>, where the Air Quality Index turns pollution into one simple number: below 50 is good, 101 to 150 is unhealthy for sensitive people, 151 to 200 is unhealthy for everyone, and above 300 is hazardous. In winter, Lahore and other cities in Punjab face heavy smog, and our <a href="blog-smog-lahore">smog in Lahore guide</a> explains what causes it and how to stay safe.</p>
         <p>Weather Tomorrow covers the whole world, not just Pakistan. The <a href="countries">countries page</a> lists 20 countries with their cities, from the United Kingdom and the United States to the United Arab Emirates, Saudi Arabia, Japan, Australia and more. Wherever you are going, check the weather before you travel — a five-minute check can save a ruined day.</p>
         <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 24px 0 10px 0;">What's the Weather</h3>
         <p>
@@ -438,7 +447,7 @@
         <div>
           <h4 class="footer-col-title">Worldwide Coverage</h4>
           <div class="footer-desc" style="font-size: 13px;">
-            Connecting millions of cities worldwide to live meteorological telemetry.
+            Connecting cities worldwide to live meteorological telemetry.
           </div>
 </div>
       </div>
