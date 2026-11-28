@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/images/logo.png">
+  <link rel="apple-touch-icon" href="/images/logo.png">
+  <title>Snowfall Weather Forecast — Weather Tomorrow</title>
+  <meta name="description" content="Snowfall weather forecast explained in simple words: what it means, how to read a snowfall map, and how to check snow near you.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.weathertomorrow.website/snowfall-forecast">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Snowfall Weather Forecast — Weather Tomorrow">
+  <meta property="og:description" content="Snowfall weather forecast explained in simple words: what it means, how to read a snowfall map, and how to check snow near you.">
+  <meta property="og:url" content="https://www.weathertomorrow.website/snowfall-forecast">
+  <meta property="og:image" content="https://www.weathertomorrow.website/images/hero-mountain-lake.webp">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Snowfall Weather Forecast — Weather Tomorrow">
+  <meta name="twitter:description" content="Snowfall weather forecast explained in simple words: what it means, how to read a snowfall map, and how to check snow near you.">
+  <meta name="twitter:image" content="https://www.weathertomorrow.website/images/hero-mountain-lake.webp">
+
+  <script>try{var __wt=localStorage.getItem('wt-theme');if(__wt==='dark'||__wt==='light')document.documentElement.setAttribute('data-theme',__wt);}catch(e){}</script>
+  <link rel="stylesheet" href="/css/styles.css?v=blog2">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.weathertomorrow.website/snowfall-forecast#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.weathertomorrow.website/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Snowfall Weather Forecast",
+          "item": "https://www.weathertomorrow.website/snowfall-forecast"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.weathertomorrow.website/snowfall-forecast#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a snowfall forecast?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A snowfall forecast is a prediction of how much snow may fall in a place, and when. It is given as a range, such as 5 to 10 centimetres. The real amount can be more or less."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I check the snowfall forecast for my town?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Type your town name in the search box at the top of this page. If your town has a page on this site, open it to see the hourly and 10-day forecast. Check again on the day itself for the newest data."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does a snowfall forecast map show?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A snowfall forecast map shows where snow is expected, using coloured areas. Darker colours often mean more snow. A 7-day map shows the snow expected over the next seven days. Maps are forecasts, not photos of real snow."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much snow will fall tomorrow?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This page cannot say how much snow will fall in your town tomorrow, because it changes by place and by day. Check the forecast for your town on this site, and check again in the morning. The answer will be a range, not one exact number."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How accurate is a snowfall forecast?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Forecasts for tomorrow are usually much more accurate than forecasts for a week ahead. The amount of snow is the hardest part to get right. Check the forecast often, and use more than one source for an important trip."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I do if heavy snow is forecast?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Stay indoors if you can, and avoid travel. Keep your phone charged, and keep food, water, warm clothes, and any medicine you need at home. If you must drive, go slow, keep a long gap, and tell someone where you are going."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#38BDF8">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Weather Tomorrow">
+  <script src="/pwa.js" defer></script>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/index" class="brand" aria-label="Weather Tomorrow Home">
+        <div class="brand-icon">
+          <img src="/images/logo.png" alt="Weather Tomorrow logo" width="34" height="34">
+        </div>
+        <div class="brand-text">Weather<span>Tomorrow</span></div>
+      </a>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <a href="/index" class="nav-link">Home</a>
+        <a href="/countries" class="nav-link">Countries</a>
+        <a href="/forecast-10day" class="nav-link">10-Day</a>
+        <a href="/hourly" class="nav-link">Hourly</a>
+        <a href="/aqi" class="nav-link">AQI/Smog</a>
+        <a href="/about" class="nav-link">About</a>
+        <a href="/blog" class="nav-link">Blog</a>
+      </nav>
+
+      <div class="header-actions">
+
+        <!-- Language Dropdown Button -->
+        <button id="langTrigger" class="lang-btn" type="button" aria-haspopup="dialog" aria-expanded="false" title="Select Language">
+          <span id="currentLangLabel">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" class="svg-ico"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span>English</span>
+          </span>
+          <span class="lang-caret">▼</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <!-- Theme Toggle (Light / Dark) -->
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Dark mode">
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+        <button id="mobileMenuToggle" class="mobile-toggle" type="button" aria-label="Toggle navigation menu">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileDrawer" class="mobile-drawer" role="menu">
+      <a href="/index" class="mobile-nav-link">Home</a>
+      <a href="/countries" class="mobile-nav-link">Countries</a>
+      <a href="/forecast-10day" class="mobile-nav-link">10-Day</a>
+      <a href="/hourly" class="mobile-nav-link">Hourly</a>
+      <a href="/aqi" class="mobile-nav-link">AQI/Smog</a>
+      <a href="/about" class="mobile-nav-link">About</a>
+      <a href="/blog" class="mobile-nav-link">Blog</a>
+    </div>
+
+
+    <!-- Language Searchable Modal -->
+    <div id="langModal" class="lang-modal" role="dialog" aria-label="Select Language">
+      <div class="lang-search-box">
+        <input type="text" id="langSearchInput" placeholder="Search language..." aria-label="Search language">
+      </div>
+      <ul id="langList" class="lang-list"></ul>
+    </div>
+  </header>
+
+  <!-- City Page Banner -->
+  <section class="page-banner">
+    <div class="container">
+      <div class="banner-icon"><svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="white" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg></div>
+      <h1 class="banner-title">Snowfall Weather Forecast</h1>
+      <p class="banner-subtitle">What a snowfall forecast means, how to read a snowfall map, and how to check snow near you — in simple words.</p>
+      <p class="banner-subtitle">Snowfall amounts, maps, ski towns, and accuracy — explained without hard words.</p>
+
+      <div class="banner-search-wrap">
+        <div class="search-container" style="max-width: 520px; width: 100%; margin-bottom: 0;">
+          <div class="search-bar">
+            <span class="search-bar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
+            <input type="text" id="citySearchInput" class="search-input" placeholder="Search another world city..." autocomplete="off">
+            <button type="button" id="citySearchBtn" class="search-btn"><span>Search</span></button>
+          </div>
+          <div id="searchDropdown" class="search-dropdown"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container" style="margin-top: 30px; margin-bottom: 50px;">
+    <div style="margin-top: 24px; padding: 20px; background: var(--card-bg); border: 1px solid var(--border-color, #E2E8F0); border-radius: 12px;">
+        <p style="margin: 0;"><strong>Snowfall amounts:</strong> this page explains what a snowfall forecast means. It does not show live snowfall amounts. For the snow forecast in your town today, use the search box above or open the <a href="/forecast-10day">10-day forecast</a> page.</p>
+      </div>
+
+    <article class="seo-section" style="margin-top: 40px;">
+      <h2 class="seo-title">How to Check the Snowfall Forecast</h2>
+      <div class="seo-prose">
+        <p>A snowfall forecast tells you how much snow may fall, where it may fall, and when. It is part of a weather forecast, and it helps you plan travel, work, and school days in winter. This page explains snowfall forecasts in simple words: what they mean, how to read a snowfall map, how to check the snow near you, and how much you can trust the numbers. It does not show live snowfall amounts for today. For the snow in your town today, use the search box above or open the 10-day forecast page.</p>
+        <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 20px 0 10px 0;">What Is a Snowfall Forecast?</h3>
+        <p>A snowfall forecast is a prediction of snow. It says how much snow may fall in a place, and over what time. Snow is measured in centimetres or inches. A forecast may say, for example, that 5 to 10 centimetres of snow may fall in one day. That is a range, not a promise. The real amount can be more or less. Forecasts are made with computer models that use data from satellites, radar, weather stations, and balloons. When people search for a weather forecast snowfall report, they usually want one thing: will it snow where I live, and how much? This page answers that question in general terms. For your own town, always check the latest forecast, because snow forecasts change as the storm gets closer.</p>
+        <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 20px 0 10px 0;">Snowfall Forecast Map</h3>
+        <p>A snowfall forecast map shows snow on a map. Coloured areas show where snow is expected, and darker colours often mean more snow. A map makes it easy to see at a glance which places may get snow and which may stay dry. A 7 day snowfall forecast map shows the snow expected over the next seven days, day by day. That helps you plan a trip or a week of travel. But a map is a picture of a forecast, not a photo of real snow. The snow may fall in a different place, or in a different amount, than the map shows. A weather snowfall forecast map is most useful a day or two ahead. Check the map again on the day itself, because the newest map uses the newest data. On this site, you can check the forecast for your town on the 10-day page, which shows snow, rain, and wind for the days ahead.</p>
+        <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 20px 0 10px 0;">Snowfall Weather Forecast Near Me</h3>
+        <p>A snowfall weather forecast near me means the forecast for your own town, not for the whole country. Snow can fall heavily in one town and not at all in the next town, so the town name matters. To check your town, type its name in the search box at the top of this page and pick it from the list. If your town has its own page on this site, you will see the current weather, the hourly forecast, and the 10-day forecast there. If your town is small and has no page, pick the nearest big town. Its forecast will be close, but the snow amount can still differ, mainly if your town is higher up or in a valley. Always check the forecast for the town itself when you can.</p>
+        <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 20px 0 10px 0;">How Much Snow Will Fall Tomorrow?</h3>
+        <p>How much snow will fall tomorrow is the question most people ask in winter. The answer is a range, such as 2 to 5 centimetres, or 10 to 20 centimetres. The range shows that the forecast is not exact. Small changes in temperature decide whether rain falls as snow, or snow melts as it lands. One degree can change the result. The amount also depends on where you are. High ground often gets more snow than low ground nearby. A town on a hill can get snow while the valley below gets rain. To get the best answer, check the forecast on the evening before and again in the morning. The morning forecast uses the newest data and is usually the most accurate. Do not trust a single number you saw days ago.</p>
+        <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 20px 0 10px 0;">Snowfall Forecast for Whistler</h3>
+        <p>Whistler is a ski town in British Columbia, Canada. It is one of the best-known ski places in North America, and people travel there from many countries to ski and snowboard. Searches for snowfall at Whistler go up before ski trips, because visitors want to know if fresh snow is coming. The town sits in the mountains, so it gets more snow than the towns on the coast below. The road from Vancouver to Whistler runs through the mountains and can be slow or closed in heavy snow, so drivers should check the road and the forecast before they leave. If you plan a ski trip, check the snowfall forecast for the days of your trip, and check again on the day you travel. Fresh snow is good for skiing, but heavy snow can close roads and lifts. See the <a href="/canada">Canada</a> page for more towns in the country.</p>
+        <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 20px 0 10px 0;">Snowfall Forecast for Aspen</h3>
+        <p>Aspen is a ski town in Colorado, in the United States. It sits high in the Rocky Mountains, so winters are cold and snowy. Searches for aspen snowfall rise in winter, when skiers plan trips and want to know about fresh snow. The town is high up, which helps snow stay on the ground through the winter. But the weather can change fast in the mountains. A sunny morning can turn into a snowy afternoon. If you visit Aspen, check the snowfall forecast each morning before you go out, and follow the advice of local officials about roads and ski areas. Carry warm clothes, even on a day that starts clear.</p>
+        <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 20px 0 10px 0;">Snowfall Forecast for Banff</h3>
+        <p>Banff is a town in the Rocky Mountains in Alberta, Canada. It is a popular place for skiing, and it sits inside a national park. Searches for banff snowfall come from skiers and travellers who want to know if snow is on the way. Banff is high up, so it gets a long winter with plenty of snow. The roads in the mountains can be icy, and snow can close passes after a storm. If you drive to Banff in winter, check the snowfall forecast and the road report before you leave, keep warm clothes and food in the car, and allow extra time for the trip. See the <a href="/canada">Canada</a> page for more towns in the country.</p>
+        <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 20px 0 10px 0;">Snowfall Forecast for Niseko</h3>
+        <p>Niseko is a ski area on the island of Hokkaido, in Japan. Skiers from many countries visit Niseko for its deep, soft snow. Searches for niseko snowfall rise before the ski season and through the winter. Hokkaido is in the north of Japan, and cold air from Siberia brings heavy snow there in winter. The snow in Niseko is often light and dry, which skiers like. But heavy snow can still close roads and slow travel. If you visit, check the snowfall forecast each day, follow local advice, and plan extra time for travel on snowy days. See the <a href="/japan">Japan</a> page for more towns in the country.</p>
+        <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 20px 0 10px 0;">Snowfall Forecast for Shimla and Manali</h3>
+        <p>Shimla and Manali are hill towns in India. Shimla is in Himachal Pradesh, and Manali is in the mountains further north in the same state. Both places get snow in winter, and many visitors travel there to see it. Searches for manali snowfall go up each winter, when people ask if snow has started. Snow can block the roads to both towns, and the road to Manali can close for days in heavy snow. If you plan a trip, check the snowfall forecast and the road status before you leave, and carry warm clothes. A forecast of snow does not always mean the roads will be open. Check again on the day of travel. See the <a href="/india">India</a> page for more towns in the country.</p>
+        <h3 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 20px 0 10px 0;">How Accurate Is a Snowfall Forecast?</h3>
+        <p>How accurate is a snowfall forecast? It depends on how far ahead you look. A forecast for tomorrow is usually much more accurate than a forecast for seven days ahead. Weather models are good at the big picture, but small changes can move snow from one valley to the next. The amount of snow is the hardest part to get right. The forecast may say 10 centimetres, and the real amount may be 5 or 15. That is normal. The timing can also shift by a few hours. The best way to use a snowfall forecast is to check it often. Check the evening before, check in the morning, and check again before you travel. Use more than one source when the trip matters, and always follow the advice of local officials. A forecast is a guide, not a promise.</p>
+
+        <h4 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 20px 0 10px 0;">Frequently Asked Questions About Snowfall Forecasts</h4>
+
+        <div style="margin-bottom: 14px;">
+          <p style="font-weight: 700; color: var(--text-main); margin-bottom: 4px;">What is a snowfall forecast?</p>
+          <p>A snowfall forecast is a prediction of how much snow may fall in a place, and when. It is given as a range, such as 5 to 10 centimetres. The real amount can be more or less.</p>
+        </div>
+        <div style="margin-bottom: 14px;">
+          <p style="font-weight: 700; color: var(--text-main); margin-bottom: 4px;">How do I check the snowfall forecast for my town?</p>
+          <p>Type your town name in the search box at the top of this page. If your town has a page on this site, open it to see the hourly and 10-day forecast. Check again on the day itself for the newest data.</p>
+        </div>
+        <div style="margin-bottom: 14px;">
+          <p style="font-weight: 700; color: var(--text-main); margin-bottom: 4px;">What does a snowfall forecast map show?</p>
+          <p>A snowfall forecast map shows where snow is expected, using coloured areas. Darker colours often mean more snow. A 7-day map shows the snow expected over the next seven days. Maps are forecasts, not photos of real snow.</p>
+        </div>
+        <div style="margin-bottom: 14px;">
+          <p style="font-weight: 700; color: var(--text-main); margin-bottom: 4px;">How much snow will fall tomorrow?</p>
+          <p>This page cannot say how much snow will fall in your town tomorrow, because it changes by place and by day. Check the forecast for your town on this site, and check again in the morning. The answer will be a range, not one exact number.</p>
+        </div>
+        <div style="margin-bottom: 14px;">
+          <p style="font-weight: 700; color: var(--text-main); margin-bottom: 4px;">How accurate is a snowfall forecast?</p>
+          <p>Forecasts for tomorrow are usually much more accurate than forecasts for a week ahead. The amount of snow is the hardest part to get right. Check the forecast often, and use more than one source for an important trip.</p>
+        </div>
+        <div style="margin-bottom: 14px;">
+          <p style="font-weight: 700; color: var(--text-main); margin-bottom: 4px;">What should I do if heavy snow is forecast?</p>
+          <p>Stay indoors if you can, and avoid travel. Keep your phone charged, and keep food, water, warm clothes, and any medicine you need at home. If you must drive, go slow, keep a long gap, and tell someone where you are going.</p>
+        </div>
+
+        <h4 style="font-size: 16px; font-weight: 700; margin-bottom: 12px;">Explore Other Weather Pages</h4>
+        <p><a href="/snowfall-murree">Snowfall in Murree</a> &middot; <a href="/will-it-snow-tomorrow">Will It Snow Tomorrow?</a> &middot; <a href="/winter-storm-warning">Winter Storm Warning</a> &middot; <a href="/countries">All Countries</a> &middot; <a href="/forecast-10day">10-Day Forecast</a></p>
+      </div>
+    </article>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-brand-title">Weather<span>Tomorrow</span></div>
+          <p class="footer-desc">
+            Accurate, real-time meteorological intelligence and multi-day forecasts for countries and cities worldwide.
+          </p>
+          <div class="footer-attribution">
+            Data from MET Norway (api.met.no, CC BY 4.0)
+          </div>
+          <div style="font-size: 11px; color: #64748B; margin-top: 2px;">
+            Search data © OpenStreetMap contributors
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="/index" class="footer-link">Home</a></li>
+            <li><a href="/countries" class="footer-link">Countries</a></li>
+            <li><a href="/forecast-10day" class="footer-link">10-Day Forecast</a></li>
+            <li><a href="/hourly" class="footer-link">Hourly Forecast</a></li>
+            <li><a href="/aqi" class="footer-link">AQI &amp; Smog</a></li>
+            <li><a href="/blog" class="footer-link">Blog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="/about" class="footer-link">About Us</a></li>
+            <li><a href="/privacy" class="footer-link">Privacy Policy</a></li>
+            <li><a href="/terms" class="footer-link">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Worldwide Coverage</h4>
+          <div class="footer-desc" style="font-size: 13px;">
+            Connecting cities worldwide to live meteorological telemetry.
+          </div>
+</div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Weather Tomorrow. All rights reserved.</div>
+        <div class="footer-credit">Made with <svg viewBox="0 0 24 24" width="14" height="14" fill="#EF4444" style="vertical-align: -2px; display: inline-block;" aria-label="love"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> by Ahsan Ali</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/theme.js"></script>
+  <script src="/js/config.js?v=3"></script>
+  <script src="/js/i18n.js?v=3"></script>
+  <script src="/js/ui.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/search.js?v=3"></script>
+  <script src="/js/weather.js?v=4"></script>
+  <script src="/js/countries.js?v=3"></script>
+  <script src="/js/language.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initLanguage();
+
+      const mobileBtn = document.getElementById('mobileMenuToggle');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+      if (mobileBtn && mobileDrawer) {
+        mobileBtn.addEventListener('click', () => mobileDrawer.classList.toggle('is-open'));
+      }
+
+      initSearch('#citySearchInput', '#searchDropdown');
+
+
+    });
+  </script>
+</body>
+</html>

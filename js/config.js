@@ -67,7 +67,8 @@ const CONFIG = {
         { slug: "paris", name: "Paris", lat: 48.8566, lon: 2.3522, region: "Île-de-France", elevation: "35 m" },
         { slug: "marseille", name: "Marseille", lat: 43.2965, lon: 5.3698, region: "Provence", elevation: "12 m" },
         { slug: "lyon", name: "Lyon", lat: 45.7640, lon: 4.8357, region: "Auvergne-Rhône-Alpes", elevation: "173 m" },
-        { slug: "nice", name: "Nice", lat: 43.7102, lon: 7.2620, region: "French Riviera", elevation: "10 m" }
+        { slug: "nice", name: "Nice", lat: 43.7102, lon: 7.2620, region: "French Riviera", elevation: "10 m" },
+        { slug: "bordeaux", name: "Bordeaux", lat: 44.8412, lon: -0.58, region: "Nouvelle-Aquitaine" }
       ]
     },
     {
@@ -79,7 +80,8 @@ const CONFIG = {
         { slug: "berlin", name: "Berlin", lat: 52.5200, lon: 13.4050, region: "Berlin", elevation: "34 m" },
         { slug: "munich", name: "Munich", lat: 48.1351, lon: 11.5820, region: "Bavaria", elevation: "519 m" },
         { slug: "frankfurt", name: "Frankfurt", lat: 50.1109, lon: 8.6821, region: "Hesse", elevation: "112 m" },
-        { slug: "hamburg", name: "Hamburg", lat: 53.5511, lon: 9.9937, region: "Hamburg", elevation: "6 m" }
+        { slug: "hamburg", name: "Hamburg", lat: 53.5511, lon: 9.9937, region: "Hamburg", elevation: "6 m" },
+        { slug: "stuttgart", name: "Stuttgart", lat: 48.7784, lon: 9.18, region: "Baden-Württemberg", elevation: "245 m" }
       ]
     },
     {
@@ -91,7 +93,8 @@ const CONFIG = {
         { slug: "tokyo", name: "Tokyo", lat: 35.6762, lon: 139.6503, region: "Kanto", elevation: "40 m" },
         { slug: "osaka", name: "Osaka", lat: 34.6937, lon: 135.5023, region: "Kansai", elevation: "15 m" },
         { slug: "kyoto", name: "Kyoto", lat: 35.0116, lon: 135.7681, region: "Kansai", elevation: "50 m" },
-        { slug: "sapporo", name: "Sapporo", lat: 43.0618, lon: 141.3545, region: "Hokkaido", elevation: "29 m" }
+        { slug: "sapporo", name: "Sapporo", lat: 43.0618, lon: 141.3545, region: "Hokkaido", elevation: "29 m" },
+        { slug: "hiroshima", name: "Hiroshima", lat: 34.3917, lon: 132.4518, region: "Hiroshima Prefecture" }
       ]
     },
     {
@@ -103,7 +106,8 @@ const CONFIG = {
         { slug: "toronto", name: "Toronto", lat: 43.6532, lon: -79.3832, region: "Ontario", elevation: "76 m" },
         { slug: "vancouver", name: "Vancouver", lat: 49.2827, lon: -123.1207, region: "British Columbia", elevation: "4 m" },
         { slug: "montreal", name: "Montreal", lat: 45.5017, lon: -73.5673, region: "Quebec", elevation: "36 m" },
-        { slug: "calgary", name: "Calgary", lat: 51.0447, lon: -114.0719, region: "Alberta", elevation: "1,045 m" }
+        { slug: "calgary", name: "Calgary", lat: 51.0447, lon: -114.0719, region: "Alberta", elevation: "1,045 m" },
+        { slug: "ottawa", name: "Ottawa", lat: 45.4209, lon: -75.6901, region: "Ontario" }
       ]
     },
     {
@@ -115,7 +119,8 @@ const CONFIG = {
         { slug: "sydney", name: "Sydney", lat: -33.8688, lon: 151.2093, region: "New South Wales", elevation: "19 m" },
         { slug: "melbourne", name: "Melbourne", lat: -37.8136, lon: 144.9631, region: "Victoria", elevation: "31 m" },
         { slug: "brisbane", name: "Brisbane", lat: -27.4698, lon: 153.0251, region: "Queensland", elevation: "28 m" },
-        { slug: "perth", name: "Perth", lat: -31.9505, lon: 115.8605, region: "Western Australia", elevation: "20 m" }
+        { slug: "perth", name: "Perth", lat: -31.9505, lon: 115.8605, region: "Western Australia", elevation: "20 m" },
+        { slug: "adelaide", name: "Adelaide", lat: -34.9282, lon: 138.5999, region: "South Australia" }
       ]
     },
     {
@@ -150,7 +155,8 @@ const CONFIG = {
         { slug: "rome", name: "Rome", lat: 41.9028, lon: 12.4964, region: "Lazio", elevation: "21 m" },
         { slug: "milan", name: "Milan", lat: 45.4642, lon: 9.1900, region: "Lombardy", elevation: "120 m" },
         { slug: "florence", name: "Florence", lat: 43.7696, lon: 11.2558, region: "Tuscany", elevation: "50 m" },
-        { slug: "venice", name: "Venice", lat: 45.4408, lon: 12.3155, region: "Veneto", elevation: "1 m" }
+        { slug: "venice", name: "Venice", lat: 45.4408, lon: 12.3155, region: "Veneto", elevation: "1 m" },
+        { slug: "naples", name: "Naples", lat: 40.8359, lon: 14.2488, region: "Campania", elevation: "99.8 m" }
       ]
     },
     {
@@ -161,7 +167,8 @@ const CONFIG = {
       cities: [
         { slug: "madrid", name: "Madrid", lat: 40.4168, lon: -3.7038, region: "Community of Madrid", elevation: "667 m" },
         { slug: "barcelona", name: "Barcelona", lat: 41.3879, lon: 2.1699, region: "Catalonia", elevation: "12 m" },
-        { slug: "seville", name: "Seville", lat: 37.3891, lon: -5.9845, region: "Andalusia", elevation: "7 m" }
+        { slug: "seville", name: "Seville", lat: 37.3891, lon: -5.9845, region: "Andalusia", elevation: "7 m" },
+        { slug: "valencia", name: "Valencia", lat: 39.4697, lon: -0.3763, region: "Valencian Community", elevation: "15 m" }
       ]
     },
     {
