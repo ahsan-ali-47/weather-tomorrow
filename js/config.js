@@ -8,15 +8,16 @@ const CONFIG = {
   SITE_NAME: SITE_NAME,
   CONTACT_EMAIL: CONTACT_EMAIL,
 
+  // Homepage fallback when IP detection fails or finds no city (2026-11-28).
   DEFAULT_CITY: {
-    slug: "london",
-    name: "London",
-    country: "United Kingdom",
-    countryCode: "GB",
-    lat: 51.5074,
-    lon: -0.1278,
-    region: "England",
-    elevation: "25 m"
+    slug: "lahore",
+    name: "Lahore",
+    country: "Pakistan",
+    countryCode: "PK",
+    lat: 31.5497,
+    lon: 74.3436,
+    region: "Punjab",
+    elevation: "217 m"
   },
 
   // Worldwide Countries with their top cities & coordinates

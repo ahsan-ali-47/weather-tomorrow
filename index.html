@@ -208,7 +208,7 @@
         <div class="wt2-top">
           <div class="wt2-city">
             <span class="location-pin"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path><circle cx="12" cy="9" r="2.5"></circle></svg></span>
-            <span class="city-name">London, United Kingdom</span>
+            <span class="city-name">Lahore, Pakistan</span>
           </div>
           <div class="updated-time">Loading live MET Norway observations...</div>
         </div>
@@ -238,7 +238,12 @@
     </div>
 
 
-        <!-- Air Quality / Smog Block -->
+                <!-- My Location (tap only: browser geolocation, never automatic) -->
+        <div style="text-align:center; margin-top: 16px;">
+          <button type="button" id="myLocationBtn" style="cursor:pointer; padding:8px 18px; border-radius:999px; border:1px solid #cbd5e1; background:#ffffff; color:#0f172a; font-weight:600; font-size:14px;">My location</button>
+        </div>
+
+<!-- Air Quality / Smog Block -->
     <div id="aqiContainer" style="margin-top: 24px;"></div>
 
     <!-- 4 Feature Badges matching reference mockup -->
@@ -489,33 +494,107 @@
 
       initSearch('#citySearchInput', '#searchDropdown');
 
-      // Initialize Home Weather with Default City (London)
-      const defaultCity = CONFIG.DEFAULT_CITY;
+      // Home Weather: IP-detected city first (no permission prompt), Lahore fallback.
       const weatherContainer = document.getElementById('weatherCardContainer');
       const aqiContainer = document.getElementById('aqiContainer');
 
-      API.getWeather(defaultCity.lat, defaultCity.lon)
-        .then(data => {
-          if (!data) throw new Error('No weather data received');
-          const parsed = Weather.parseWeatherData(data);
+      function loadHomeWeather(city) {
+        API.getWeather(city.lat, city.lon)
+          .then(data => {
+            if (!data) throw new Error('No weather data received');
+            const parsed = Weather.parseWeatherData(data);
+            Weather.renderHeroCard(weatherContainer, city, parsed, 'home');
+          })
+          .catch(err => {
+            console.error('Weather load error:', err);
+            if (weatherContainer) {
+              Weather.renderError(weatherContainer, "Weather data could not be loaded, please try again");
+            }
+          });
 
-          Weather.renderHeroCard(weatherContainer, defaultCity, parsed, 'home');
-        })
-        .catch(err => {
-          console.error('Weather load error:', err);
-          if (weatherContainer) {
-            Weather.renderError(weatherContainer, "Weather data could not be loaded, please try again");
+        // Load AQI
+        API.getAqi(city.lat, city.lon)
+          .then(aqiData => {
+            Weather.renderAqiBlock(aqiContainer, aqiData);
+          })
+          .catch(() => {
+            if (aqiContainer) aqiContainer.style.display = 'none';
+          });
+      }
+
+      function fetchJsonTimeout(url, ms) {
+        return new Promise(function (resolve, reject) {
+          var settled = false;
+          var timer = setTimeout(function () { if (!settled) { settled = true; reject(new Error('IP lookup timeout')); } }, ms);
+          fetch(url).then(function (res) {
+            if (!res.ok) throw new Error('IP lookup HTTP ' + res.status);
+            return res.json();
+          }).then(function (json) {
+            if (!settled) { settled = true; clearTimeout(timer); resolve(json); }
+          }).catch(function (err) {
+            if (!settled) { settled = true; clearTimeout(timer); reject(err); }
+          });
+        });
+      }
+
+      function matchFeaturedCity(name, countryCode) {
+        var list = (typeof CONFIG !== 'undefined' && CONFIG.FEATURED_CITIES) || [];
+        var wanted = (name || '').trim().toLowerCase();
+        for (var i = 0; i < list.length; i++) {
+          if ((list[i].name || '').toLowerCase() === wanted) {
+            if (!countryCode || !list[i].countryCode || list[i].countryCode.toUpperCase() === String(countryCode).toUpperCase()) return list[i];
           }
-        });
+        }
+        return null;
+      }
 
-      // Load AQI
-      API.getAqi(defaultCity.lat, defaultCity.lon)
-        .then(aqiData => {
-          Weather.renderAqiBlock(aqiContainer, aqiData);
-        })
-        .catch(() => {
-          if (aqiContainer) aqiContainer.style.display = 'none';
+      // IP-based city guess: ipwho.is first, GeoJS fallback. No permission prompt.
+      // Any failure returns the Lahore fallback (CONFIG.DEFAULT_CITY). Never guesses.
+      function resolveHomeCity() {
+        return fetchJsonTimeout('https://ipwho.is/', 3000).then(function (w) {
+          if (w && w.success !== false && w.city && w.latitude != null && w.longitude != null && isFinite(Number(w.latitude)) && isFinite(Number(w.longitude))) {
+            var hit = matchFeaturedCity(w.city, w.country_code);
+            if (hit) return hit;
+            return { slug: '', name: w.city, country: w.country || '', countryCode: w.country_code || '', lat: parseFloat(w.latitude), lon: parseFloat(w.longitude) };
+          }
+          throw new Error('No city from ipwho.is');
+        }).catch(function () {
+          return fetchJsonTimeout('https://get.geojs.io/v1/ip/geo.json', 3000).then(function (g) {
+            if (g && g.city && g.latitude != null && g.longitude != null && isFinite(parseFloat(g.latitude)) && isFinite(parseFloat(g.longitude))) {
+              var hit2 = matchFeaturedCity(g.city, g.country_code);
+              if (hit2) return hit2;
+              return { slug: '', name: g.city, country: g.country || '', countryCode: g.country_code || '', lat: parseFloat(g.latitude), lon: parseFloat(g.longitude) };
+            }
+            throw new Error('No city from GeoJS');
+          });
+        }).catch(function () {
+          return CONFIG.DEFAULT_CITY;
         });
+      }
+
+      resolveHomeCity().then(loadHomeWeather);
+
+      // 'My location' button: exact browser geolocation, only when tapped. Never automatic.
+      var myLocationBtn = document.getElementById('myLocationBtn');
+      if (myLocationBtn && navigator.geolocation) {
+        myLocationBtn.addEventListener('click', function () {
+          var btn = this;
+          btn.disabled = true;
+          var originalText = btn.textContent;
+          btn.textContent = 'Locating...';
+          navigator.geolocation.getCurrentPosition(function (pos) {
+            loadHomeWeather({ slug: '', name: 'My Location', country: '', countryCode: '', lat: pos.coords.latitude, lon: pos.coords.longitude });
+            btn.disabled = false;
+            btn.textContent = originalText;
+          }, function () {
+            btn.disabled = false;
+            btn.textContent = originalText;
+          }, { timeout: 10000 });
+        });
+      } else if (myLocationBtn) {
+        myLocationBtn.style.display = 'none';
+      }
+
 
       // FAQ accordion toggle
       document.querySelectorAll('.faq-question').forEach(btn => {
